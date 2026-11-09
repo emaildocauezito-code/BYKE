@@ -22,12 +22,26 @@
       >
         ☰
       </button>
-      <nav class="nav">
-        <a href="#modelos">Bicicletas</a>
-        <a href="#tecnologia">Tecnologia</a>
-        <a href="#planos">Planos</a>
-        <button class="btn btn-dark" data-go="modelos">
-          Escolher minha BYKE <span>↗</span>
+      <nav class="nav" aria-label="Navegação principal">
+        <div class="nav-products">
+          <button
+            class="products-toggle"
+            aria-expanded="false"
+            aria-controls="products-panel"
+          >
+            Bicicletas <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="products-panel" id="products-panel" hidden>
+            <div class="products-intro">
+              <span class="eyebrow">BICICLETAS ELÉTRICAS</span>
+              <h2>Encontre sua BYKE.</h2>
+              <a href="#modelos" data-go="modelos">Ver todas as bicicletas ↗</a>
+            </div>
+            <div class="products-grid" id="nav-product-grid"></div>
+          </div>
+        </div>
+        <button class="btn btn-dark" data-go="planos">
+          Escolher meu plano <span>↗</span>
         </button>
       </nav>
     </header>
@@ -41,7 +55,7 @@
           <h1>O futuro da<br>mobilidade <em>é seu.</em></h1>
           <p>
             Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por
-            assinatura anual e pagamento mensal.
+            assinatura semestral ou anual e pagamento mensal.
           </p>
           <div class="actions">
             <button class="btn btn-green" data-go="modelos">
@@ -79,7 +93,7 @@
           <h2>Não é sobre ter uma bike.<br><em>É sobre ir além.</em></h2>
           <div>
             <p>
-              Na BYKE, você escolhe uma bicicleta elétrica e assina por um ano. Ela
+              Na BYKE, você escolhe uma bicicleta elétrica e assina por 6 ou 12 meses. Ela
               fica na sua casa, disponível para seu dia a dia, enquanto você paga uma
               mensalidade.
             </p>
@@ -98,7 +112,7 @@
             <span>02</span>
             <h3>Fique com ela</h3>
             <p>
-              Contrato anual para ter a bicicleta em casa todos os dias.
+              Planos de 6 ou 12 meses para ter a bicicleta em casa todos os dias.
             </p>
           </article>
           <article>
@@ -180,18 +194,25 @@
           <div class="eyebrow">
             04 / ASSINATURA
           </div>
-          <span class="section-note">CONTRATO ANUAL</span>
+          <span class="section-note">PLANOS DE 6 OU 12 MESES</span>
         </div>
         <h2>Uma bike para você.<br><em>Um plano do seu jeito.</em></h2>
         <p class="section-intro">
           Selecione um modelo para simular sua assinatura. Não há
           contratação, cadastro ou pagamento real.
         </p>
+        <div class="plan-controls">
+          <div class="plan-toggle" role="group" aria-label="Duração do plano">
+            <button type="button" data-term="semiannual" aria-pressed="false">
+              Semestral <small>6 meses</small>
+            </button>
+            <button type="button" data-term="annual" aria-pressed="true">
+              Anual <small>12 meses · menor mensalidade</small>
+            </button>
+          </div>
+          <p id="plan-selection-note" role="status"></p>
+        </div>
         <div id="plan-grid" class="plan-grid"></div>
-        <p class="disclaimer">
-          * Valores mensais fictícios, apresentados apenas para
-          demonstrar a experiência do site.
-        </p>
       </section>
       <section class="final-cta">
         <span>O FUTURO COMEÇA AQUI</span>
@@ -232,14 +253,19 @@
         <h2 id="modal-title">Monte sua BYKE</h2>
         <p class="modal-sub">
           Escolha um modelo para visualizar uma simulação de
-          assinatura anual.
+          assinatura semestral ou anual.
         </p>
         <label for="model-select">Bicicleta</label>
         <select id="model-select"></select>
+        <label for="term-select" class="term-label">Duração do plano</label>
+        <select id="term-select">
+          <option value="semiannual">Semestral — 6 meses</option>
+          <option value="annual" selected>Anual — 12 meses, com desconto</option>
+        </select>
         <div class="summary">
           <div>
             <span>Plano</span>
-            <strong>Assinatura anual</strong>
+            <strong id="summary-plan">Assinatura anual</strong>
           </div>
           <div>
             <span>Mensalidade ilustrativa</span>
@@ -247,7 +273,7 @@
           </div>
           <div>
             <span>Prazo</span>
-            <strong>12 meses</strong>
+            <strong id="summary-term">12 meses</strong>
           </div>
         </div>
         <button class="btn btn-green full" id="confirm">Simular escolha ↗</button>
