@@ -111,9 +111,7 @@ document.addEventListener('keydown', event => {
 document.querySelector('.menu-toggle').addEventListener('click', () => {
   setProductsOpen(false);
 });
-const modelGrid=document.getElementById('model-grid');const planGrid=document.getElementById('plan-grid');
-models.forEach((m,i)=>{let card=document.createElement('article');card.className='model-card';card.innerHTML=`<div class="model-visual"><span class="model-tag">${m.tag}</span><img src="bike.svg" alt="Ilustração da ${m.name}" class="bike-${i}"><span class="model-index">0${i+1} / 03</span></div><div class="model-info"><div><h3>${m.name}</h3><p>${m.desc}</p></div><button class="circle-arrow" aria-label="Ver assinatura de ${m.name}" data-pick="${i}">↗</button></div><div class="model-price">A partir de <strong>${money(m.price)}/mês</strong></div>`;modelGrid.appendChild(card);
-});
+const planGrid = document.getElementById('plan-grid');
 
 function renderPlans() {
   const term = terms[selectedTerm];
@@ -121,8 +119,13 @@ function renderPlans() {
     const saving = terms.semiannual.prices[index] - terms.annual.prices[index];
     return `
       <article class="plan-card${index === 1 ? ' featured' : ''}">
+        <div class="plan-visual">
+          <img src="bike.svg" alt="Ilustração conceitual de ${model.name}"
+            class="bike-${index}" loading="lazy">
+        </div>
         <span class="plan-label">${model.tag}</span>
         <h3>${model.name}</h3>
+        <p class="plan-description">${model.desc}</p>
         <div class="plan-price">
           <strong>${money(monthlyPrice(model))}</strong><span> / mês</span>
         </div>
