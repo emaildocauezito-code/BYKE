@@ -1,6 +1,12 @@
 # BYKE — Build Your Keen Energy
 
-Protótipo acadêmico de assinatura anual de bicicletas elétricas. Valores ilustrativos: R$ 149, R$ 199 e R$ 279 por mês. Não realiza cadastro, cobrança, reserva ou contratação.
+Protótipo acadêmico de assinatura mensal, semestral ou anual de bicicletas elétricas. Não realiza cadastro, cobrança, reserva ou contratação.
+
+| Modelo | Mensal (por mês) | Semestral (por mês) | Anual (por mês) |
+|---|---:|---:|---:|
+| Marlin · Esportiva | R$ 329 | R$ 269 | R$ 239 |
+| Tuna · Urbana | R$ 279 | R$ 219 | R$ 199 |
+| Whale · Cross | R$ 329 | R$ 269 | R$ 239 |
 
 ## Executar localmente
 
@@ -16,11 +22,14 @@ Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
 ## Arquivos
 
 - `index.html`: estrutura e conteúdo das seções e do simulador.
+- `planos.html`: layout de detalhes dos planos, etapas da assinatura e dúvidas frequentes.
+- `bicicletas.html`: layout de apresentação dos três modelos, sem preços.
+- `detalhes.css`: estilos responsivos exclusivos das páginas de detalhes.
 - `style.css`: identidade visual, responsividade e animações.
 - `script.js`: modelos, preços, planos, navegação e simulação.
 - `bike.svg`: ilustração conceitual compartilhada pelos modelos.
 
-Os quatro arquivos foram importados sem alterações do ZIP BYKE_MVP fornecido pelo autor. As fontes DM Sans e Manrope são carregadas do Google Fonts; sem acesso à rede, o navegador usa fontes alternativas.
+O projeto partiu do ZIP BYKE_MVP fornecido pelo autor. As páginas de detalhes usam textos genéricos e campos de especificações para preenchimento posterior. As fontes DM Sans e Manrope são carregadas do Google Fonts; sem acesso à rede, o navegador usa fontes alternativas.
 
 ## Verificação manual
 
@@ -28,4 +37,4 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 
 ## Limites atuais
 
-Os modelos têm nomes e descrições conceituais e usam a mesma ilustração. Ainda não existe uma página ou painel próprio de detalhes de cada bicicleta: os botões dos modelos abrem o simulador. Recuperação de energia na frenagem é uma proposta conceitual, sem autonomia ou especificações técnicas comprovadas.
+Marlin, Tuna e Whale usam a mesma ilustração conceitual. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; os cartões da página inicial abrem o simulador. A página de planos reúne as três modalidades e seus preços. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.

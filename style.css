@@ -154,6 +154,11 @@
   font-weight: 400;
   line-height: 1.6;
 }
+.plan-card .plan-tagline {
+  margin: 0 0 14px;
+  color: var(--forest);
+  line-height: 1.6;
+}
 .plan-toggle {
   display: inline-flex;
   gap: 6px;

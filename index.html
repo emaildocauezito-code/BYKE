@@ -24,25 +24,26 @@
       </button>
       <nav class="nav" aria-label="Navegação principal">
         <div class="nav-products">
-          <button
+          <a
+            href="bicicletas.html"
             class="products-toggle"
             aria-expanded="false"
             aria-controls="products-panel"
           >
             Bicicletas <span aria-hidden="true">⌄</span>
-          </button>
+          </a>
           <div class="products-panel" id="products-panel" hidden>
             <div class="products-intro">
               <span class="eyebrow">BICICLETAS ELÉTRICAS</span>
               <h2>Encontre sua BYKE.</h2>
-              <a href="#planos" data-go="planos">Ver bicicletas e planos ↗</a>
+              <a href="bicicletas.html">Ver todas as bicicletas ↗</a>
             </div>
             <div class="products-grid" id="nav-product-grid"></div>
           </div>
         </div>
-        <button class="btn btn-dark" data-go="planos">
+        <a class="btn btn-dark" href="planos.html">
           Escolher meu plano <span>↗</span>
-        </button>
+        </a>
       </nav>
     </header>
     <main>
@@ -55,12 +56,12 @@
           <h1>O futuro da<br>mobilidade <em>é seu.</em></h1>
           <p>
             Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por
-            assinatura semestral ou anual e pagamento mensal.
+            assinatura mensal, semestral ou anual e pagamento mensal.
           </p>
           <div class="actions">
-            <button class="btn btn-green" data-go="planos">
+            <a class="btn btn-green" href="bicicletas.html">
               Explorar bicicletas <span>↗</span>
-            </button>
+            </a>
             <button class="text-btn" data-go="como-funciona">
               Como funciona <span>↗</span>
             </button>
@@ -93,11 +94,11 @@
           <h2>Não é sobre ter uma bike.<br><em>É sobre ir além.</em></h2>
           <div>
             <p>
-              Na BYKE, você escolhe uma bicicleta elétrica e assina por 6 ou 12 meses. Ela
+              Na BYKE, você escolhe uma bicicleta elétrica e assina por 1, 6 ou 12 meses. Ela
               fica na sua casa, disponível para seu dia a dia, enquanto você paga uma
               mensalidade.
             </p>
-            <button class="text-btn" data-go="planos">Entenda nossos planos ↗</button>
+            <a class="text-btn" href="planos.html">Entenda nossos planos ↗</a>
           </div>
         </div>
         <div class="features">
@@ -112,7 +113,7 @@
             <span>02</span>
             <h3>Fique com ela</h3>
             <p>
-              Planos de 6 ou 12 meses para ter a bicicleta em casa todos os dias.
+              Planos de 1, 6 ou 12 meses para ter a bicicleta em casa todos os dias.
             </p>
           </article>
           <article>
@@ -176,16 +177,19 @@
           <div class="eyebrow">
             03 / BICICLETAS E PLANOS
           </div>
-          <span class="section-note">PLANOS DE 6 OU 12 MESES</span>
+          <span class="section-note">PLANOS DE 1, 6 OU 12 MESES</span>
         </div>
         <h2>Uma bike para você.<br><em>Um plano do seu jeito.</em></h2>
         <p class="section-intro">
-          Explore os três modelos conceituais e escolha um plano semestral ou anual.
+          Explore Marlin, Tuna e Whale e escolha um plano mensal, semestral ou anual.
           Selecione sua bicicleta para simular a assinatura. Não há contratação,
           cadastro ou pagamento real.
         </p>
         <div class="plan-controls">
           <div class="plan-toggle" role="group" aria-label="Duração do plano">
+            <button type="button" data-term="monthly" aria-pressed="false">
+              Mensal <small>1 mês</small>
+            </button>
             <button type="button" data-term="semiannual" aria-pressed="false">
               Semestral <small>6 meses</small>
             </button>
@@ -203,7 +207,7 @@
         <p>
           Escolha seu modelo e experimente uma nova ideia de mobilidade urbana.
         </p>
-        <button class="btn btn-green" data-go="planos">Escolher bicicleta ↗</button>
+        <a class="btn btn-green" href="bicicletas.html">Escolher bicicleta ↗</a>
       </section>
     </main>
     <footer>
@@ -236,12 +240,13 @@
         <h2 id="modal-title">Monte sua BYKE</h2>
         <p class="modal-sub">
           Escolha um modelo para visualizar uma simulação de
-          assinatura semestral ou anual.
+          assinatura mensal, semestral ou anual.
         </p>
         <label for="model-select">Bicicleta</label>
         <select id="model-select"></select>
         <label for="term-select" class="term-label">Duração do plano</label>
         <select id="term-select">
+          <option value="monthly">Mensal — 1 mês</option>
           <option value="semiannual">Semestral — 6 meses</option>
           <option value="annual" selected>Anual — 12 meses, com desconto</option>
         </select>

@@ -1,10 +1,36 @@
-const models=[{id:0,name:'Modelo 01',price:149,tag:'ESSENCIAL',desc:'Um conceito de mobilidade elétrica para o dia a dia.'},{id:1,name:'Modelo 02',price:199,tag:'URBANO',desc:'Uma proposta de bicicleta moderna para sua rotina.'},{id:2,name:'Modelo 03',price:279,tag:'PREMIUM',desc:'Mais uma opção conceitual para explorar a experiência BYKE.'}];
+const models = [
+  {
+    id: 0, name: 'Marlin', price: 239, tag: 'ESPORTIVA',
+    tagline: 'Encontre seu ritmo.',
+    desc: 'A agilidade do marlin inspira nossa bike de perfil esportivo. ' +
+      'Com guidão curvo e uma posição de pedalada mais inclinada, a Marlin é ' +
+      'para quem gosta de movimento, ritmo e trajetos no asfalto.'
+  },
+  {
+    id: 1, name: 'Tuna', price: 199, tag: 'URBANA',
+    tagline: 'Energia para acompanhar seu dia.',
+    desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
+      'combina maior autonomia de bateria, posição confortável e praticidade. ' +
+      'A cesta e o bagageiro acomodam seus pertences, enquanto o quadro baixo ' +
+      'facilita cada parada pelo caminho.'
+  },
+  {
+    id: 2, name: 'Whale', price: 239, tag: 'CROSS',
+    tagline: 'Presença para explorar.',
+    desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
+      'largos, suspensão dianteira e traseira e visual robusto, ela traz uma ' +
+      'proposta aventureira para quem quer explorar caminhos de terra e percursos irregulares.'
+  }
+];
 const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const terms = {
-  semiannual: { label: 'semestral', months: 6, prices: [179, 239, 329] },
+  monthly: { label: 'mensal', months: 1, prices: [329, 279, 329] },
+  semiannual: { label: 'semestral', months: 6, prices: [269, 219, 269] },
   annual: { label: 'anual', months: 12, prices: models.map(model => model.price) }
 };
-let selectedTerm = 'annual';
+const requestedTerm = new URLSearchParams(window.location.search).get('plano');
+let selectedTerm = Object.hasOwn(terms, requestedTerm) ? requestedTerm : 'annual';
+const termDuration = term => `${term.months} ${term.months === 1 ? 'mês' : 'meses'}`;
 const monthlyPrice = model => terms[selectedTerm].prices[model.id];
 const productsNav = document.querySelector('.nav-products');
 const productsToggle = document.querySelector('.products-toggle');
@@ -81,9 +107,6 @@ function setProductsOpen(open) {
   }).catch(() => {});
 }
 
-productsToggle.addEventListener('click', () => {
-  setProductsOpen(!productsOpen);
-});
 productsNav.addEventListener('pointerenter', event => {
   if (event.pointerType === 'mouse') setProductsOpen(true);
 });
@@ -116,7 +139,8 @@ const planGrid = document.getElementById('plan-grid');
 function renderPlans() {
   const term = terms[selectedTerm];
   planGrid.innerHTML = models.map((model, index) => {
-    const saving = terms.semiannual.prices[index] - terms.annual.prices[index];
+    const saving = terms.monthly.prices[index] - term.prices[index];
+    const annualSaving = terms.monthly.prices[index] - terms.annual.prices[index];
     return `
       <article class="plan-card${index === 1 ? ' featured' : ''}">
         <div class="plan-visual">
@@ -125,15 +149,16 @@ function renderPlans() {
         </div>
         <span class="plan-label">${model.tag}</span>
         <h3>${model.name}</h3>
+        <p class="plan-tagline">${model.tagline}</p>
         <p class="plan-description">${model.desc}</p>
         <div class="plan-price">
           <strong>${money(monthlyPrice(model))}</strong><span> / mês</span>
         </div>
-        <p class="plan-saving">${selectedTerm === 'annual'
-          ? `Economize ${money(saving)}/mês em relação ao semestral`
-          : `No anual, você economiza ${money(saving)}/mês`}</p>
+        <p class="plan-saving">${selectedTerm !== 'monthly'
+          ? `Economize ${money(saving)}/mês em relação ao mensal`
+          : `No anual, você economiza ${money(annualSaving)}/mês`}</p>
         <div class="plan-divider"></div>
-        <p>Contrato de ${term.months} meses</p>
+        <p>Contrato de ${termDuration(term)}</p>
         <ul>
           <li>Bicicleta elétrica para uso diário</li>
           <li>Permanece na sua casa durante o plano</li>
@@ -144,7 +169,8 @@ function renderPlans() {
       </article>`;
   }).join('');
   document.getElementById('plan-selection-note').textContent =
-    `Plano ${term.label}: contrato de ${term.months} meses, com pagamento mensal.`;
+    `Plano ${term.label}: contrato de ${termDuration(term)}, com pagamento mensal.`;
+  document.getElementById('term-select').value = selectedTerm;
   document.querySelectorAll('[data-term]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.term === selectedTerm));
   });
@@ -175,7 +201,7 @@ function update() {
   document.getElementById('summary-plan').textContent =
     'Assinatura ' + terms[selectedTerm].label;
   document.getElementById('summary-term').textContent =
-    terms[selectedTerm].months + ' meses';
+    termDuration(terms[selectedTerm]);
 }
 function closeModal(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.classList.remove('locked')}
 let toastTimer;function notify(s){toast.textContent=s;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),4400)}
@@ -186,7 +212,7 @@ document.getElementById('confirm').addEventListener('click', () => {
   const term = terms[selectedTerm];
   closeModal();
   notify(`Simulação concluída: ${model.name}, plano ${term.label}, por ` +
-    `${money(monthlyPrice(model))}/mês durante ${term.months} meses. ` +
+    `${money(monthlyPrice(model))}/mês durante ${termDuration(term)}. ` +
     'Nenhuma assinatura foi realizada.');
 });
 document.querySelector('.menu-toggle').addEventListener('click',e=>{let n=document.querySelector('.nav');const b=n.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',String(b))});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
