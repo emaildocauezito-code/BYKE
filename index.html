@@ -1,15 +1,262 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#121A16"><title>BYKE — Build Your Keen Energy</title><link rel="stylesheet" href="style.css"></head>
-<body>
-<header class="header"><a href="#inicio" class="logo" aria-label="BYKE - início">BY<span>KE</span><small>BUILD YOUR KEEN ENERGY</small></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button><nav class="nav"><a href="#modelos">Bicicletas</a><a href="#tecnologia">Tecnologia</a><a href="#planos">Planos</a><button class="btn btn-dark" data-go="modelos">Escolher minha BYKE <span>↗</span></button></nav></header>
-<main>
-<section class="hero" id="inicio"><div class="hero-copy"><div class="eyebrow"><span class="dot"></span> UMA NOVA FORMA DE SE MOVER</div><h1>O futuro da<br>mobilidade <em>é seu.</em></h1><p>Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por assinatura anual e pagamento mensal.</p><div class="actions"><button class="btn btn-green" data-go="modelos">Explorar bicicletas <span>↗</span></button><button class="text-btn" data-go="como-funciona">Como funciona <span>↗</span></button></div><div class="hero-bottom"><span>01 / 03 — MOBILIDADE ELÉTRICA</span><span>DESLIZE PARA EXPLORAR ↓</span></div></div><div class="hero-visual"><div class="visual-glow"></div><img src="bike.svg" alt="Ilustração conceitual de bicicleta elétrica BYKE"><div class="hero-visual-caption"><span class="green-line"></span> BYKE / CONCEPT 01 <small>Design elétrico para o seu dia a dia</small></div></div></section>
-<div class="ticker"><span>ELETRICIDADE</span><i>✳</i><span>LIBERDADE</span><i>✳</i><span>DESIGN</span><i>✳</i><span>ENERGIA</span><i>✳</i><span>MOBILIDADE</span></div>
-<section class="section about" id="como-funciona"><div class="section-top"><div class="eyebrow">01 / O CONCEITO</div><span class="section-note">BUILD YOUR KEEN ENERGY</span></div><div class="about-grid"><h2>Não é sobre ter uma bike.<br><em>É sobre ir além.</em></h2><div><p>Na BYKE, você escolhe uma bicicleta elétrica e assina por um ano. Ela fica na sua casa, disponível para seu dia a dia, enquanto você paga uma mensalidade.</p><button class="text-btn" data-go="planos">Entenda nossos planos ↗</button></div></div><div class="features"><article><span>01</span><h3>Escolha sua BYKE</h3><p>Modelos diferentes para necessidades e estilos diferentes.</p></article><article><span>02</span><h3>Fique com ela</h3><p>Contrato anual para ter a bicicleta em casa todos os dias.</p></article><article><span>03</span><h3>Pague por mês</h3><p>Mensalidades ilustrativas para comparar possibilidades.</p></article></div></section>
-<section class="section models" id="modelos"><div class="section-top"><div class="eyebrow">02 / MODELOS</div><span class="section-note">A SUA CIDADE. O SEU RITMO.</span></div><h2>Encontre a sua<br><em>próxima BYKE.</em></h2><p class="section-intro">Três modelos conceituais para explorar. Nomes e especificações finais serão definidos pela equipe.</p><div id="model-grid" class="model-grid"></div><p class="disclaimer">* Imagens ilustrativas e preços fictícios de um projeto acadêmico.</p></section>
-<section class="technology" id="tecnologia"><div class="section-top"><div class="eyebrow">03 / TECNOLOGIA</div><span class="section-note">ENERGIA QUE ACOMPANHA VOCÊ</span></div><div class="tech-content"><div><h2>Pensada para<br><em>continuar em movimento.</em></h2><p>A proposta BYKE une carregamento prático e aproveitamento inteligente de energia durante a frenagem. São conceitos de projeto, ainda sem especificações técnicas definidas.</p></div><div class="tech-wheel"><div class="wheel-inner"><span>BYKE</span><small>ENERGY CONCEPT</small></div></div></div><div class="tech-features"><article><b>01 —</b><h3>Carregamento fácil</h3><p>Conveniência para o dia a dia.</p></article><article><b>02 —</b><h3>Recuperação na frenagem</h3><p>Proposta de reaproveitar parte da energia em desacelerações.</p></article><article><b>03 —</b><h3>Maior duração</h3><p>Conceito voltado ao uso eficiente da bateria.</p></article></div></section>
-<section class="section plans" id="planos"><div class="section-top"><div class="eyebrow">04 / ASSINATURA</div><span class="section-note">CONTRATO ANUAL</span></div><h2>Uma bike para você.<br><em>Um plano do seu jeito.</em></h2><p class="section-intro">Selecione um modelo para simular sua assinatura. Não há contratação, cadastro ou pagamento real.</p><div id="plan-grid" class="plan-grid"></div><p class="disclaimer">* Valores mensais fictícios, apresentados apenas para demonstrar a experiência do site.</p></section>
-<section class="final-cta"><span>O FUTURO COMEÇA AQUI</span><h2>Vai de <em>BYKE?</em></h2><p>Escolha seu modelo e experimente uma nova ideia de mobilidade urbana.</p><button class="btn btn-green" data-go="modelos">Escolher bicicleta ↗</button></section>
-</main><footer><div class="footer-logo">BY<span>KE</span><small>BUILD YOUR KEEN ENERGY</small></div><div>Projeto acadêmico • Design & User Experience<br><span>Protótipo conceitual de mobilidade urbana</span></div><button class="back-top" data-go="inicio">Voltar ao topo ↑</button></footer>
-<div class="modal" id="modal" aria-hidden="true"><div class="modal-overlay" data-close></div><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-modal" data-close aria-label="Fechar">×</button><div class="eyebrow">SIMULADOR DE ASSINATURA</div><h2 id="modal-title">Monte sua BYKE</h2><p class="modal-sub">Escolha um modelo para visualizar uma simulação de assinatura anual.</p><label for="model-select">Bicicleta</label><select id="model-select"></select><div class="summary"><div><span>Plano</span><strong>Assinatura anual</strong></div><div><span>Mensalidade ilustrativa</span><strong id="summary-price"></strong></div><div><span>Prazo</span><strong>12 meses</strong></div></div><button class="btn btn-green full" id="confirm">Simular escolha ↗</button><p class="modal-note">Demonstração acadêmica, sem cobrança ou reserva.</p></div></div>
-<div class="toast" id="toast" role="status"></div><script src="script.js"></script></body></html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#121A16">
+    <title>BYKE — Build Your Keen Energy</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+      <a
+        href="#inicio"
+        class="logo"
+        aria-label="BYKE - início"
+      >BY<span>KE</span><small>BUILD
+      YOUR KEEN ENERGY</small></a>
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav">
+        <a href="#modelos">Bicicletas</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#planos">Planos</a>
+        <button class="btn btn-dark" data-go="modelos">
+          Escolher minha BYKE <span>↗</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            UMA NOVA FORMA DE SE MOVER
+          </div>
+          <h1>O futuro da<br>mobilidade <em>é seu.</em></h1>
+          <p>
+            Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por
+            assinatura anual e pagamento mensal.
+          </p>
+          <div class="actions">
+            <button class="btn btn-green" data-go="modelos">
+              Explorar bicicletas <span>↗</span>
+            </button>
+            <button class="text-btn" data-go="como-funciona">
+              Como funciona <span>↗</span>
+            </button>
+          </div>
+          <div class="hero-bottom">
+            <span>01 / 03 — MOBILIDADE ELÉTRICA</span>
+            <span>DESLIZE PARA EXPLORAR ↓</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-glow"></div>
+          <img src="bike.svg" alt="Ilustração conceitual de bicicleta elétrica BYKE">
+          <div class="hero-visual-caption">
+            <span class="green-line"></span>
+            BYKE / CONCEPT 01
+            <small>Design elétrico para o seu dia a dia</small>
+          </div>
+        </div>
+      </section>
+      <div class="ticker">
+      </div>
+      <section class="section about" id="como-funciona">
+        <div class="section-top">
+          <div class="eyebrow">
+            01 / O CONCEITO
+          </div>
+          <span class="section-note">BUILD YOUR KEEN ENERGY</span>
+        </div>
+        <div class="about-grid">
+          <h2>Não é sobre ter uma bike.<br><em>É sobre ir além.</em></h2>
+          <div>
+            <p>
+              Na BYKE, você escolhe uma bicicleta elétrica e assina por um ano. Ela
+              fica na sua casa, disponível para seu dia a dia, enquanto você paga uma
+              mensalidade.
+            </p>
+            <button class="text-btn" data-go="planos">Entenda nossos planos ↗</button>
+          </div>
+        </div>
+        <div class="features">
+          <article>
+            <span>01</span>
+            <h3>Escolha sua BYKE</h3>
+            <p>
+              Modelos diferentes para necessidades e estilos diferentes.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Fique com ela</h3>
+            <p>
+              Contrato anual para ter a bicicleta em casa todos os dias.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Pague por mês</h3>
+            <p>
+              Mensalidades ilustrativas para comparar possibilidades.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section models" id="modelos">
+        <div class="section-top">
+          <div class="eyebrow">
+            02 / MODELOS
+          </div>
+          <span class="section-note">A SUA CIDADE. O SEU RITMO.</span>
+        </div>
+        <h2>Encontre a sua<br><em>próxima BYKE.</em></h2>
+        <p class="section-intro">
+          Três modelos conceituais para explorar. Nomes e
+          especificações finais serão definidos pela equipe.
+        </p>
+        <div id="model-grid" class="model-grid"></div>
+        <p class="disclaimer">
+          * Imagens ilustrativas e preços fictícios de um projeto
+          acadêmico.
+        </p>
+      </section>
+      <section class="technology" id="tecnologia">
+        <div class="section-top">
+          <div class="eyebrow">
+            03 / TECNOLOGIA
+          </div>
+          <span class="section-note">ENERGIA QUE ACOMPANHA VOCÊ</span>
+        </div>
+        <div class="tech-content">
+          <div>
+            <h2>Pensada para<br><em>continuar em movimento.</em></h2>
+            <p>
+              A proposta BYKE une carregamento prático e aproveitamento inteligente de
+              energia durante a frenagem. São conceitos de projeto, ainda sem
+              especificações técnicas definidas.
+            </p>
+          </div>
+          <div class="tech-wheel">
+            <div class="wheel-inner">
+              <span>BYKE</span>
+              <small>ENERGY CONCEPT</small>
+            </div>
+          </div>
+        </div>
+        <div class="tech-features">
+          <article>
+            <b>01 —</b>
+            <h3>Carregamento fácil</h3>
+            <p>
+              Conveniência para o dia a dia.
+            </p>
+          </article>
+          <article>
+            <b>02 —</b>
+            <h3>Recuperação na frenagem</h3>
+            <p>
+              Proposta de reaproveitar parte da energia em desacelerações.
+            </p>
+          </article>
+          <article>
+            <b>03 —</b>
+            <h3>Maior duração</h3>
+            <p>
+              Conceito voltado ao uso eficiente da bateria.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section plans" id="planos">
+        <div class="section-top">
+          <div class="eyebrow">
+            04 / ASSINATURA
+          </div>
+          <span class="section-note">CONTRATO ANUAL</span>
+        </div>
+        <h2>Uma bike para você.<br><em>Um plano do seu jeito.</em></h2>
+        <p class="section-intro">
+          Selecione um modelo para simular sua assinatura. Não há
+          contratação, cadastro ou pagamento real.
+        </p>
+        <div id="plan-grid" class="plan-grid"></div>
+        <p class="disclaimer">
+          * Valores mensais fictícios, apresentados apenas para
+          demonstrar a experiência do site.
+        </p>
+      </section>
+      <section class="final-cta">
+        <span>O FUTURO COMEÇA AQUI</span>
+        <h2>Vai de <em>BYKE?</em></h2>
+        <p>
+          Escolha seu modelo e experimente uma nova ideia de mobilidade urbana.
+        </p>
+        <button class="btn btn-green" data-go="modelos">Escolher bicicleta ↗</button>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-logo">
+        BY
+        <span>KE</span>
+        <small>BUILD YOUR KEEN ENERGY</small>
+      </div>
+      <div>
+        Projeto acadêmico • Design
+        &
+        User Experience
+        <br>
+        <span>Protótipo conceitual de mobilidade urbana</span>
+      </div>
+      <button class="back-top" data-go="inicio">Voltar ao topo ↑</button>
+    </footer>
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-overlay" data-close></div>
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="close-modal" data-close aria-label="Fechar">×</button>
+        <div class="eyebrow">
+          SIMULADOR DE ASSINATURA
+        </div>
+        <h2 id="modal-title">Monte sua BYKE</h2>
+        <p class="modal-sub">
+          Escolha um modelo para visualizar uma simulação de
+          assinatura anual.
+        </p>
+        <label for="model-select">Bicicleta</label>
+        <select id="model-select"></select>
+        <div class="summary">
+          <div>
+            <span>Plano</span>
+            <strong>Assinatura anual</strong>
+          </div>
+          <div>
+            <span>Mensalidade ilustrativa</span>
+            <strong id="summary-price"></strong>
+          </div>
+          <div>
+            <span>Prazo</span>
+            <strong>12 meses</strong>
+          </div>
+        </div>
+        <button class="btn btn-green full" id="confirm">Simular escolha ↗</button>
+        <p class="modal-note">
+          Demonstração acadêmica, sem cobrança ou reserva.
+        </p>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
