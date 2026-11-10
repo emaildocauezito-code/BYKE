@@ -32,14 +32,6 @@
           >
             Bicicletas <span aria-hidden="true">⌄</span>
           </a>
-          <div class="products-panel" id="products-panel" hidden>
-            <div class="products-intro">
-              <span class="eyebrow">BICICLETAS ELÉTRICAS</span>
-              <h2>Encontre sua BYKE.</h2>
-              <a href="bicicletas.html">Ver todas as bicicletas ↗</a>
-            </div>
-            <div class="products-grid" id="nav-product-grid"></div>
-          </div>
         </div>
         <a class="btn btn-dark" href="planos.html">
           Escolher meu plano <span>↗</span>
@@ -56,7 +48,7 @@
           <h1>O futuro da<br>mobilidade <em>é seu.</em></h1>
           <p>
             Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por
-            assinatura mensal, semestral ou anual e pagamento mensal.
+            assinatura trimestral, semestral ou anual e pagamento mensal.
           </p>
           <div class="actions">
             <a class="btn btn-green" href="bicicletas.html">
@@ -177,18 +169,18 @@
           <div class="eyebrow">
             03 / BICICLETAS E PLANOS
           </div>
-          <span class="section-note">PLANOS DE 1, 6 OU 12 MESES</span>
+          <span class="section-note">PLANOS DE 3, 6 OU 12 MESES</span>
         </div>
         <h2>Uma bike para você.<br><em>Um plano do seu jeito.</em></h2>
         <p class="section-intro">
-          Explore Marlin, Tuna e Whale e escolha um plano mensal, semestral ou anual.
+          Explore Marlim, Tuna e Wale e escolha um plano trimestral, semestral ou anual.
           Selecione sua bicicleta para simular a assinatura. Não há contratação,
           cadastro ou pagamento real.
         </p>
         <div class="plan-controls">
           <div class="plan-toggle" role="group" aria-label="Duração do plano">
-            <button type="button" data-term="monthly" aria-pressed="false">
-              Mensal <small>1 mês</small>
+            <button type="button" data-term="quarterly" aria-pressed="false">
+              Trimestral <small>3 meses</small>
             </button>
             <button type="button" data-term="semiannual" aria-pressed="false">
               Semestral <small>6 meses</small>
@@ -240,13 +232,13 @@
         <h2 id="modal-title">Monte sua BYKE</h2>
         <p class="modal-sub">
           Escolha um modelo para visualizar uma simulação de
-          assinatura mensal, semestral ou anual.
+          assinatura trimestral, semestral ou anual.
         </p>
         <label for="model-select">Bicicleta</label>
         <select id="model-select"></select>
         <label for="term-select" class="term-label">Duração do plano</label>
         <select id="term-select">
-          <option value="monthly">Mensal — 1 mês</option>
+          <option value="quarterly">Trimestral — 3 meses</option>
           <option value="semiannual">Semestral — 6 meses</option>
           <option value="annual" selected>Anual — 12 meses, com desconto</option>
         </select>
@@ -271,6 +263,8 @@
       </div>
     </div>
     <div class="toast" id="toast" role="status"></div>
+    <script src="catalogo.js"></script>
+    <script src="menu-bicicletas.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
