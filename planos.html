@@ -112,6 +112,52 @@
       <span>Projeto acadêmico · Conteúdo ilustrativo</span>
       <a class="back-top" href="#conteudo">Voltar ao topo ↑</a>
     </footer>
+    <div class="modal" id="modal" aria-hidden="true" inert>
+      <div class="modal-overlay" data-close></div>
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="close-modal" data-close aria-label="Fechar">×</button>
+        <div class="eyebrow">
+          SIMULADOR DE ASSINATURA
+        </div>
+        <h2 id="modal-title">Monte sua BYKE</h2>
+        <p class="modal-sub">
+          Escolha um modelo para visualizar uma simulação de
+          assinatura trimestral, semestral ou anual.
+        </p>
+        <label for="model-select">Bicicleta</label>
+        <select id="model-select"></select>
+        <label for="term-select" class="term-label">Duração do plano</label>
+        <select id="term-select">
+          <option value="quarterly">Trimestral — 3 meses</option>
+          <option value="semiannual">Semestral — 6 meses</option>
+          <option value="annual" selected>Anual — 12 meses, com desconto</option>
+        </select>
+        <div class="summary">
+          <div>
+            <span>Plano</span>
+            <strong id="summary-plan">Assinatura anual</strong>
+          </div>
+          <div>
+            <span>Mensalidade ilustrativa</span>
+            <strong id="summary-price"></strong>
+          </div>
+          <div>
+            <span>Prazo</span>
+            <strong id="summary-term">12 meses</strong>
+          </div>
+        </div>
+        <button class="btn btn-green full" id="confirm">Simular escolha ↗</button>
+        <p class="modal-note">
+          Demonstração acadêmica, sem cobrança ou reserva.
+        </p>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
     <script src="catalogo.js"></script>
     <script src="menu-bicicletas.js"></script>
     <script src="planos.js"></script>
