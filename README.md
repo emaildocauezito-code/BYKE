@@ -1,12 +1,12 @@
 # BYKE — Build Your Keen Energy
 
-Protótipo acadêmico de assinatura mensal, semestral ou anual de bicicletas elétricas. Não realiza cadastro, cobrança, reserva ou contratação.
+Protótipo acadêmico de assinatura trimestral, semestral ou anual de bicicletas elétricas. Não realiza cadastro, cobrança, reserva ou contratação.
 
-| Modelo | Mensal (por mês) | Semestral (por mês) | Anual (por mês) |
+| Modelo | Trimestral (por mês) | Semestral (por mês) | Anual (por mês) |
 |---|---:|---:|---:|
-| Marlin · Esportiva | R$ 329 | R$ 269 | R$ 239 |
+| Marlim · Esportiva | R$ 329 | R$ 269 | R$ 239 |
 | Tuna · Urbana | R$ 279 | R$ 219 | R$ 199 |
-| Whale · Cross | R$ 329 | R$ 269 | R$ 239 |
+| Wale · Cross | R$ 329 | R$ 269 | R$ 239 |
 
 ## Executar localmente
 
@@ -26,7 +26,10 @@ Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
 - `bicicletas.html`: layout de apresentação dos três modelos, sem preços.
 - `detalhes.css`: estilos responsivos exclusivos das páginas de detalhes.
 - `style.css`: identidade visual, responsividade e animações.
-- `script.js`: modelos, preços, planos, navegação e simulação.
+- `catalogo.js`: modelos, características e preços por duração.
+- `menu-bicicletas.js`: painel de bicicletas compartilhado pelo cabeçalho.
+- `planos.js`: seletor de duração e preços na página de planos.
+- `script.js`: navegação, planos e simulação na página inicial.
 - `bike.svg`: ilustração conceitual compartilhada pelos modelos.
 
 O projeto partiu do ZIP BYKE_MVP fornecido pelo autor. As páginas de detalhes usam textos genéricos e campos de especificações para preenchimento posterior. As fontes DM Sans e Manrope são carregadas do Google Fonts; sem acesso à rede, o navegador usa fontes alternativas.
@@ -37,4 +40,4 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 
 ## Limites atuais
 
-Marlin, Tuna e Whale usam a mesma ilustração conceitual. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; os cartões da página inicial abrem o simulador. A página de planos reúne as três modalidades e seus preços. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.
+Marlim, Tuna e Wale usam a mesma ilustração conceitual. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; os cartões da página inicial abrem o simulador. A página de planos reúne as três modalidades e seus preços. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.

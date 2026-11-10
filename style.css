@@ -115,6 +115,7 @@
   font-weight: 400;
 }
 .nav-product .text-btn {
+  display: inline-block;
   font-size: 13px;
 }
 .plan-controls {

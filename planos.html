@@ -15,7 +15,12 @@
         BY<span>KE</span><small>BUILD YOUR KEEN ENERGY</small>
       </a>
       <nav class="nav" aria-label="Navegação principal">
-        <a href="bicicletas.html">Bicicletas</a>
+        <div class="nav-products">
+          <a href="bicicletas.html" class="products-toggle"
+            aria-expanded="false" aria-controls="products-panel">
+            Bicicletas <span aria-hidden="true">⌄</span>
+          </a>
+        </div>
         <a class="btn btn-dark" href="planos.html" aria-current="page">
           Escolher meu plano <span aria-hidden="true">↗</span>
         </a>
@@ -30,7 +35,7 @@
           <h1>Mais caminhos.<br><em>Um plano para você.</em></h1>
           <p class="detail-lead">
             Conheça as opções de assinatura e encontre a duração que combina
-            com sua rotina. Escolha entre os planos mensal, semestral e anual.
+            com sua rotina. Escolha entre os planos trimestral, semestral e anual.
           </p>
           <a class="btn btn-green" href="#opcoes">Conhecer os planos ↗</a>
         </div>
@@ -39,45 +44,21 @@
         <div class="detail-heading">
           <p class="eyebrow">01 / ESCOLHA SEU PLANO</p>
           <h2>Do seu jeito.<br><em>No seu ritmo.</em></h2>
-          <p>Compare as três modalidades. Quanto maior o prazo, menor a mensalidade.</p>
+          <p>Escolha sua bike e o prazo da assinatura. Quanto maior o prazo, menor o preço por mês.</p>
         </div>
-        <div class="detail-plan-grid">
-          <article class="detail-plan">
-            <span class="eyebrow">1 MÊS</span>
-            <h3>Mensal</h3>
-            <p>Escolha sua BYKE com um contrato de um mês e pagamento mensal.</p>
-            <ul class="detail-list">
-              <li>Marlin e Whale: R$ 329 por mês</li>
-              <li>Tuna: R$ 279 por mês</li>
-              <li>Condições de contratação a definir</li>
-            </ul>
-            <a class="text-btn" href="index.html?plano=monthly#planos">
-              Simular plano mensal ↗
-            </a>
-          </article>
-          <article class="detail-plan">
-            <span class="eyebrow">6 MESES</span>
-            <h3>Semestral</h3>
-            <p>Seis meses com sua BYKE e mensalidade menor que no plano mensal.</p>
-            <ul class="detail-list">
-              <li>Marlin e Whale: R$ 269 por mês</li>
-              <li>Tuna: R$ 219 por mês</li>
-              <li>Condições de contratação a definir</li>
-            </ul>
-            <a class="text-btn" href="index.html?plano=semiannual#planos">Simular plano semestral ↗</a>
-          </article>
-          <article class="detail-plan detail-plan-featured">
-            <span class="eyebrow">12 MESES · MENOR MENSALIDADE</span>
-            <h3>Anual</h3>
-            <p>Doze meses com sua BYKE e a menor mensalidade entre as modalidades.</p>
-            <ul class="detail-list">
-              <li>Marlin e Whale: R$ 239 por mês</li>
-              <li>Tuna: R$ 199 por mês</li>
-              <li>Condições de contratação a definir</li>
-            </ul>
-            <a class="text-btn" href="index.html?plano=annual#planos">Simular plano anual ↗</a>
-          </article>
+        <div class="detail-plan-controls">
+          <div class="detail-term-picker" role="radiogroup" aria-label="Duração da assinatura">
+            <input type="radio" name="plano" id="plano-trimestral" value="quarterly">
+            <label for="plano-trimestral">Trimestral</label>
+            <input type="radio" name="plano" id="plano-semestral" value="semiannual">
+            <label for="plano-semestral">Semestral</label>
+            <input type="radio" name="plano" id="plano-anual" value="annual" checked>
+            <label for="plano-anual">Anual</label>
+          </div>
+          <p class="detail-term-note" role="status"></p>
         </div>
+        <div class="detail-plan-grid"></div>
+        <noscript><p>Ative o JavaScript para comparar os preços e simular a assinatura.</p></noscript>
       </section>
       <section class="detail-band">
         <div class="detail-shell detail-section">
@@ -131,5 +112,8 @@
       <span>Projeto acadêmico · Conteúdo ilustrativo</span>
       <a class="back-top" href="#conteudo">Voltar ao topo ↑</a>
     </footer>
+    <script src="catalogo.js"></script>
+    <script src="menu-bicicletas.js"></script>
+    <script src="planos.js"></script>
   </body>
 </html>
