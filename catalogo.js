@@ -41,5 +41,5 @@ const money = amount => amount.toLocaleString('pt-BR', {
 const termDuration = term => `${term.months} meses`;
 const simulationUrl = (model, term) => {
   const query = new URLSearchParams({ plano: term, modelo: model.name.toLowerCase() });
-  return `index.html?${query}#planos`;
+  return `planos.html?${query}#opcoes`;
 };
