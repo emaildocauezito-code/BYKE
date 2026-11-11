@@ -286,12 +286,12 @@ h2 em { color: inherit; }
 .eyebrow { color: #636363; font-weight: 500; font-size: 11px; letter-spacing: 1.6px; }
 .text-btn { font-weight: 500; }
 .products-panel { box-shadow: 0 18px 24px #0000000c; max-height: calc(100dvh - 80px); }
-.nav-product-image { border-radius: 0; background: #080808; overflow: hidden; }
+.nav-product-image { border-radius: 0; background: transparent; overflow: hidden; }
 .nav-product-image img { object-fit: contain; }
 .nav-product-tag { color: var(--muted); }
 footer { padding: 40px 5%; background: #eee; color: #333; border-top: 1px solid var(--line); }
 footer span, footer div { color: #636363; }
-.footer-logo { width: 150px; border-radius: 0; }
+.footer-logo { width: 150px; border-radius: 0; background: transparent; }
 .skip-link { position: fixed; top: 12px; left: 12px; z-index: 50; padding: 12px 20px; background: var(--dark); color: #fff; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 @media (max-width: 760px) {

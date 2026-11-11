@@ -56,6 +56,10 @@ A composição usa o site oficial da BYD Brasil (https://www.byd.com/br) como re
 
 ### Cenas dos modelos na landing page
 
-A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlim em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio continuam no catálogo e no menu. O texto da Tuna fica à esquerda no desktop; as três paisagens ocupam toda a largura e os textos ficam sobre as imagens, com contraste em gradiente. No celular, o texto ocupa a parte superior da paisagem.
+A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlim em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes. O texto da Tuna fica à esquerda no desktop; as três paisagens ocupam toda a largura e os textos ficam sobre as imagens, com contraste em gradiente. No celular, o texto ocupa a parte superior da paisagem.
 
 O nome público do modelo Cross foi corrigido para Whale. Arquivos originais com prefixo `wale-` foram preservados; links antigos do simulador com `modelo=wale` continuam aceitos.
+
+### Imagens transparentes na página de bicicletas
+
+A página `bicicletas.html` usa `assets/bicicletas/marlim-sem-fundo.png`, `tuna-sem-fundo.png` e `whale-sem-fundo.png`, recortados com Imagegen a partir das imagens de estúdio, com canal alfa real. O fundo do contêiner também é transparente. O menu compartilhado usa esses mesmos recortes, com fundo transparente nos três cartões. As imagens originais e as cenas da landing page foram preservadas. Prompt em `assets/bicicletas/RECORTES.md`.

@@ -1,7 +1,7 @@
 const models = [
   {
     id: 0, name: 'Marlim', price: 239, tag: 'ESPORTIVA',
-    image: 'assets/bicicletas/marlim-speed.png',
+    image: 'assets/bicicletas/marlim-sem-fundo.png',
     imageAlt: 'Bicicleta BYKE Marlim Speed com guidão curvo e GPS',
     tagline: 'Encontre seu ritmo.',
     desc: 'A agilidade do marlim inspira nossa bike de perfil esportivo. ' +
@@ -12,7 +12,7 @@ const models = [
   },
   {
     id: 1, name: 'Tuna', price: 199, tag: 'URBANA',
-    image: 'assets/bicicletas/tuna-urbana.png',
+    image: 'assets/bicicletas/tuna-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro',
     tagline: 'Energia para acompanhar seu dia.',
     desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
@@ -24,7 +24,7 @@ const models = [
   },
   {
     id: 2, name: 'Whale', price: 239, tag: 'CROSS',
-    image: 'assets/bicicletas/wale-cross.png',
+    image: 'assets/bicicletas/whale-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla',
     tagline: 'Presença para explorar.',
     desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +

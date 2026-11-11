@@ -441,8 +441,8 @@ a.breadcrumb:hover {
 .detail-hero-grid > img { filter: none; }
 .detail-page main h2 { font-weight: 500; letter-spacing: -.035em; }
 .detail-model { gap: 60px; padding-block: 80px; }
-.detail-model-image { background: #080808; padding: 20px 0 0; }
-.detail-model-image > .eyebrow { display: block; padding-left: 24px; color: #bbb; }
+.detail-model-image { background: transparent; padding: 20px 0 0; }
+.detail-model-image > .eyebrow { display: block; padding-left: 24px; color: var(--muted); }
 .detail-model-image img { margin-top: 0; }
 .model-jump-nav { justify-content: center; }
 .detail-plan { border: 1px solid var(--line); background: #fff; border-radius: 0; }
