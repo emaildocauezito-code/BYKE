@@ -3,13 +3,6 @@ if (legacyPlan.has('plano') || legacyPlan.has('modelo')) {
   window.location.replace(`planos.html?${legacyPlan}#opcoes`);
 }
 
-const mainNav = document.querySelector('.nav');
-const menuToggle = document.querySelector('.menu-toggle');
-menuToggle.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(open));
-});
-
 // Add the final MP4 paths here in playback order.
 const motionClips = [];
 const showcase = document.querySelector('.motion-showcase');

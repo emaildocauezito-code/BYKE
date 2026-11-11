@@ -16,15 +16,17 @@
         <img src="assets/BYKE-logo.png" width="691" height="197"
           alt="BYKE — Build Your Keen Energy">
       </a>
-      <nav class="nav" aria-label="Navegação principal">
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav id="main-nav" class="nav" aria-label="Navegação principal">
         <div class="nav-products">
           <a href="bicicletas.html" class="products-toggle" aria-current="page"
             aria-expanded="false" aria-controls="products-panel">
             Bicicletas
           </a>
         </div>
+        <a href="index.html#como-funciona">Como funciona</a>
         <a class="btn btn-dark" href="planos.html">
-          Escolher meu plano <span aria-hidden="true">↗</span>
+          Planos de aluguel
         </a>
       </nav>
     </header>
@@ -34,8 +36,8 @@
           <div>
             <a class="breadcrumb" href="index.html">Início</a>
             <span class="breadcrumb" aria-hidden="true"> / Bicicletas</span>
-            <p class="eyebrow">DESIGN PARA SE MOVER</p>
-            <h1>Conheça sua<br><em>próxima BYKE.</em></h1>
+            <p class="eyebrow">BICICLETAS ELÉTRICAS</p>
+            <h1>Marlim. Tuna. Wale.</h1>
             <p class="detail-lead">
               Marlim, Tuna e Wale: três personalidades para diferentes caminhos.
               Conheça a proposta e as características de cada bicicleta.
@@ -127,7 +129,7 @@
       <section class="detail-shell detail-section" id="comparar">
         <div class="detail-heading">
           <p class="eyebrow">LADO A LADO</p>
-          <h2>Encontre seu <em>caminho.</em></h2>
+          <h2>Compare os modelos.</h2>
         </div>
         <table class="comparison-table">
           <caption>Compare as características de Marlim, Tuna e Wale</caption>
@@ -198,6 +200,7 @@
       <span>Projeto acadêmico · Conteúdo ilustrativo</span>
       <a class="back-top" href="#conteudo">Voltar ao topo ↑</a>
     </footer>
+    <script src="navegacao.js"></script>
     <script src="catalogo.js"></script>
     <script src="menu-bicicletas.js"></script>
   </body>
