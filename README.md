@@ -31,7 +31,9 @@ Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
 - `menu-bicicletas.js`: painel de bicicletas compartilhado pelo cabeçalho.
 - `planos.js`: seletor de duração, preços e simulação.
 - `script.js`: navegação e reprodução dos vídeos na página inicial.
-- `bike.svg`: ilustração conceitual compartilhada pelos modelos.
+- `assets/bicicletas/`: imagens dos modelos fornecidas pelo autor: tipo 1, Marlim Speed; tipo 2, Tuna urbana com cesto; tipo 3, Wale Cross.
+- `assets/BYKE-logo.png`: logo oficial fornecida pelo autor, usada nos cabeçalhos, rodapés e ícones das abas das três páginas.
+- `bike.svg`: ilustração conceitual original, preservada como recurso de referência.
 
 O projeto partiu do ZIP BYKE_MVP fornecido pelo autor. As páginas de detalhes usam textos genéricos e campos de especificações para preenchimento posterior. As fontes DM Sans e Manrope são carregadas do Google Fonts; sem acesso à rede, o navegador usa fontes alternativas.
 
@@ -45,4 +47,4 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 
 ## Limites atuais
 
-Marlim, Tuna e Wale usam a mesma ilustração conceitual. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.
+Marlim, Tuna e Wale usam imagens próprias na página inicial, na apresentação dos modelos e no menu de bicicletas. Os caminhos e textos alternativos usados pelo menu ficam em `catalogo.js`. As imagens PNG originais foram preservadas sem recorte ou alteração de cores. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; essas especificações ainda precisam ser validadas em relação aos modelos ilustrados. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.

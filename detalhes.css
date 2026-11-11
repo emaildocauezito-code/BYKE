@@ -233,6 +233,7 @@ a.breadcrumb:hover {
 }
 .detail-hero-grid > img {
   width: 100%;
+  height: auto;
   filter: drop-shadow(0 20px 20px #26342b20);
 }
 .model-jump-nav {
@@ -266,13 +267,8 @@ a.breadcrumb:hover {
 .detail-model-image img {
   display: block;
   width: 100%;
+  height: auto;
   margin-top: 20px;
-}
-.detail-model-image .bike-1 {
-  filter: hue-rotate(30deg) saturate(.65);
-}
-.detail-model-image .bike-2 {
-  filter: grayscale(.4);
 }
 .detail-model:nth-child(even) .detail-model-image {
   order: 2;

@@ -25,6 +25,11 @@
   height: 100%;
   z-index: -2;
 }
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  animation: none;
+}
 .motion-art {
   object-fit: contain;
   object-position: center 35%;
@@ -132,6 +137,7 @@
 .bikes-link-art img {
   display: block;
   width: 100%;
+  height: auto;
   padding: 5%;
 }
 .plans-link {

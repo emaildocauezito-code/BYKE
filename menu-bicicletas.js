@@ -15,8 +15,8 @@ productsToggle.insertAdjacentHTML('afterend', `
           <h3>${model.name}</h3>
           <a class="nav-product-image" data-pick="${model.id}"
             aria-label="Ver assinatura de ${model.name}">
-            <img src="bike.svg" alt="Ilustração conceitual de ${model.name}"
-              class="bike-${model.id}">
+            <img src="${model.image}" alt="${model.imageAlt}"
+              width="1536" height="1024" loading="lazy">
           </a>
           <p><strong></strong><span> / mês</span></p>
           <a class="text-btn" data-pick="${model.id}"
