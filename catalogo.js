@@ -23,11 +23,11 @@ const models = [
       'Cesta dianteira e bagageiro traseiro']
   },
   {
-    id: 2, name: 'Wale', price: 239, tag: 'CROSS',
+    id: 2, name: 'Whale', price: 239, tag: 'CROSS',
     image: 'assets/bicicletas/wale-cross.png',
-    imageAlt: 'Bicicleta elétrica BYKE Wale Cross com pneus largos e suspensão dupla',
+    imageAlt: 'Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla',
     tagline: 'Presença para explorar.',
-    desc: 'A força e a presença da baleia dão personalidade à Wale. Com pneus ' +
+    desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
       'largos, suspensão dianteira e traseira e visual robusto, ela traz uma ' +
       'proposta aventureira para quem quer explorar caminhos de terra e percursos irregulares.',
     specs: ['Autonomia estimada de até 60 km', 'Recarga estimada de 5 a 7 horas',
