@@ -5,10 +5,10 @@ const models = [
     imageAlt: 'Bicicleta BYKE Marlim Speed com guidão curvo e GPS',
     tagline: 'Encontre seu ritmo.',
     desc: 'A agilidade do marlim inspira nossa bike de perfil esportivo. ' +
-      'Com guidão curvo e uma posição de pedalada mais inclinada, a Marlim é ' +
-      'para quem gosta de movimento, ritmo e trajetos no asfalto.',
-    specs: ['Autonomia estimada de até 70 km', 'Recarga estimada de 3 a 4 horas',
-      'Guidão curvo e posição esportiva']
+      'Com guidão curvo e pneus de rolagem lisa, a Marlim foi pensada para quem ' +
+      'gosta de ganhar ritmo no asfalto.',
+    specs: ['Autonomia estimada de até 100 km', 'Recarga estimada de 4 a 5 horas',
+      'Guidão curvo esportivo']
   },
   {
     id: 1, name: 'Tuna', price: 199, tag: 'URBANA',
@@ -16,7 +16,7 @@ const models = [
     imageAlt: 'Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro',
     tagline: 'Energia para acompanhar seu dia.',
     desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
-      'combina maior autonomia de bateria, posição confortável e praticidade. ' +
+      'combina autonomia de bateria, conforto e praticidade. ' +
       'A cesta e o bagageiro acomodam seus pertences, enquanto o quadro baixo ' +
       'facilita cada parada pelo caminho.',
     specs: ['Autonomia estimada de até 100 km', 'Recarga estimada de 4 a 6 horas',
