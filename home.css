@@ -5,10 +5,6 @@
 .home-hero h1 { margin: 0; font-size: clamp(34px, 4.3vw, 66px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
 .home-hero-copy > p:last-child { margin: 16px auto 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .home-hero-image { display: block; width: 100%; height: auto; object-fit: contain; }
-.hero-actions { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 24px 5%; background: #fff; border-bottom: 1px solid var(--line); }
-.hero-actions p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
-.hero-actions strong { display: block; color: var(--ink); font-size: 16px; font-weight: 500; }
-.hero-actions .actions { margin: 0; gap: 12px; }
 .collection-nav { display: flex; align-items: center; justify-content: center; gap: 48px; padding: 24px; font-size: 14px; border-bottom: 1px solid var(--line); }
 .collection-nav a:hover { text-decoration: underline; text-underline-offset: 7px; }
 /* Paisagens de ponta a ponta, com texto sobre a própria imagem. */
@@ -37,7 +33,7 @@
 .rental-steps li::before { content: '0' counter(rental); color: #717171; font-size: 12px; }
 .rental-steps h3 { margin: 20px 0 12px; font-size: 20px; font-weight: 500; }
 .rental-steps p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
-.brand-section { display: flex; justify-content: space-between; align-items: center; gap: 60px; padding: 64px 5%; background: #f3f3f1; }
+.brand-section { padding: 64px 5%; background: #f3f3f1; }
 .brand-section > div { max-width: 640px; }
 .brand-section h2 { font-size: 32px; margin-bottom: 18px; }
 .brand-section p:not(.eyebrow) { color: var(--muted); line-height: 1.8; }
@@ -45,9 +41,6 @@
   .home-hero-copy { padding: 38px 20px 26px; }
   .home-hero-copy > p:last-child { max-width: 300px; font-size: 14px; }
   .home-hero-image { max-height: none; object-fit: contain; }
-  .hero-actions { flex-direction: column; align-items: stretch; gap: 20px; padding: 22px 5%; }
-  .hero-actions .actions { display: grid; grid-template-columns: 1fr 1fr; }
-  .hero-actions .btn { padding-inline: 12px; font-size: 12px; }
   .collection-nav { gap: 34px; padding: 22px; }
   .product-stage { min-height: 720px; aspect-ratio: auto; align-items: flex-start; }
   .product-stage > img { object-position: center bottom; }
@@ -60,5 +53,5 @@
   .rental-intro { grid-template-columns: 1fr; gap: 8px; }
   .rental-intro > p { margin-top: 0; font-size: 16px; }
   .rental-steps { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; padding-top: 32px; }
-  .brand-section { flex-direction: column; align-items: flex-start; gap: 20px; padding: 48px 5%; }
+  .brand-section { padding: 48px 5%; }
 }

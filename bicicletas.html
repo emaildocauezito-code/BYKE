@@ -26,7 +26,7 @@
         </div>
         <a href="index.html#como-funciona">Como funciona</a>
         <a class="btn btn-dark" href="planos.html">
-          Planos de aluguel
+          Planos
         </a>
       </nav>
     </header>
@@ -44,8 +44,25 @@
             </p>
             <a class="btn btn-green" href="#modelos">Explorar modelos ↗</a>
           </div>
-          <img src="assets/bicicletas/marlim-sem-fundo.png" width="1536" height="1024"
-            alt="Bicicleta BYKE Marlim Speed com guidão curvo e GPS">
+          <div class="bike-carousel" role="group" aria-label="Fotos dos modelos BYKE">
+            <div class="bike-carousel-images" id="bike-carousel-images">
+              <img class="bike-carousel-active" src="assets/bicicletas/marlim-sem-fundo.png"
+                width="1536" height="1024" alt="Bicicleta BYKE Marlim Speed com guidão curvo e GPS">
+            </div>
+            <div class="bike-carousel-controls" hidden>
+              <button type="button" data-step="-1" aria-label="Bicicleta anterior" aria-controls="bike-carousel-images">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" data-step="1" aria-label="Próxima bicicleta" aria-controls="bike-carousel-images">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <span class="bike-carousel-status" role="status"></span>
+          </div>
         </div>
       </section>
       <nav class="model-jump-nav detail-shell" aria-label="Modelos de bicicletas">
@@ -65,14 +82,13 @@
             <h2>Encontre seu ritmo.</h2>
             <p class="detail-lead">
               A agilidade do marlin inspira nossa bike de perfil esportivo. Com guidão
-              curvo e uma posição de pedalada mais inclinada, a Marlim é para quem
-              gosta de movimento, ritmo e trajetos no asfalto.
+              curvo e pneus de rolagem lisa, a Marlim foi pensada para quem gosta
+              de ganhar ritmo no asfalto.
             </p>
             <dl class="detail-specs">
-              <div><dt>Autonomia estimada</dt><dd>Até 70 km por carga</dd></div>
-              <div><dt>Recarga completa estimada</dt><dd>3–4 horas</dd></div>
-              <div><dt>Posição de pedalada</dt><dd>Mais inclinada</dd></div>
-              <div><dt>Percurso proposto</dt><dd>Asfalto</dd></div>
+              <div><dt>Autonomia estimada</dt><dd>Até 100 km por carga</dd></div>
+              <div><dt>Recarga completa estimada</dt><dd>4–5 horas</dd></div>
+              <div><dt>Pneu e aro propostos</dt><dd>700 × 40C · aro 700C</dd></div>
             </dl>
             <p class="detail-model-note">Agilidade · Estilo esportivo · Asfalto</p>
           </div>
@@ -88,15 +104,14 @@
             <h2>Energia para acompanhar seu dia.</h2>
             <p class="detail-lead">
               A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta
-              combina maior autonomia de bateria, posição confortável e praticidade. A
+              combina autonomia de bateria, conforto e praticidade. A
               cesta e o bagageiro acomodam seus pertences, enquanto o quadro baixo
               facilita cada parada pelo caminho.
             </p>
             <dl class="detail-specs">
               <div><dt>Autonomia estimada</dt><dd>Até 100 km por carga</dd></div>
               <div><dt>Recarga completa estimada</dt><dd>4–6 horas</dd></div>
-              <div><dt>Posição de pedalada</dt><dd>Mais ereta</dd></div>
-              <div><dt>Percurso proposto</dt><dd>Deslocamentos urbanos</dd></div>
+              <div><dt>Pneu e aro propostos</dt><dd>27,5 × 2,15″ · aro 27,5″</dd></div>
             </dl>
             <p class="detail-model-note">Autonomia · Conforto · Praticidade</p>
           </div>
@@ -119,8 +134,7 @@
             <dl class="detail-specs">
               <div><dt>Autonomia estimada</dt><dd>Até 60 km por carga</dd></div>
               <div><dt>Recarga completa estimada</dt><dd>5–7 horas</dd></div>
-              <div><dt>Posição de pedalada</dt><dd>Intermediária</dd></div>
-              <div><dt>Percurso proposto</dt><dd>Terra e caminhos irregulares</dd></div>
+              <div><dt>Pneu e aro propostos</dt><dd>26 × 4,0″ · aro 26″</dd></div>
             </dl>
             <p class="detail-model-note">Robustez · Estabilidade · Aventura</p>
           </div>
@@ -129,61 +143,59 @@
       <section class="detail-shell detail-section" id="comparar">
         <div class="detail-heading">
           <p class="eyebrow">LADO A LADO</p>
-          <h2>Compare os modelos.</h2>
+          <h2 id="comparison-title">Compare os modelos.</h2>
         </div>
-        <table class="comparison-table">
-          <caption>Compare as características de Marlim, Tuna e Whale</caption>
+        <table class="comparison-table" aria-labelledby="comparison-title"
+          aria-describedby="comparison-note">
           <thead><tr>
-            <th scope="col">Características</th>
-            <th scope="col">MARLIM</th>
-            <th scope="col">TUNA</th>
-            <th scope="col">WHALE</th>
+            <th scope="col">Ficha técnica</th>
+            <th scope="col">
+              <img src="assets/bicicletas/marlim-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
+              <strong>Marlim</strong><span>Esportiva</span>
+            </th>
+            <th scope="col">
+              <img src="assets/bicicletas/tuna-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
+              <strong>Tuna</strong><span>Urbana</span>
+            </th>
+            <th scope="col">
+              <img src="assets/bicicletas/whale-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
+              <strong>Whale</strong><span>Cross</span>
+            </th>
           </tr></thead>
           <tbody>
             <tr>
-              <th scope="row">Autonomia estimada por carga</th>
-              <td data-label="MARLIM">Até 70 km</td>
-              <td data-label="TUNA">Até 100 km</td>
-              <td data-label="WHALE">Até 60 km</td>
+              <th scope="row">Autonomia <span>Estimada por carga</span></th>
+              <td><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
+              <td><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
+              <td><strong class="comparison-value"><small>Até</small> 60&nbsp;km</strong></td>
             </tr>
             <tr>
-              <th scope="row">Tempo estimado de recarga completa</th>
-              <td data-label="MARLIM">3–4 horas</td>
-              <td data-label="TUNA">4–6 horas</td>
-              <td data-label="WHALE">5–7 horas</td>
+              <th scope="row">Recarga <span>Completa, estimada</span></th>
+              <td><strong class="comparison-value">4–5&nbsp;h</strong></td>
+              <td><strong class="comparison-value">4–6&nbsp;h</strong></td>
+              <td><strong class="comparison-value">5–7&nbsp;h</strong></td>
             </tr>
             <tr>
-              <th scope="row">Posição de pedalada</th>
-              <td data-label="MARLIM">Mais inclinada</td>
-              <td data-label="TUNA">Mais ereta</td>
-              <td data-label="WHALE">Intermediária</td>
+              <th scope="row">Pneus e aros</th>
+              <td><strong>700 × 40C</strong><span>Aro 700C · perfil liso</span></td>
+              <td><strong>27,5 × 2,15″</strong><span>Aro 27,5″ · uso urbano</span></td>
+              <td><strong>26 × 4,0″</strong><span>Aro 26″ · cravos para trilha</span></td>
             </tr>
             <tr>
-              <th scope="row">Percurso proposto</th>
-              <td data-label="MARLIM">Asfalto</td>
-              <td data-label="TUNA">Deslocamentos urbanos</td>
-              <td data-label="WHALE">Terra e caminhos irregulares</td>
+              <th scope="row">Controle e conforto</th>
+              <td><strong>Guidão curvo</strong><span>Pegadas variadas durante o pedal</span></td>
+              <td><strong>Quadro baixo</strong><span>Facilita subir e descer</span></td>
+              <td><strong>Suspensão dupla</strong><span>Dianteira e traseira</span></td>
             </tr>
             <tr>
-              <th scope="row">Suspensão dianteira e traseira</th>
-              <td data-label="MARLIM" aria-label="Sim">✓</td>
-              <td data-label="TUNA" aria-label="Não">—</td>
-              <td data-label="WHALE" aria-label="Sim">✓</td>
-            </tr>
-            <tr>
-              <th scope="row">Cesta dianteira</th>
-              <td data-label="MARLIM" aria-label="Não">—</td>
-              <td data-label="TUNA" aria-label="Sim">✓</td>
-              <td data-label="WHALE" aria-label="Não">—</td>
-            </tr>
-            <tr>
-              <th scope="row">Bagageiro traseiro</th>
-              <td data-label="MARLIM" aria-label="Não">—</td>
-              <td data-label="TUNA" aria-label="Não">—</td>
-              <td data-label="WHALE" aria-label="Sim">✓</td>
+              <th scope="row">Acessórios</th>
+              <td><strong>GPS</strong><span>Suporte para garrafa</span></td>
+              <td><strong>Cesta dianteira</strong><span>Para compras e objetos do dia a dia</span></td>
+              <td><strong>Bagageiro traseiro</strong><span>Para levar equipamento na trilha</span></td>
             </tr>
           </tbody>
         </table>
+        <p class="comparison-note" id="comparison-note">As medidas dos pneus e aros são propostas para o protótipo.</p>
       </section>
       <section class="detail-bottom-cta">
         <p class="eyebrow">JÁ ENCONTROU SUA BYKE?</p>
@@ -203,5 +215,6 @@
     <script src="navegacao.js"></script>
     <script src="catalogo.js"></script>
     <script src="menu-bicicletas.js"></script>
+    <script src="bicicletas.js"></script>
   </body>
 </html>
