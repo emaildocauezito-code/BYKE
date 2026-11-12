@@ -119,5 +119,7 @@ termPicker.addEventListener('change', () => updateBikePrices(true));
 window.addEventListener('pageshow', () => updateBikePrices(false));
 updateBikePrices(false);
 
-const initialModel = models.find(model => model.name.toLowerCase() === planQuery.get('modelo'));
+const requestedModel = planQuery.get('modelo');
+const initialModel = models.find(model => model.name.toLowerCase() ===
+  (requestedModel === 'wale' ? 'whale' : requestedModel));
 if (initialModel) openSimulator(initialModel.id);

@@ -1,6 +1,8 @@
 const models = [
   {
     id: 0, name: 'Marlim', price: 239, tag: 'ESPORTIVA',
+    image: 'assets/bicicletas/marlim-sem-fundo.png',
+    imageAlt: 'Bicicleta BYKE Marlim Speed com guidão curvo e GPS',
     tagline: 'Encontre seu ritmo.',
     desc: 'A agilidade do marlim inspira nossa bike de perfil esportivo. ' +
       'Com guidão curvo e uma posição de pedalada mais inclinada, a Marlim é ' +
@@ -10,6 +12,8 @@ const models = [
   },
   {
     id: 1, name: 'Tuna', price: 199, tag: 'URBANA',
+    image: 'assets/bicicletas/tuna-sem-fundo.png',
+    imageAlt: 'Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro',
     tagline: 'Energia para acompanhar seu dia.',
     desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
       'combina maior autonomia de bateria, posição confortável e praticidade. ' +
@@ -19,9 +23,11 @@ const models = [
       'Cesta dianteira e bagageiro traseiro']
   },
   {
-    id: 2, name: 'Wale', price: 239, tag: 'CROSS',
+    id: 2, name: 'Whale', price: 239, tag: 'CROSS',
+    image: 'assets/bicicletas/whale-sem-fundo.png',
+    imageAlt: 'Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla',
     tagline: 'Presença para explorar.',
-    desc: 'A força e a presença da baleia dão personalidade à Wale. Com pneus ' +
+    desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
       'largos, suspensão dianteira e traseira e visual robusto, ela traz uma ' +
       'proposta aventureira para quem quer explorar caminhos de terra e percursos irregulares.',
     specs: ['Autonomia estimada de até 60 km', 'Recarga estimada de 5 a 7 horas',

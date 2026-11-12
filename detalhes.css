@@ -233,6 +233,7 @@ a.breadcrumb:hover {
 }
 .detail-hero-grid > img {
   width: 100%;
+  height: auto;
   filter: drop-shadow(0 20px 20px #26342b20);
 }
 .model-jump-nav {
@@ -266,13 +267,8 @@ a.breadcrumb:hover {
 .detail-model-image img {
   display: block;
   width: 100%;
+  height: auto;
   margin-top: 20px;
-}
-.detail-model-image .bike-1 {
-  filter: hue-rotate(30deg) saturate(.65);
-}
-.detail-model-image .bike-2 {
-  filter: grayscale(.4);
 }
 .detail-model:nth-child(even) .detail-model-image {
   order: 2;
@@ -435,4 +431,35 @@ a.breadcrumb:hover {
   .detail-model:nth-child(even) .detail-model-image {
     order: 0;
   }
+}
+
+/* Continuidade da vitrine nas páginas de modelos e aluguel. */
+.detail-hero { background: #f4f4f2; }
+.detail-hero h1 { font-weight: 500; font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.04em; }
+.detail-hero h1 em { color: inherit; }
+.detail-hero-grid { gap: 48px; }
+.detail-hero-grid > img { filter: none; }
+.detail-page main h2 { font-weight: 500; letter-spacing: -.035em; }
+.detail-model { gap: 60px; padding-block: 80px; }
+.detail-model-image { background: transparent; padding: 20px 0 0; }
+.detail-model-image > .eyebrow { display: block; padding-left: 24px; color: var(--muted); }
+.detail-model-image img { margin-top: 0; }
+.model-jump-nav { justify-content: center; }
+.detail-plan { border: 1px solid var(--line); background: #fff; border-radius: 0; }
+.detail-plan h3 { font-weight: 500; }
+.detail-plan .plan-price { color: var(--ink); }
+.detail-term-picker, .detail-term-picker::before, .detail-term-picker label { border-radius: 0; }
+.detail-term-picker { background: #eee; }
+.detail-term-picker::before { box-shadow: none; }
+.detail-bottom-cta { background: #f0f0ee; }
+.detail-page .detail-hero-bikes { background: #fff; }
+@media (max-width: 760px) {
+  .detail-page .header { height: 72px; min-height: 72px; flex-wrap: nowrap; gap: 16px; padding: 0 5%; }
+  .detail-page .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 24px 5%; background: #fff; flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 20px; box-shadow: 0 12px 20px #0000000c; }
+  .detail-page .nav.open { display: flex; }
+  .detail-page .nav-products { margin: 0; padding: 0; }
+  .detail-page .products-panel { display: none; }
+  .detail-model { gap: 28px; padding-block: 48px; }
+  .model-jump-nav { gap: 22px; }
+  .model-jump-nav span { display: block; margin: 6px 0 0; font-size: 11px; }
 }

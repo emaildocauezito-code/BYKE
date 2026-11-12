@@ -4,26 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#121A16">
-    <title>BYKE — Build Your Keen Energy</title>
+    <title>BYKE — Aluguel de bicicletas elétricas</title>
+    <meta name="description" content="Conheça Marlim, Tuna e Whale. Aluguel de bicicletas elétricas por assinatura trimestral, semestral ou anual, com pagamento mensal.">
+    <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home.css">
   </head>
-  <body>
+  <body class="home-page">
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <header class="header">
       <a
         href="#inicio"
         class="logo"
         aria-label="BYKE - início"
-      >BY<span>KE</span><small>BUILD
-      YOUR KEEN ENERGY</small></a>
+      >
+        <img src="assets/BYKE-logo.png" width="691" height="197"
+          alt="BYKE — Build Your Keen Energy">
+      </a>
       <button
         class="menu-toggle"
         aria-label="Abrir menu"
         aria-expanded="false"
+        aria-controls="main-nav"
       >
         ☰
       </button>
-      <nav class="nav" aria-label="Navegação principal">
+      <nav id="main-nav" class="nav" aria-label="Navegação principal">
         <div class="nav-products">
           <a
             href="bicicletas.html"
@@ -31,143 +37,103 @@
             aria-expanded="false"
             aria-controls="products-panel"
           >
-            Bicicletas <span aria-hidden="true">⌄</span>
+            Bicicletas
           </a>
         </div>
+        <a href="index.html#como-funciona">Como funciona</a>
         <a class="btn btn-dark" href="planos.html">
-          Escolher meu plano <span>↗</span>
+          Planos de aluguel
         </a>
       </nav>
     </header>
-    <main>
-      <section class="hero" id="inicio">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <span class="dot"></span>
-            UMA NOVA FORMA DE SE MOVER
-          </div>
-          <h1>O futuro da<br>mobilidade <em>é seu.</em></h1>
-          <p>
-            Descubra a liberdade de ter uma bicicleta elétrica moderna em casa, por
-            assinatura trimestral, semestral ou anual e pagamento mensal.
-          </p>
+    <main id="conteudo">
+      <section class="home-hero" id="inicio" aria-labelledby="hero-title">
+        <div class="home-hero-copy">
+          <p class="eyebrow">BICICLETAS ELÉTRICAS POR ASSINATURA</p>
+          <h1 id="hero-title">Sua próxima bike, por assinatura.</h1>
+          <p>Escolha uma BYKE para fazer parte da sua rotina.</p>
+        </div>
+        <img class="home-hero-image" src="assets/bicicletas/bykes-estudio.png"
+          width="1774" height="887" fetchpriority="high"
+          alt="Marlim, Tuna e Whale: os três modelos de bicicletas elétricas BYKE">
+        <div class="hero-actions">
+          <p><strong>Uma BYKE à disposição, em casa.</strong>Planos de 3, 6 ou 12 meses. Pagamento mensal.</p>
           <div class="actions">
-            <a class="btn btn-green" href="bicicletas.html">
-              Explorar bicicletas <span>↗</span>
-            </a>
-            <a class="text-btn" href="#como-funciona">Conheça a BYKE <span>↓</span></a>
-          </div>
-          <div class="hero-bottom">
-            <span>01 / 03 — MOBILIDADE ELÉTRICA</span>
-            <span>DESLIZE PARA EXPLORAR ↓</span>
+            <a class="btn btn-dark" href="planos.html">Conhecer os planos</a>
+            <a class="btn btn-outline" href="bicicletas.html">Ver bicicletas</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="visual-glow"></div>
-          <img src="bike.svg" alt="Ilustração conceitual de bicicleta elétrica BYKE">
-          <div class="hero-visual-caption">
-            <span class="green-line"></span>
-            BYKE / CONCEPT 01
-            <small>Design elétrico para o seu dia a dia</small>
+      </section>  
+      <section class="product-stage" id="marlim" aria-labelledby="marlim-title">
+        <div class="product-stage-copy">
+          <p class="eyebrow">BYKE · ESPORTIVA</p>
+          <h2 id="marlim-title">Marlim</h2>
+          <p>Guidão curvo e posição esportiva para os trajetos no asfalto.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="bicicletas.html#modelo-01">Conhecer modelo</a>
+            <a class="text-btn" href="planos.html?modelo=marlim#opcoes">Ver planos</a>
           </div>
         </div>
+        <img src="assets/cenarios/marlim-ciclovia.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Marlim estacionada ao lado de uma ciclovia em uma cidade tecnológica inspirada em Shenzhen">
       </section>
-      <section class="section" id="como-funciona">
-        <div class="section-top">
-          <p class="eyebrow">01 / SOBRE A BYKE</p>
-          <span class="section-note">BUILD YOUR KEEN ENERGY</span>
+      <section class="product-stage" id="tuna" aria-labelledby="tuna-title">
+        <div class="product-stage-copy">
+          <p class="eyebrow">BYKE · URBANA</p>
+          <h2 id="tuna-title">Tuna</h2>
+          <p>Quadro baixo, cesta e conforto para os deslocamentos do dia a dia.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="bicicletas.html#modelo-02">Conhecer modelo</a>
+            <a class="text-btn" href="planos.html?modelo=tuna#opcoes">Ver planos</a>
+          </div>
         </div>
-        <div class="about-grid">
-          <h2>Mais liberdade para<br><em>se mover pela cidade.</em></h2>
-          <p>A BYKE é um projeto de mobilidade urbana que aproxima a bicicleta elétrica da rotina.
-            A ideia é simples: ter uma bike à disposição, em casa, sempre que surgir um caminho.</p>
-        </div>
-        <div class="features">
-          <article>
-            <span>01</span>
-            <h3>Liberdade de escolha</h3>
-            <p>Cada pessoa tem um ritmo. A mobilidade precisa caber nele.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Simplicidade</h3>
-            <p>Queremos que começar a pedalar seja tão simples quanto escolher para onde ir.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Design para a rotina</h3>
-            <p>O desenho da bike parte dos trajetos e das necessidades de quem pedala.</p>
-          </article>
-        </div>
+        <img src="assets/cenarios/tuna-comercio.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Tuna estacionada junto a lojas de uma área comercial inspirada em Milão">
       </section>
-      <section class="motion-showcase" id="movimento" aria-labelledby="motion-title">
-        <img class="motion-art" src="bike.svg" alt="" loading="lazy">
+      <section class="product-stage motion-showcase" id="whale" aria-labelledby="whale-title">
+        <div class="product-stage-copy">
+          <p class="eyebrow">BYKE · CROSS</p>
+          <h2 id="whale-title">Whale</h2>
+          <p>Pneus largos e suspensão dupla para explorar caminhos irregulares.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="bicicletas.html#modelo-03">Conhecer modelo</a>
+            <a class="text-btn" href="planos.html?modelo=whale#opcoes">Ver planos</a>
+          </div>
+        </div>
+        <img src="assets/cenarios/wale-trilha.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Whale estacionada em uma trilha de terra com pedras e terreno irregular">
         <video class="motion-video" playsinline muted preload="none" aria-hidden="true"></video>
-        <div class="motion-copy">
-          <p class="eyebrow">02 / BYKE EM MOVIMENTO</p>
-          <h2 id="motion-title">Design que<br>ganha movimento.</h2>
-        </div>
         <button class="motion-toggle" type="button" hidden>Reproduzir vídeos</button>
       </section>
-      <section class="section city-section" id="cidade">
-        <p class="eyebrow">03 / A CIDADE NO SEU RITMO</p>
-        <h2>Os caminhos que fazem<br><em>parte do seu dia.</em></h2>
-        <div class="city-grid">
-          <article>
-            <span>MANHÃ</span>
-            <h3>Da porta de casa à aula ou ao trabalho</h3>
-            <p>Comece o dia no seu ritmo e escolha o caminho que faz sentido para você.</p>
-          </article>
-          <article>
-            <span>DURANTE O DIA</span>
-            <h3>Entre uma parada e outra no bairro</h3>
-            <p>Passe na padaria, encontre alguém ou resolva o que ficou para depois.</p>
-          </article>
-          <article>
-            <span>FIM DE SEMANA</span>
-            <h3>Um passeio sem pressa</h3>
-            <p>Explore uma rua nova ou faça do parque a próxima parada.</p>
-          </article>
+      <section class="rental-section" id="como-funciona" aria-labelledby="rental-title">
+        <div class="rental-intro">
+          <div>
+            <p class="eyebrow">COMO FUNCIONA O ALUGUEL</p>
+            <h2 id="rental-title">Escolha a bicicleta.<br>Defina por quanto tempo.</h2>
+            <a class="btn btn-dark" href="planos.html#opcoes">Comparar planos</a>
+          </div>
+          <p>A BYKE é uma proposta de aluguel de bicicletas elétricas por assinatura.
+            Você escolhe entre Marlim, Tuna e Whale e define um prazo trimestral,
+            semestral ou anual, com pagamento mensal.</p>
         </div>
+        <ol class="rental-steps">
+          <li><h3>Conheça os modelos</h3><p>Compare a posição de pedalada, a autonomia estimada e o tipo de percurso de cada bicicleta.</p></li>
+          <li><h3>Escolha o prazo</h3><p>Veja as mensalidades para 3, 6 ou 12 meses e encontre a opção para sua rotina.</p></li>
+          <li><h3>Simule a assinatura</h3><p>Confira o modelo, a duração e o valor mensal no simulador. Este protótipo não realiza contratação.</p></li>
+        </ol>
       </section>
-      <section class="section origin-section" id="por-que-byke">
-        <p class="eyebrow">04 / POR QUE CRIAMOS A BYKE</p>
-        <h2>E se a bike já estivesse<br><em>à sua espera?</em></h2>
-        <p>A BYKE nasceu dessa pergunta. Imaginamos uma bicicleta elétrica que faz parte da vida
-          em casa e dos pequenos trajetos que ligam a gente à cidade. É daí que vem
-          <em>Build Your Keen Energy</em>, o nome que demos à ideia de se mover com energia própria.</p>
-      </section>
-      <section class="section home-link bikes-link" id="bicicletas">
+      <section class="brand-section" id="por-que-byke">
         <div>
-          <p class="eyebrow">05 / CONHEÇA AS BIKES</p>
-          <h2>Encontre a BYKE<br><em>que combina com você.</em></h2>
-          <p>Descubra os modelos e encontre a bicicleta elétrica para os seus caminhos.</p>
-          <a class="btn btn-green" href="bicicletas.html">Conhecer as bikes <span aria-hidden="true">↗</span></a>
+          <p class="eyebrow">SOBRE A BYKE</p>
+          <h2>Build Your Keen Energy.</h2>
+          <p>A BYKE nasceu da ideia de ter uma bicicleta elétrica à disposição em casa,
+            para os trajetos que ligam você à cidade. Um projeto de mobilidade urbana
+            que aproxima a bicicleta da rotina.</p>
         </div>
-        <div class="bikes-link-art" aria-hidden="true"><img src="bike.svg" alt="" loading="lazy"></div>
-      </section>
-      <section class="section home-link plans-link" id="planos">
-        <div>
-          <p class="eyebrow">06 / CONHEÇA OS PLANOS</p>
-          <h2>Um plano<br><em>do seu jeito.</em></h2>
-          <p>Escolha por quanto tempo quer ter uma BYKE à disposição.</p>
-          <a class="btn btn-green" href="planos.html#opcoes">Conhecer os planos <span aria-hidden="true">↗</span></a>
-        </div>
-        <svg class="plans-link-art" viewBox="0 0 480 300" fill="none" aria-hidden="true">
-          <path d="M-20 82h189c32 0 58 26 58 58s26 58 58 58h211M87-20v340M395-20v340M-20 254h516M-20 34h516"
-            stroke="currentColor" stroke-opacity=".24" stroke-width="2"/>
-          <path d="M87 220v-56c0-22 18-40 40-40h91c22 0 40 18 40 40v38c0 22 18 40 40 40h57c22 0 40-18 40-40V85"
-            stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
-          <circle cx="87" cy="220" r="10" fill="#eef5eb" stroke="currentColor" stroke-width="3"/>
-          <circle cx="395" cy="85" r="10" fill="#58b947" stroke="currentColor" stroke-width="3"/>
-        </svg>
+        <a class="text-btn" href="bicicletas.html">Conheça as bicicletas</a>
       </section>
     </main>
     <footer>
       <div class="footer-logo">
-        BY
-        <span>KE</span>
-        <small>BUILD YOUR KEEN ENERGY</small>
+        <img src="assets/BYKE-logo-sem-fundo.png" width="2172" height="724"
+          alt="BYKE — Build Your Keen Energy">
       </div>
       <div>
         Projeto acadêmico • Design
@@ -178,6 +144,7 @@
       </div>
       <a class="back-top" href="#inicio">Voltar ao topo ↑</a>
     </footer>
+    <script src="navegacao.js"></script>
     <script src="catalogo.js"></script>
     <script src="menu-bicicletas.js"></script>
     <script src="script.js"></script>
