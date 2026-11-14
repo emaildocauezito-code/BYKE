@@ -63,3 +63,50 @@ if (motionClips.length) {
     syncMotionPlayback();
   }, { threshold: 0.45 }).observe(showcase);
 }
+
+const heroMedia = document.querySelector('.home-hero-media');
+if (heroMedia) {
+  const photo = heroMedia.querySelector('img');
+  const video = heroMedia.querySelector('video');
+  const arrows = heroMedia.querySelectorAll('button');
+  let photoTimer;
+  let videoSelected = false;
+
+  function showPhoto(advance = true) {
+    clearTimeout(photoTimer);
+    videoSelected = false;
+    video.pause();
+    video.hidden = true;
+    photo.removeAttribute('aria-hidden');
+    if (advance && !motionPreference.matches) {
+      photoTimer = setTimeout(showVideo, 3000);
+    }
+  }
+
+  function showVideo() {
+    clearTimeout(photoTimer);
+    videoSelected = true;
+    video.currentTime = 0;
+    video.play().catch(() => {
+      if (videoSelected && video.paused) showPhoto(false);
+    });
+  }
+
+  video.addEventListener('playing', () => {
+    if (!videoSelected) return;
+    video.hidden = false;
+    photo.setAttribute('aria-hidden', 'true');
+  });
+  video.addEventListener('ended', () => showPhoto());
+  video.addEventListener('error', () => showPhoto(false));
+  for (const arrow of arrows) {
+    arrow.hidden = false;
+    // With two items, both directions lead to the other slide.
+    arrow.addEventListener('click', () => {
+      if (videoSelected) showPhoto();
+      else showVideo();
+    });
+  }
+  motionPreference.addEventListener('change', () => showPhoto());
+  showPhoto();
+}
