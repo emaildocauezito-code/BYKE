@@ -4,7 +4,7 @@ Protótipo acadêmico de assinatura trimestral, semestral ou anual de bicicletas
 
 | Modelo | Trimestral (por mês) | Semestral (por mês) | Anual (por mês) |
 |---|---:|---:|---:|
-| Marlim · Esportiva | R$ 329 | R$ 269 | R$ 239 |
+| Marlin · Esportiva | R$ 329 | R$ 269 | R$ 239 |
 | Tuna · Urbana | R$ 279 | R$ 219 | R$ 199 |
 | Whale · Cross | R$ 329 | R$ 269 | R$ 239 |
 
@@ -48,7 +48,7 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 
 ## Limites atuais
 
-Marlim, Tuna e Whale usam imagens próprias na página inicial, na apresentação dos modelos e no menu de bicicletas. Os caminhos e textos alternativos usados pelo menu ficam em `catalogo.js`. As imagens PNG originais foram preservadas sem recorte ou alteração de cores. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; essas especificações ainda precisam ser validadas em relação aos modelos ilustrados. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.
+Marlin, Tuna e Whale usam imagens próprias na página inicial, na apresentação dos modelos e no menu de bicicletas. Os caminhos e textos alternativos usados pelo menu ficam em `catalogo.js`. As imagens PNG originais foram preservadas sem recorte ou alteração de cores. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; essas especificações ainda precisam ser validadas em relação aos modelos ilustrados. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.
 
 ## Revisão visual
 
