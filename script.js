@@ -63,3 +63,59 @@ if (motionClips.length) {
     syncMotionPlayback();
   }, { threshold: 0.45 }).observe(showcase);
 }
+
+const heroMedia = document.querySelector('.home-hero-media');
+if (heroMedia) {
+  const photo = heroMedia.querySelector('img');
+  const slides = [photo, ...heroMedia.querySelectorAll('video')];
+  const previous = heroMedia.querySelector('.home-hero-arrow--prev');
+  const next = heroMedia.querySelector('.home-hero-arrow--next');
+  let activeIndex = 0;
+  let photoTimer;
+  let selection = 0;
+
+  function showSlide(index, advance = true) {
+    clearTimeout(photoTimer);
+    const currentSelection = ++selection;
+    const oldSlide = slides[activeIndex];
+    if (oldSlide !== photo) {
+      oldSlide.pause();
+      oldSlide.hidden = true;
+    }
+    photo.removeAttribute('aria-hidden');
+    activeIndex = (index + slides.length) % slides.length;
+    const slide = slides[activeIndex];
+    if (slide === photo) {
+      if (advance && !motionPreference.matches) {
+        photoTimer = setTimeout(() => showSlide(1), 3000);
+      }
+      return;
+    }
+    slide.currentTime = 0;
+    slide.play().catch(() => {
+      if (selection === currentSelection) showSlide(0, false);
+    });
+  }
+
+  for (const video of slides.slice(1)) {
+    video.addEventListener('playing', () => {
+      if (slides[activeIndex] !== video || video.paused) return;
+      video.hidden = false;
+      photo.setAttribute('aria-hidden', 'true');
+    });
+    video.addEventListener('ended', () => {
+      if (slides[activeIndex] === video) {
+        showSlide(motionPreference.matches ? 0 : activeIndex + 1);
+      }
+    });
+    video.addEventListener('error', () => {
+      if (slides[activeIndex] === video) showSlide(0, false);
+    });
+  }
+  previous.hidden = false;
+  next.hidden = false;
+  previous.addEventListener('click', () => showSlide(activeIndex - 1));
+  next.addEventListener('click', () => showSlide(activeIndex + 1));
+  motionPreference.addEventListener('change', () => showSlide(0));
+  showSlide(0);
+}
