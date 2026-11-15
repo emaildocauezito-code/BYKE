@@ -1,5 +1,5 @@
 (() => {
-  const { facts, getModel, getTerm, modelUrl, termOptions } = BYKEPreview;
+  const { facts, getModel, getTerm, termOptions } = BYKEPreview;
   const query = new URLSearchParams(location.search);
   const model = getModel(query.get('modelo'));
   let term = getTerm(query.get('plano'));
@@ -20,8 +20,9 @@
   function updateChoice() {
     const selected = terms[term];
     const price = selected.prices[model.id];
-    const modelLink = modelUrl(model, term);
-    document.getElementById('back-to-model').href = modelLink;
+    const modelLink = `bicicletas.html?plano=${term}#modelos`;
+    document.getElementById('back-to-model').href = `bicicletas.html?plano=${term}`;
+    document.getElementById('catalog-plans-link').href = modelLink;
     document.getElementById('change-model').href = modelLink;
     document.getElementById('back-to-shop').href = modelLink;
     history.replaceState(null, '', `assinatura.html?${new URLSearchParams({ modelo: model.name.toLowerCase(), plano: term })}`);

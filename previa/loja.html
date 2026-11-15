@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <title>Bicicletas e planos — BYKE</title>
+    <title>Bicicletas — BYKE</title>
     <link rel="icon" href="../assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../bicicletas-motion.css?v=quiz-motion-1">
-    <link rel="stylesheet" href="loja.css?v=loja-1">
+    <link rel="stylesheet" href="loja.css?v=catalogo-2">
   </head>
   <body class="shop-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -16,19 +16,19 @@
       <a class="logo" href="index.html" aria-label="BYKE — início"><img src="../assets/BYKE-logo.png" width="691" height="197" alt="BYKE — Build Your Keen Energy"></a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
       <nav id="main-nav" class="nav" aria-label="Navegação principal">
-        <a href="loja.html" aria-current="page">Bicicletas e planos</a>
+        <div class="nav-products"><a href="bicicletas.html" class="products-toggle" aria-current="page" aria-expanded="false" aria-controls="products-panel">Bicicletas</a></div>
         <a href="index.html#como-funciona">Como funciona</a>
-        <a class="btn btn-dark" href="#bike-quiz" data-open-quiz>Descubra sua BYKE</a>
+        <a class="btn btn-dark" href="bicicletas.html#modelos">Planos</a>
       </nav>
     </header>
-    <div class="preview-bar"><div class="shop-shell"><span>Prévia · Bicicletas e planos juntos</span><a href="../bicicletas.html">Ver versão atual <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>
+    <div class="preview-bar"><div class="shop-shell"><span>Prévia · Catálogo BYKE</span><a href="../bicicletas.html">Ver versão atual <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>
     <main id="conteudo" class="shop-shell">
       <nav class="shop-model-nav" aria-label="Escolha um modelo">
         <a href="loja.html?modelo=marlin" data-model="marlin">Marlin <span>Esportiva</span></a>
         <a href="loja.html?modelo=tuna" data-model="tuna">Tuna <span>Urbana</span></a>
         <a href="loja.html?modelo=whale" data-model="whale">Whale <span>Cross</span></a>
       </nav>
-      <p class="shop-breadcrumb"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Bicicletas e planos</span><span aria-hidden="true">/</span><span id="breadcrumb-model">Marlin</span></p>
+      <p class="shop-breadcrumb"><a href="index.html">Início</a><span aria-hidden="true">/</span><a href="bicicletas.html">Bicicletas</a><span aria-hidden="true">/</span><span id="breadcrumb-model">Marlin</span></p>
       <section class="shop-product" id="produto" aria-labelledby="product-name"></section>
       <section class="shop-related" aria-labelledby="related-title">
         <div class="shop-section-heading"><div><p class="eyebrow">OUTRAS POSSIBILIDADES</p><h2 id="related-title">Conheça também.</h2></div><p>Informações e planos, tudo no mesmo lugar.</p></div>
@@ -43,8 +43,10 @@
     <noscript><p class="shop-shell">Ative o JavaScript para visualizar as bicicletas e escolher um plano. Você também pode <a href="../bicicletas.html">ver a apresentação atual dos modelos</a>.</p></noscript>
     <script src="../navegacao.js"></script>
     <script src="../catalogo.js?v=escolher-modelo-1"></script>
-    <script src="dados.js?v=loja-1"></script>
-    <script src="loja.js?v=loja-1"></script>
+    <script src="dados.js?v=catalogo-2"></script>
+    <script src="../menu-bicicletas.js"></script>
+    <script src="inicio.js?v=catalogo-2"></script>
+    <script src="loja.js?v=catalogo-2"></script>
     <script src="../quiz.js?v=quiz-motion-1"></script>
   </body>
 </html>

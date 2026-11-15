@@ -22,5 +22,16 @@ window.BYKEPreview = (() => {
       <input type="radio" name="${name}" value="${key}" ${key === selected ? 'checked' : ''}>
       <span><strong>${term.months} meses</strong><small>${money(term.prices[model.id])}/mês</small></span>
     </label>`).join('');
-  return { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions };
+  const modelCard = (model, selectedTerm) => {
+    const term = terms[getTerm(selectedTerm)];
+    return `
+      <article class="shop-related-card">
+        <a class="shop-related-image" href="${modelUrl(model, selectedTerm)}#produto" data-model="${slug(model)}" aria-label="Conhecer ${model.name}"><img src="${model.gallery[0].src}" width="1536" height="1024" loading="lazy" alt="${model.imageAlt}"></a>
+        <div class="shop-related-info"><div><p class="eyebrow">${model.tag}</p><h3>${model.name}</h3></div><p class="shop-related-price"><strong>${money(term.prices[model.id])}</strong><span>/mês · ${term.months} meses</span></p></div>
+        <p class="shop-related-desc">${model.desc}</p>
+        <p class="shop-related-specs">${facts[model.id].range} por carga <span aria-hidden="true">·</span> ${facts[model.id].feature}</p>
+        <a class="btn btn-outline" href="${modelUrl(model, selectedTerm)}#produto" data-model="${slug(model)}">Conhecer ${model.name} ${arrow}</a>
+      </article>`;
+  };
+  return { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard };
 })();

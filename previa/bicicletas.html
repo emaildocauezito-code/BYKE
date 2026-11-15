@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Conheça os três modelos BYKE, descubra seu perfil no quiz e compare planos de 3, 6 ou 12 meses.">
+    <title>Bicicletas — BYKE</title>
+    <link rel="icon" href="../assets/BYKE-logo-sem-fundo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../bicicletas-motion.css?v=quiz-motion-1">
+    <link rel="stylesheet" href="loja.css?v=catalogo-2">
+    <link rel="stylesheet" href="bicicletas.css?v=catalogo-2">
+  </head>
+  <body class="shop-page catalog-page">
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="BYKE — início"><img src="../assets/BYKE-logo.png" width="691" height="197" alt="BYKE — Build Your Keen Energy"></a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav id="main-nav" class="nav" aria-label="Navegação principal">
+        <div class="nav-products"><a href="bicicletas.html" class="products-toggle" aria-current="page" aria-expanded="false" aria-controls="products-panel">Bicicletas</a></div>
+        <a href="index.html#como-funciona">Como funciona</a>
+        <a class="btn btn-dark" href="bicicletas.html#modelos">Planos</a>
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="catalog-hero" aria-labelledby="catalog-title">
+        <h1 id="catalog-title" class="shop-sr-only">Conheça as bicicletas BYKE</h1>
+        <picture class="catalog-hero-picture">
+          <source media="(max-aspect-ratio: 1/1)" srcset="../assets/cenarios/responsivos/grupo-mobile.webp">
+          <img src="../assets/cenarios/responsivos/grupo-desktop.webp" width="1817" height="866" fetchpriority="high" alt="Marlin, Tuna e Whale: os três modelos BYKE lado a lado em um cenário de estúdio">
+        </picture>
+        <div class="catalog-hero-actions">
+          <a class="btn btn-dark" href="#quiz-convite" data-open-quiz>Qual BYKE combina comigo? <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a class="btn catalog-explore" href="#modelos">Explorar modelos <span aria-hidden="true">↓</span></a>
+        </div>
+        <a class="catalog-scroll" href="#modelos" aria-label="Ver os três modelos"><span aria-hidden="true">↓</span></a>
+      </section>
+      <section class="shop-shell catalog-models" id="modelos" aria-labelledby="catalog-models-title">
+        <div class="shop-section-heading"><div><p class="eyebrow">ESPORTIVA · URBANA · CROSS</p><h2 id="catalog-models-title">Escolha seu modelo.</h2></div><p>Abra uma bicicleta para conhecer os detalhes e escolher seu plano.</p></div>
+        <div class="catalog-controls">
+          <fieldset class="catalog-terms"><legend>Duração da assinatura</legend>
+            <label><input type="radio" name="catalogDuration" value="quarterly"><span>3 meses</span></label>
+            <label><input type="radio" name="catalogDuration" value="semiannual"><span>6 meses</span></label>
+            <label><input type="radio" name="catalogDuration" value="annual" checked><span>12 meses</span></label>
+          </fieldset>
+          <p id="catalog-term-note" role="status">Contrato de 12 meses · Pagamento mensal</p>
+        </div>
+        <div class="catalog-grid" id="catalog-models"></div>
+        <noscript><p>Ative o JavaScript para comparar os modelos ou <a href="../bicicletas.html">acesse a apresentação atual das bicicletas</a>.</p></noscript>
+      </section>
+      <section class="shop-shell shop-quiz-invite" id="quiz-convite" aria-labelledby="catalog-quiz-title"><div><p class="eyebrow">ESCOLHA PELO SEU PERFIL</p><h2 id="catalog-quiz-title">Qual é a sua BYKE?</h2><p>Responda cinco perguntas e veja os modelos em ordem de afinidade com a sua rotina.</p></div><a class="btn btn-dark" href="#bike-quiz" data-open-quiz>Descobrir minha BYKE <span aria-hidden="true">→</span></a></section>
+    </main>
+    <footer><a class="footer-logo" href="index.html" aria-label="BYKE — início"><img src="../assets/BYKE-logo-sem-fundo.png" width="2172" height="724" alt="BYKE"></a><span>Projeto acadêmico · Conteúdo ilustrativo</span><a href="../bicicletas.html">Voltar à versão atual</a></footer>
+    <dialog class="bike-quiz" id="bike-quiz" aria-labelledby="quiz-title"><button class="quiz-close" type="button" aria-label="Fechar quiz"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" stroke-width="1.6"/></svg></button><div id="quiz-content"></div></dialog>
+    <script src="../navegacao.js"></script>
+    <script src="../catalogo.js?v=escolher-modelo-1"></script>
+    <script src="dados.js?v=catalogo-2"></script>
+    <script src="../menu-bicicletas.js"></script>
+    <script src="inicio.js?v=catalogo-2"></script>
+    <script src="bicicletas.js?v=catalogo-2"></script>
+    <script src="../quiz.js?v=quiz-motion-1"></script>
+  </body>
+</html>

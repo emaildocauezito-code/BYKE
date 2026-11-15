@@ -1,5 +1,5 @@
 (() => {
-  const { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions } = BYKEPreview;
+  const { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard } = BYKEPreview;
   const product = document.getElementById('produto');
   const related = document.getElementById('related-models');
   const status = document.getElementById('shop-status');
@@ -26,7 +26,7 @@
   function readLocation() {
     const query = new URLSearchParams(location.search);
     const legacy = { '#modelo-01': 'marlin', '#modelo-02': 'tuna', '#modelo-03': 'whale' };
-    model = getModel(query.get('modelo') || legacy[location.hash]);
+    model = getModel((query.get('modelo') || legacy[location.hash] || '').toLowerCase());
     term = getTerm(query.get('plano'));
   }
   function renderPrice() {
@@ -36,20 +36,15 @@
     document.getElementById('product-total').textContent = `${selected.months} meses · ${money(price * selected.months)} no período`;
     document.getElementById('subscribe-link').href = checkoutUrl(model, term);
     document.querySelectorAll('[data-model]').forEach(link => { link.href = modelUrl(getModel(link.dataset.model), term); });
-    related.innerHTML = models.filter(other => other.id !== model.id).map(other => `
-      <article class="shop-related-card">
-        <a class="shop-related-image" href="${modelUrl(other, term)}#produto" data-model="${slug(other)}" aria-label="Conhecer ${other.name}"><img src="${other.gallery[0].src}" width="1536" height="1024" loading="lazy" alt="${other.imageAlt}"></a>
-        <div class="shop-related-info"><div><p class="eyebrow">${other.tag}</p><h3>${other.name}</h3></div><p class="shop-related-price"><strong>${money(selected.prices[other.id])}</strong><span>/mês · ${selected.months} meses</span></p></div>
-        <p class="shop-related-desc">${other.desc}</p>
-        <p class="shop-related-specs">${facts[other.id].range} por carga <span aria-hidden="true">·</span> ${facts[other.id].feature}</p>
-        <a class="btn btn-outline" href="${modelUrl(other, term)}#produto" data-model="${slug(other)}">Conhecer ${other.name} ${arrow}</a>
-      </article>`).join('');
+    related.innerHTML = models.filter(other => other.id !== model.id).map(other => modelCard(other, term)).join('');
+    if (typeof updateProductPrices === 'function') updateProductPrices(term);
+    BYKEPreview.refreshNavigation?.(term);
   }
   function renderProduct() {
     galleryRequest++;
     currentView = 0;
     const fact = facts[model.id];
-    document.title = `${model.name} — Bicicletas e planos BYKE`;
+    document.title = `${model.name} — Bicicletas BYKE`;
     document.getElementById('breadcrumb-model').textContent = model.name;
     document.querySelectorAll('.shop-model-nav a').forEach(link => {
       if (link.dataset.model === slug(model)) link.setAttribute('aria-current', 'true');
@@ -142,6 +137,15 @@
     navigateModel(getModel(quizModel || link.dataset.model));
   });
   addEventListener('popstate', () => { readLocation(); renderProduct(); });
+  const initialQuery = new URLSearchParams(location.search);
+  const hasLegacyModel = /^#modelo-0[123]$/.test(location.hash);
+  const requested = (initialQuery.get('modelo') || '').toLowerCase();
+  if (!models.some(item => slug(item) === (requested === 'wale' ? 'whale' : requested)) && !hasLegacyModel) {
+    const selectedTerm = getTerm(initialQuery.get('plano'));
+    const destination = initialQuery.has('plano') || location.hash === '#plano' ? `bicicletas.html?plano=${selectedTerm}#modelos` : 'bicicletas.html';
+    location.replace(destination);
+    return;
+  }
   readLocation();
   renderProduct();
   if ('IntersectionObserver' in window && !reducedMotion.matches) {
