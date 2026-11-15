@@ -5,6 +5,7 @@ models.forEach(model => {
   model.gallery = [lateral, diagonal, frontal].map(view => ({ ...view, src: `../${view.src}` }));
 });
 window.BYKEPreview = (() => {
+  const styleUrl = href => window.BYKEStyleVariant?.withVariant(href) || href;
   const facts = [
     { range: 'Até 100 km', charge: '4–5 horas', tire: '700 × 40C · aro 700C', feature: 'Guidão curvo', use: 'Esportiva · Asfalto', position: 'Esportiva, com diferentes posições para as mãos', terrain: 'Asfalto e ciclovias de piso regular', accessories: 'Bagageiro traseiro, suporte para garrafa e GPS', comfort: 'Guidão curvo com pegadas variadas', overview: 'A Marlin reúne guidão curvo e pneus de perfil liso para o pedal no asfalto. As diferentes pegadas permitem variar a posição das mãos ao longo do percurso.' },
     { range: 'Até 100 km', charge: '4–6 horas', tire: '27,5 × 2,15″ · aro 27,5″', feature: 'Quadro baixo e cesta', use: 'Urbana · Dia a dia', position: 'Urbana, com acesso facilitado pelo quadro baixo', terrain: 'Deslocamentos urbanos e paradas frequentes', accessories: 'Cesta dianteira e bagageiro traseiro', comfort: 'Quadro baixo para facilitar subir e descer', overview: 'A Tuna combina quadro baixo, cesta e bagageiro para os deslocamentos cotidianos. O desenho do quadro facilita subir e descer nas paradas, e a cesta mantém os pequenos objetos à mão.' },
@@ -13,7 +14,7 @@ window.BYKEPreview = (() => {
   const slug = model => model.name.toLowerCase();
   const getModel = value => models.find(model => slug(model) === (value === 'wale' ? 'whale' : value)) || models[0];
   const getTerm = value => Object.hasOwn(terms, value) ? value : 'annual';
-  const url = (page, model, term) => `${page}?${new URLSearchParams({ modelo: slug(model), plano: getTerm(term) })}`;
+  const url = (page, model, term) => styleUrl(`${page}?${new URLSearchParams({ modelo: slug(model), plano: getTerm(term) })}`);
   const modelUrl = (model, term) => url('loja.html', model, term);
   const checkoutUrl = (model, term) => url('assinatura.html', model, term);
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';

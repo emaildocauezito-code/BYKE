@@ -1,4 +1,5 @@
 (() => {
+  const styleUrl = href => window.BYKEStyleVariant?.withVariant(href) || href;
   const { getModel, getTerm, modelUrl, modelCard, comparisonTable } = BYKEPreview;
   const controls = document.querySelector('.catalog-terms');
   const cards = document.getElementById('catalog-models');
@@ -13,7 +14,7 @@
   }
   controls.addEventListener('change', event => {
     term = getTerm(event.target.value);
-    history.replaceState(null, '', `bicicletas.html?plano=${term}${location.hash}`);
+    history.replaceState(null, '', styleUrl(`bicicletas.html?plano=${term}${location.hash}`));
     renderCards();
   });
   addEventListener('popstate', () => {

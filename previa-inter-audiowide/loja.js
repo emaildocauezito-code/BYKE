@@ -1,4 +1,5 @@
 (() => {
+  const styleUrl = href => window.BYKEStyleVariant?.withVariant(href) || href;
   const { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq } = BYKEPreview;
   const product = document.getElementById('produto');
   const related = document.getElementById('related-models');
@@ -140,7 +141,7 @@
   if (!models.some(item => slug(item) === (requested === 'wale' ? 'whale' : requested)) && !hasLegacyModel) {
     const selectedTerm = getTerm(initialQuery.get('plano'));
     const destination = initialQuery.has('plano') || location.hash === '#plano' ? `bicicletas.html?plano=${selectedTerm}#modelos` : 'bicicletas.html';
-    location.replace(destination);
+    location.replace(styleUrl(destination));
     return;
   }
   readLocation();

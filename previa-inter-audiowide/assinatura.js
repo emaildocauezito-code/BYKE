@@ -1,4 +1,5 @@
 (() => {
+  const styleUrl = href => window.BYKEStyleVariant?.withVariant(href) || href;
   const { facts, getModel, getTerm, termOptions } = BYKEPreview;
   const query = new URLSearchParams(location.search);
   const model = getModel(query.get('modelo'));
@@ -31,7 +32,7 @@
     document.querySelector('.nav-quiz').href = `bicicletas.html?quiz=1&plano=${term}`;
     document.getElementById('change-model').href = modelLink;
     document.getElementById('back-to-shop').href = modelLink;
-    history.replaceState(null, '', `assinatura.html?${new URLSearchParams({ modelo: model.name.toLowerCase(), plano: term })}`);
+    history.replaceState(null, '', styleUrl(`assinatura.html?${new URLSearchParams({ modelo: model.name.toLowerCase(), plano: term })}`));
     document.getElementById('order-summary').innerHTML = `
       <img class="checkout-summary-image" src="${model.gallery[0].src}" width="1536" height="1024" alt="${model.imageAlt}">
       <p class="eyebrow">${model.tag}</p><h2>${model.name}</h2><p class="checkout-summary-feature">${facts[model.id].feature}</p>
