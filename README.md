@@ -24,6 +24,8 @@ Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
 - `index.html`: vitrine ampla da linha BYKE, apresentação individual dos três modelos e explicação do aluguel.
 - `planos.html`: comparação dos planos, simulador, etapas da assinatura e dúvidas frequentes.
 - `bicicletas.html`: layout de apresentação dos três modelos, sem preços.
+- `bicicletas.js` e `bicicletas-motion.css`: interação da vitrine e entradas suaves durante a rolagem da página de bicicletas.
+- `quiz.js`: perguntas, recomendação e ranking de modelos do quiz.
 - `detalhes.css`: estilos responsivos exclusivos das páginas de detalhes.
 - `style.css`: identidade visual, responsividade e animações.
 - `home.css`: vitrines de produto e seções de aluguel da página inicial.
@@ -53,6 +55,16 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 ### Escolha do modelo na página de bicicletas
 
 Cada seção de `bicicletas.html` apresenta o nome do modelo, uma descrição objetiva, o botão “Escolher Marlin”, “Escolher Tuna” ou “Escolher Whale” e as especificações. O botão leva a `planos.html?modelo=marlin#opcoes` (ou `tuna`/`whale`), abrindo o simulador com a bicicleta selecionada. Nele, é possível escolher 3, 6 ou 12 meses e conferir a mensalidade antes de concluir a simulação. Esse fluxo reutiliza a seleção por URL de `planos.js` e não realiza contratação.
+
+### Movimento e quiz de perfil
+
+Na abertura de `bicicletas.html`, entrar com o cursor na imagem avança um modelo; passar pelos nomes seleciona a bicicleta correspondente. As setas e os nomes também funcionam por clique, toque ou teclado (setas esquerda/direita, Home e End nos seletores). A imagem acompanha suavemente o cursor. Não há avanço por temporizador. Um `IntersectionObserver` revela os conteúdos uma vez conforme entram na tela, sem prender a rolagem. A preferência `prefers-reduced-motion` desativa as animações e os movimentos de acompanhamento.
+
+O quiz tem convites na abertura, depois dos modelos e no final da página, além de links discretos junto às fichas de cada bicicleta para quem chega diretamente pelos links “Conhecer modelo”. Usa um diálogo nativo com fechamento por Escape, retorno do foco ao convite e respostas mantidas apenas em memória durante a visita. São cinco perguntas: piso, estilo, objetos transportados, distância entre recargas e diferencial preferido. O resultado traz motivos, dados estimados, ranking dos três modelos e links para escolher cada um no simulador de planos.
+
+As opções somam pontos de afinidade definidos em `quiz.js`. O ranking usa a soma e, em empates, a ordem estável do catálogo; não apresenta porcentagens de compatibilidade. Para respostas de 61 a 100 km entre recargas, Marlin e Tuna precedem a Whale por suas autonomias estimadas. O resultado explica essa prioridade. A recomendação é orientativa, baseada nas características do protótipo. Não verifica condições reais de uso nem substitui a validação das especificações.
+
+Para conferir: faça os perfis esportivo, urbano e cross, volte a uma pergunta, revise respostas e refaça o quiz. Teste os links do resultado com os três prazos no simulador, além de foco, Escape, telas pequenas e movimento reduzido.
 
 ## Fotos nos cartões de planos
 

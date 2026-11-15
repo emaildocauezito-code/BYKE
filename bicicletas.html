@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="detalhes.css?v=escolher-modelo-1">
+    <link rel="stylesheet" href="bicicletas-motion.css?v=quiz-motion-1">
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -31,18 +32,21 @@
       </nav>
     </header>
     <main id="conteudo">
-      <section class="detail-hero detail-hero-bikes">
+      <section class="detail-hero detail-hero-bikes bikes-experience" aria-labelledby="bikes-title">
         <div class="detail-shell detail-hero-grid">
           <div>
             <a class="breadcrumb" href="index.html">Início</a>
             <span class="breadcrumb" aria-hidden="true"> / Bicicletas</span>
             <p class="eyebrow">BICICLETAS ELÉTRICAS</p>
-            <h1>Marlin. Tuna. Whale.</h1>
+            <h1 id="bikes-title">Marlin. Tuna. Whale.</h1>
             <p class="detail-lead">
               Compare as características de Marlin, Tuna e Whale
               e escolha o modelo para sua rotina.
             </p>
-            <a class="btn btn-green" href="#modelos">Explorar modelos ↗</a>
+            <div class="bikes-hero-actions">
+              <div class="bikes-quiz-cta"><a class="btn btn-dark quiz-trigger" href="#quiz-convite" data-open-quiz>Qual BYKE combina comigo? <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><p class="bikes-quiz-hint">5 perguntas · cerca de 1 minuto</p></div>
+              <a class="bikes-explore-link" href="#modelos">Explorar modelos <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
           <div class="bike-carousel" role="group" aria-label="Fotos dos modelos BYKE">
             <div class="bike-carousel-images" id="bike-carousel-images">
@@ -61,7 +65,14 @@
                 </svg>
               </button>
             </div>
-            <span class="bike-carousel-status" role="status"></span>
+            <div class="bike-preview-caption"><strong id="bike-preview-name">Marlin</strong><span id="bike-preview-type">Esportiva</span><span class="bike-preview-index" aria-hidden="true">01 / 03</span></div>
+            <div class="bike-model-picker" role="group" aria-label="Escolha a bicicleta em destaque" hidden>
+              <button type="button" data-bike="0" aria-pressed="true">Marlin</button>
+              <button type="button" data-bike="1" aria-pressed="false">Tuna</button>
+              <button type="button" data-bike="2" aria-pressed="false">Whale</button>
+            </div>
+            <p class="bike-pointer-hint" hidden>Passe o cursor pela bike para trocar. Mova para explorar.</p>
+            <span class="bike-carousel-status" role="status" aria-live="polite"></span>
           </div>
         </div>
       </section>
@@ -95,6 +106,7 @@
               <div><dt>Recarga completa estimada</dt><dd>4–5 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>700 × 40C · aro 700C</dd></div>
             </dl>
+            <a class="model-quiz-link" href="#quiz-convite" data-open-quiz>Em dúvida entre os modelos? Faça o quiz <span aria-hidden="true">→</span></a>
           </div>
         </section>
         <section class="detail-model detail-shell" id="modelo-02" aria-labelledby="model-tuna-title">
@@ -121,6 +133,7 @@
               <div><dt>Recarga completa estimada</dt><dd>4–6 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>27,5 × 2,15″ · aro 27,5″</dd></div>
             </dl>
+            <a class="model-quiz-link" href="#quiz-convite" data-open-quiz>Em dúvida entre os modelos? Faça o quiz <span aria-hidden="true">→</span></a>
           </div>
         </section>
         <section class="detail-model detail-shell" id="modelo-03" aria-labelledby="model-whale-title">
@@ -147,9 +160,15 @@
               <div><dt>Recarga completa estimada</dt><dd>5–7 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>26 × 4,0″ · aro 26″</dd></div>
             </dl>
+            <a class="model-quiz-link" href="#quiz-convite" data-open-quiz>Em dúvida entre os modelos? Faça o quiz <span aria-hidden="true">→</span></a>
           </div>
         </section>
       </div>
+      <section class="quiz-invite detail-shell" id="quiz-convite" aria-labelledby="quiz-invite-title">
+        <div class="quiz-invite-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><path d="M16 60 37 20h27M26 40h32L46 63M49 14l8 6-8 6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="60" r="11" stroke="currentColor" stroke-width="2"/><circle cx="59" cy="60" r="11" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div><p class="eyebrow">UMA ESCOLHA COM A SUA CARA</p><h2 id="quiz-invite-title">Qual delas é a sua BYKE?</h2><p>Conte como você pedala. Compare os três modelos a partir do seu perfil.</p></div>
+        <a class="btn btn-dark" href="#bike-quiz" data-open-quiz>Descobrir minha BYKE <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </section>
       <section class="detail-shell detail-section" id="comparar">
         <div class="detail-heading">
           <p class="eyebrow">LADO A LADO</p>
@@ -211,7 +230,7 @@
         <p class="eyebrow">JÁ ENCONTROU SUA BYKE?</p>
         <h2>Conheça os <em>planos.</em></h2>
         <p>Veja como funciona a assinatura e descubra as modalidades disponíveis.</p>
-        <a class="btn btn-green" href="planos.html">Conhecer planos ↗</a>
+        <div class="bikes-bottom-actions"><a class="btn btn-green" href="planos.html">Conhecer planos ↗</a><a href="#quiz-convite" data-open-quiz>Ainda em dúvida? Faça o quiz →</a></div>
       </section>
     </main>
     <footer>
@@ -222,9 +241,14 @@
       <span>Projeto acadêmico · Conteúdo ilustrativo</span>
       <a class="back-top" href="#conteudo">Voltar ao topo ↑</a>
     </footer>
+    <dialog class="bike-quiz" id="bike-quiz" aria-labelledby="quiz-title">
+      <button class="quiz-close" type="button" aria-label="Fechar quiz"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <div id="quiz-content"></div>
+    </dialog>
     <script src="navegacao.js"></script>
     <script src="catalogo.js?v=escolher-modelo-1"></script>
     <script src="menu-bicicletas.js"></script>
-    <script src="bicicletas.js"></script>
+    <script src="bicicletas.js?v=quiz-motion-1"></script>
+    <script src="quiz.js?v=quiz-motion-1"></script>
   </body>
 </html>

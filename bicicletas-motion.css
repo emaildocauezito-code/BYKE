@@ -1,0 +1,173 @@
+/* Experiência de bicicletas: movimento leve, sem alterar a rolagem da página. */
+.bikes-experience { padding-block: 40px 48px; }
+.bikes-experience .detail-hero-grid { min-height: min(660px, calc(100svh - 180px)); }
+.bikes-experience h1 { font-size: clamp(40px, 4.2vw, 64px); }
+.bikes-experience .detail-lead { max-width: 490px; }
+.bikes-hero-actions { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 24px; margin-top: 28px; }
+.bikes-hero-actions .btn { margin-top: 0; gap: 24px; min-height: 50px; }
+.bikes-quiz-cta { max-width: 100%; }
+.bikes-explore-link { font-size: 14px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.bikes-explore-link span { margin-left: 14px; }
+.bikes-quiz-hint { font-size: 12px; color: var(--muted); margin: 14px 0 0; }
+.bikes-experience .bike-carousel { padding-block: 22px 0; }
+.bikes-experience .bike-carousel::before { content: ''; position: absolute; inset: 8% -3% 26%; border-radius: 50%; background: radial-gradient(ellipse, #f1f5ed 0%, #f7f8f4 40%, transparent 72%); pointer-events: none; }
+.bikes-experience .bike-carousel-images { position: relative; transform: none; }
+.bikes-experience .bike-carousel-images img { opacity: 0; transform: translateY(12px) scale(.975); transition: opacity .45s ease, transform .7s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
+.bikes-experience .bike-carousel-images .bike-carousel-active { opacity: 1; transform: translate(var(--bike-x, 0px), var(--bike-y, 0px)) scale(1); }
+.bike-preview-caption { position: relative; display: flex; align-items: baseline; gap: 12px; padding: 18px 0 16px; border-bottom: 1px solid var(--line); }
+.bike-preview-caption strong { font-size: 20px; font-weight: 500; }
+.bike-preview-caption > span { font-size: 12px; color: var(--muted); }
+.bike-preview-index { margin-left: auto; font-variant-numeric: tabular-nums; letter-spacing: 1px; }
+.bike-model-picker { display: flex; gap: 6px; padding-top: 14px; }
+.bike-model-picker[hidden], .bike-pointer-hint[hidden] { display: none; }
+.bike-model-picker button { flex: 1; min-height: 44px; border: 1px solid transparent; background: transparent; color: var(--muted); font-size: 13px; transition: background .2s, color .2s, border-color .2s; }
+.bike-model-picker button:hover { background: #f1f4ee; color: var(--dark); }
+.bike-model-picker button[aria-pressed="true"] { border-color: #c1cfb9; background: #eff4e9; color: #243e20; }
+.bike-pointer-hint { text-align: center; font-size: 11px; line-height: 1.5; color: var(--muted); margin: 12px 0 0; }
+.bikes-experience .bike-carousel-controls button { top: 40%; z-index: 1; }
+.motion-reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+.motion-reveal.is-revealed { opacity: 1; transform: none; }
+.detail-model-copy.motion-reveal { transition-delay: .1s; }
+.model-quiz-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: var(--muted); font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+.model-quiz-link:hover { color: #335a2c; }
+.quiz-invite { display: flex; align-items: center; gap: 30px; background: #f0f3eb; padding: 38px; margin-block: 40px 20px; border: 1px solid #dce4d4; }
+.quiz-invite-symbol { display: grid; place-items: center; flex: 0 0 86px; height: 86px; border: 1px solid #bccdb0; border-radius: 50%; color: #375c2c; }
+.quiz-invite-symbol svg { width: 66px; height: 66px; }
+.quiz-invite .eyebrow { margin: 0 0 10px; color: #426137; }
+.detail-page .quiz-invite h2 { margin: 0; font-size: clamp(27px, 2.6vw, 38px); }
+.quiz-invite p:last-child { margin: 12px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+.quiz-invite .btn { flex-shrink: 0; margin-left: auto; gap: 24px; }
+.bikes-bottom-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px; }
+.bikes-bottom-actions > a:last-child { font-size: 14px; text-decoration: underline; text-underline-offset: 5px; }
+
+/* Diálogo nativo: foco, Escape e fundo inerte. */
+.bike-quiz { width: min(1040px, calc(100% - 48px)); max-height: calc(100dvh - 48px); padding: 0; border: 0; border-radius: 4px; background: #fff; color: var(--ink); overflow: auto; overscroll-behavior: contain; box-shadow: 0 24px 100px #0003; }
+.bike-quiz::backdrop { background: #111b19a8; backdrop-filter: blur(6px); }
+.bike-quiz[open] { animation: quiz-appear .3s ease both; }
+.quiz-close { position: sticky; float: right; top: 16px; right: 16px; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; margin: 16px 16px -60px 0; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--ink); }
+.quiz-close:hover { background: #f0f3eb; }
+.quiz-question-layout { display: grid; grid-template-columns: 30% minmax(0, 1fr); min-height: 650px; }
+.quiz-aside { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 38px 30px; background: #edf2e7; overflow: hidden; }
+.quiz-brand { font-size: 10px; letter-spacing: 1.8px; color: #3c5733; }
+.quiz-orbit { display: grid; place-items: center; width: 120px; height: 120px; margin-top: 64px; border: 1px solid #b8cbaa; border-radius: 50%; background: #f9fbf580; box-shadow: 0 0 0 14px #dce7d540, 0 0 0 30px #dce7d52b; }
+.quiz-orbit svg { width: 48px; height: 48px; color: #385a2d; }
+.quiz-aside-label { font-size: 20px; letter-spacing: -.5px; margin: 36px 0 4px; }
+.quiz-aside-number { font: 500 76px/1.2 'Manrope', sans-serif; letter-spacing: -5px; color: #355329; }
+.quiz-aside-number small { font: 400 14px/1.3 'DM Sans', sans-serif; letter-spacing: 1px; color: #53664a; }
+.quiz-aside-note { margin: auto 0 0; padding-top: 32px; font-size: 12px; line-height: 1.8; color: #53664a; }
+.quiz-main { padding: 48px 44px 28px; }
+.quiz-progress-label { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 18px 30px 14px 0; color: var(--muted); font-size: 10px; letter-spacing: 1.5px; }
+.quiz-progress-label > span:last-child { letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.quiz-progress { display: block; width: 100%; height: 3px; border: 0; margin-bottom: 28px; background: #eceee8; accent-color: #426e32; }
+.quiz-progress::-webkit-progress-bar { background: #eceee8; }
+.quiz-progress::-webkit-progress-value { background: #426e32; transition: width .35s ease; }
+.quiz-progress::-moz-progress-bar { background: #426e32; }
+.bike-quiz h2 { font: 500 clamp(27px, 3vw, 36px)/1.18 'Manrope', sans-serif; letter-spacing: -.04em; margin: 0 0 12px; }
+#quiz-title:focus { outline: none; }
+.quiz-question-hint { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0 0 24px; }
+.quiz-options { padding: 0; margin: 0; border: 0; display: grid; gap: 10px; }
+.quiz-option { position: relative; display: flex; align-items: center; gap: 14px; padding: 16px 18px; min-height: 76px; border: 1px solid var(--line); cursor: pointer; transition: border-color .2s, background .2s; }
+.quiz-option:hover { border-color: #879e7b; background: #fafbf8; }
+.quiz-option:has(input:checked) { border-color: #60844d; background: #f0f5e9; }
+.quiz-option:has(input:focus-visible) { outline: 3px solid #426e32; outline-offset: 3px; }
+.quiz-option input, .quiz-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.quiz-radio { display: grid; place-items: center; flex: 0 0 18px; height: 18px; border: 1px solid #9ca494; border-radius: 50%; }
+.quiz-option:has(input:checked) .quiz-radio { border: 5px solid #426e32; background: #fff; }
+.quiz-option strong { display: block; font-size: 14px; font-weight: 500; }
+.quiz-option > span:last-child > span { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 5px; }
+.quiz-navigation { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px; }
+.quiz-next { gap: 24px; }
+.quiz-next:disabled { background: #e5e7e1; color: #697060; cursor: default; }
+.quiz-back, .quiz-result-actions button { border: 0; background: transparent; color: var(--ink); font-size: 13px; min-height: 44px; padding: 8px 0; }
+.quiz-back span { margin-right: 8px; }
+.quiz-back:disabled { visibility: hidden; }
+.quiz-privacy { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 22px 0 0; }
+.quiz-result { padding: 42px; }
+.quiz-result-intro { padding-right: 36px; }
+.quiz-result-intro .eyebrow { margin: 0 0 14px; }
+.quiz-result-intro h2 { font-size: clamp(30px, 3.2vw, 42px); }
+.quiz-result-intro h2 span { color: #355c27; }
+.quiz-result-intro > p:last-child { color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 620px; }
+.quiz-match { display: grid; grid-template-columns: 46% minmax(0, 1fr); gap: 32px; margin-top: 26px; }
+.quiz-match-visual { display: flex; flex-direction: column; justify-content: center; background: radial-gradient(ellipse at center, #f4f7ed, #fafbf7); padding: 22px 12px; min-width: 0; }
+.quiz-match-tag { margin: 0 12px auto; font-size: 10px; letter-spacing: 1.3px; color: #47653a; }
+.quiz-match-visual img { display: block; width: 100%; height: auto; margin-block: 10px; }
+.quiz-match-visual > p { text-align: center; margin: auto 0 0; font-size: 12px; color: #526749; }
+.quiz-match-copy > .eyebrow { margin: 0 0 14px; }
+.quiz-match-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.7; margin: 0; color: var(--muted); }
+.quiz-reasons { list-style: none; padding: 0; margin: 14px 0; font-size: 12px; line-height: 1.6; }
+.quiz-reasons li { position: relative; padding-left: 17px; margin-top: 7px; }
+.quiz-reasons li::before { content: '✓'; position: absolute; left: 0; color: #426e32; }
+.quiz-result-specs { margin: 18px 0 22px; }
+.quiz-result-specs div { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-block: 11px; font-size: 12px; line-height: 1.6; }
+.quiz-result-specs dt { color: var(--muted); }
+.quiz-result-specs dd { margin: 0; text-align: right; }
+.quiz-choose { width: 100%; gap: 24px; }
+.quiz-plan-hint { display: block; margin-top: 10px; font-size: 11px; color: var(--muted); text-align: center; }
+.quiz-ranking { margin-top: 34px; }
+.quiz-ranking-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 12px; }
+.quiz-ranking-heading h3 { margin: 0; font-size: 19px; font-weight: 500; letter-spacing: -.5px; }
+.quiz-ranking-heading p { margin: 0; color: var(--muted); font-size: 12px; }
+.quiz-ranking ol { list-style: none; padding: 0; margin: 0; }
+.quiz-ranking li { display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--line); padding-block: 12px; }
+.quiz-rank-position { flex: 0 0 20px; white-space: nowrap; font-size: 14px; color: #47653a; font-variant-numeric: tabular-nums; }
+.quiz-ranking img { width: 100px; height: 65px; object-fit: contain; }
+.quiz-ranking li strong { display: block; font-weight: 500; font-size: 16px; }
+.quiz-ranking li div > span { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; }
+.quiz-ranking li a { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; font-size: 12px; padding: 12px 0 12px 12px; white-space: nowrap; }
+.quiz-ranking li a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.quiz-result-note { font-size: 11px; line-height: 1.7; color: var(--muted); padding-top: 16px; border-top: 1px solid var(--line); }
+.quiz-result-actions { display: flex; justify-content: space-between; gap: 16px; }
+.quiz-result-actions button:hover { text-decoration: underline; text-underline-offset: 4px; }
+.quiz-main, .quiz-result { animation: quiz-content-in .35s ease both; }
+@keyframes quiz-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes quiz-content-in { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (min-width: 1000px) { .bikes-experience .bike-carousel { margin-left: -12px; } }
+@media (max-width: 1000px) {
+  .quiz-invite { gap: 22px; padding: 28px; flex-wrap: wrap; }
+  .quiz-invite-symbol { flex-basis: 64px; height: 64px; }
+  .quiz-invite-symbol svg { width: 48px; height: 48px; }
+  .quiz-invite .btn { margin-left: 86px; }
+  .quiz-main { padding: 40px 28px 28px; }
+  .quiz-aside { padding: 32px 22px; }
+  .quiz-orbit { width: 96px; height: 96px; }
+}
+@media (max-width: 760px) {
+  .bikes-experience { padding-block: 28px 32px; }
+  .bikes-experience .detail-hero-grid { min-height: 0; gap: 20px; }
+  .bikes-experience .eyebrow { margin-top: 24px; }
+  .bikes-experience h1 { font-size: clamp(38px, 7.3vw, 54px); }
+  .bikes-hero-actions { gap: 16px; }
+  .bikes-hero-actions .btn { padding-inline: 18px; font-size: 12px; gap: 18px; }
+  .bikes-quiz-cta { max-width: 100%; }
+.bikes-explore-link { font-size: 13px; }
+  .bikes-experience .bike-carousel { padding-top: 0; }
+  .quiz-invite { display: block; margin-block: 24px 0; padding: 26px; }
+  .quiz-invite-symbol { width: 60px; height: 60px; margin-bottom: 24px; }
+  .quiz-invite .btn { margin: 24px 0 0; width: 100%; }
+  .bike-quiz { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .quiz-question-layout { display: block; min-height: 0; }
+  .quiz-aside { display: none; }
+  .quiz-main { padding: 60px 22px 26px; }
+  .quiz-progress-label { margin: 0 0 14px; }
+  .quiz-progress { margin-bottom: 24px; }
+  .quiz-option { min-height: 80px; padding: 15px 13px; gap: 12px; }
+  .quiz-navigation .btn { padding-inline: 18px; font-size: 12px; gap: 16px; }
+  .quiz-result { padding: 62px 22px 22px; }
+  .quiz-result-intro { padding-right: 0; }
+  .quiz-match { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 22px; }
+  .quiz-match-visual { padding-block: 18px; }
+  .quiz-match-visual img { max-height: 250px; object-fit: contain; }
+  .quiz-ranking li { gap: 10px; }
+  .quiz-ranking img { flex: 0 0 52px; width: 52px; height: 52px; }
+  .quiz-ranking li strong { font-size: 14px; }
+  .quiz-ranking li div > span { font-size: 10px; line-height: 1.5; }
+  .quiz-ranking li a { font-size: 11px; padding-left: 3px; }
+  .quiz-result-actions button { font-size: 12px; }
+}
+@media (hover: none), (pointer: coarse) { .bike-pointer-hint { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal { opacity: 1; transform: none; transition: none; }
+  .bikes-experience .bike-carousel-images, .bikes-experience .bike-carousel-images img, .bikes-experience .bike-carousel-images .bike-carousel-active { transform: none; transition: none; }
+  .bike-quiz[open], .quiz-main, .quiz-result { animation: none; }
+}
