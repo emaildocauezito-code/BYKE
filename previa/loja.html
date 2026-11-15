@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../bicicletas-motion.css?v=quiz-motion-1">
     <link rel="stylesheet" href="loja.css?v=detalhes-3">
     <link rel="stylesheet" href="rodape.css?v=detalhes-3">
+    <link rel="stylesheet" href="ajustes.css?v=ajustes-5">
   </head>
   <body class="shop-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -19,6 +20,7 @@
       <nav id="main-nav" class="nav" aria-label="Navegação principal">
         <div class="nav-products"><a href="bicicletas.html" class="products-toggle" aria-current="page" aria-expanded="false" aria-controls="products-panel">Bicicletas</a></div>
         <a href="index.html#como-funciona">Como funciona</a>
+        <a class="nav-quiz" href="bicicletas.html?quiz=1" data-open-quiz>Quiz</a>
         <a class="btn btn-dark" href="bicicletas.html#modelos">Planos</a>
       </nav>
     </header>
@@ -37,7 +39,6 @@
       </section>
       <section class="shop-comparison" id="comparar" aria-labelledby="comparison-title">
         <div class="shop-section-heading"><div><p class="eyebrow">LADO A LADO</p><h2 id="comparison-title">Compare os modelos.</h2></div><p>Veja o que muda entre as três bicicletas.</p></div>
-        <p class="comparison-mobile-hint">Deslize o quadro para comparar os modelos <span aria-hidden="true">→</span></p>
         <div id="comparison-table"></div>
       </section>
       <section class="shop-quiz-invite" aria-labelledby="shop-quiz-title"><div><p class="eyebrow">ESCOLHA PELO SEU PERFIL</p><h2 id="shop-quiz-title">Em dúvida entre as três?</h2><p>Cinco perguntas para comparar os modelos a partir da sua rotina.</p></div><a class="btn btn-dark" href="#bike-quiz" data-open-quiz>Qual BYKE combina comigo? <span aria-hidden="true">→</span></a></section>
@@ -56,10 +57,11 @@
     <noscript><p class="shop-shell">Ative o JavaScript para visualizar as bicicletas e escolher um plano. Você também pode <a href="../bicicletas.html">ver a apresentação atual dos modelos</a>.</p></noscript>
     <script src="../navegacao.js"></script>
     <script src="../catalogo.js?v=escolher-modelo-1"></script>
-    <script src="dados.js?v=detalhes-3"></script>
+    <script src="dados.js?v=ajustes-5"></script>
     <script src="../menu-bicicletas.js"></script>
-    <script src="inicio.js?v=detalhes-3"></script>
-    <script src="loja.js?v=detalhes-3"></script>
+    <script src="inicio.js?v=ajustes-5"></script>
+    <script src="loja.js?v=ajustes-5"></script>
     <script src="../quiz.js?v=quiz-motion-1"></script>
+    <script src="quiz-acesso.js?v=ajustes-5"></script>
   </body>
 </html>

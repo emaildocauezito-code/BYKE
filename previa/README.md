@@ -24,11 +24,11 @@ Para continuar usando a versão anterior, basta abrir o endereço do site atual.
 
 Os acessos genéricos a `loja.html`, sem um modelo válido, são redirecionados ao catálogo. Os links de modelos específicos e os dois cards relacionados conservam o comportamento da ficha individual.
 
-O catálogo e as fichas individuais incluem um quadro de comparação com os três modelos e as mensalidades do prazo escolhido. A ficha usa um painel “Saiba mais” ampliado, com nove características disponíveis no catálogo: perfil, uso, posição, autonomia, recarga, pneus/aros, conforto, acessórios e iluminação. O FAQ muda conforme a bicicleta escolhida, incluindo seus valores e acessórios. Não foram criados valores de potência, peso ou capacidade de bateria sem fonte.
+O catálogo e as fichas individuais incluem um quadro de comparação com os três modelos e as mensalidades do prazo escolhido. A ficha usa um painel “Saiba mais” ampliado, com nove características disponíveis no catálogo: perfil, uso, posição, autonomia, recarga, pneus/aros, conforto, acessórios e iluminação. O FAQ tem cinco perguntas; na ficha individual, muda conforme a bicicleta escolhida. A página inicial e o catálogo também apresentam cinco perguntas frequentes. Não foram criados valores de potência, peso ou capacidade de bateria sem fonte.
 
 O rodapé das quatro páginas usa `rodape.css`, com os créditos de Manuela Valone, Davi Freitas e Caue Mathias e o Instagram @bykeenergy, informado pela autora, com link para https://www.instagram.com/bykeenergy/ e abertura em outra aba.
 
-O quiz existente é reutilizado de `../quiz.js`. Seus resultados levam ao modelo escolhido na loja da prévia. Os estilos do quiz também são compartilhados; os arquivos publicados na raiz permanecem iguais.
+O quiz existente é reutilizado de `../quiz.js`. A aba “Quiz” aparece nos quatro cabeçalhos. `quiz-acesso.js` centraliza os destinos dos resultados, mantém o prazo escolhido e abre o teste também em `bicicletas.html?quiz=1`. Abrir e fechar o quiz na assinatura preserva o preenchimento. No celular, fechar pelo menu retorna o foco ao botão de navegação. Seus resultados levam ao modelo escolhido na loja da prévia. Os estilos do quiz também são compartilhados; os arquivos publicados na raiz permanecem iguais.
 
 ## Entrega e confirmação
 
@@ -48,4 +48,8 @@ Nome, contato e endereço ficam apenas na memória da página. O formulário nã
 
 Para executar localmente, inicie um servidor na raiz do repositório e abra `/previa/index.html`.
 
-Para conferir os novos detalhes: abra “Saiba mais” em cada modelo, confira as nove informações, troque o prazo e compare os valores do quadro. No celular, o quadro desliza horizontalmente sem alargar a página. Teste e-mail “teste”, CEP “abc”, estado livre, data “a combinar” e campos vazios até o comprovante. Confira os três créditos nas quatro páginas.
+Para conferir os novos detalhes: abra “Saiba mais” em cada modelo, confira as nove informações, troque o prazo e compare os valores do quadro. No celular, a comparação usa blocos por característica: cada bloco exibe os valores de Marlin, Tuna e Whale em linhas identificadas. Não é preciso arrastar o quadro. A tabela no computador foi preservada. Teste e-mail “teste”, CEP “abc”, estado livre, data “a combinar” e campos vazios até o comprovante. Confira os três créditos nas quatro páginas.
+
+## Tipografia da abertura
+
+Na versão anterior, o título e o subtítulo usavam DM Sans, respectivamente nos pesos 500 e 400 (estilo aplicado conferido no navegador). O título agora diz “Sua próxima BYKE, por assinatura.” e mantém DM Sans 500. O subtítulo é “Build Your Keen Energy”, em Audiowide 400. A fonte Audiowide Latin foi obtida do Google Fonts e está em `assets/fonts/audiowide-latin.woff2`, acompanhada da licença SIL OFL. A apresentação e a comparação móvel estão em `ajustes.css`, carregado apenas pela prévia.

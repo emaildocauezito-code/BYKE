@@ -28,6 +28,7 @@
     const modelLink = `bicicletas.html?plano=${term}#modelos`;
     document.getElementById('back-to-model').href = `bicicletas.html?plano=${term}`;
     document.getElementById('catalog-plans-link').href = modelLink;
+    document.querySelector('.nav-quiz').href = `bicicletas.html?quiz=1&plano=${term}`;
     document.getElementById('change-model').href = modelLink;
     document.getElementById('back-to-shop').href = modelLink;
     history.replaceState(null, '', `assinatura.html?${new URLSearchParams({ modelo: model.name.toLowerCase(), plano: term })}`);

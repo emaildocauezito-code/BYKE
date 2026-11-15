@@ -16,12 +16,7 @@
     quizReturnFocus = null;
     if (target?.isConnected) requestAnimationFrame(() => target.focus({ preventScroll: true }));
   });
-  new MutationObserver(() => {
-    quiz.querySelectorAll('a[href]').forEach(link => {
-      const requested = new URL(link.href).searchParams.get('modelo');
-      if (requested) { link.href = modelUrl(getModel(requested), term); link.dataset.model = requested; }
-    });
-  }).observe(document.getElementById('quiz-content'), { childList: true, subtree: true });
+
 
   function readLocation() {
     const query = new URLSearchParams(location.search);

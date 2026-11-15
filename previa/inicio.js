@@ -14,10 +14,13 @@
       } else if (page === 'planos.html') {
         link.href = 'bicicletas.html#modelos';
       } else if (selectedTerm) {
-        link.href = `bicicletas.html?plano=${BYKEPreview.getTerm(selectedTerm)}${url.hash}`;
+        const query = new URLSearchParams(url.search);
+        query.set('plano', BYKEPreview.getTerm(selectedTerm));
+        link.href = `bicicletas.html?${query}${url.hash}`;
       }
     });
   }
   BYKEPreview.refreshNavigation = refreshNavigation;
   refreshNavigation();
+  document.querySelectorAll('[data-general-faq]').forEach(element => { element.innerHTML = BYKEPreview.generalFaq(); });
 })();
