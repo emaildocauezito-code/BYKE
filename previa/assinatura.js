@@ -107,4 +107,5 @@
   });
   document.getElementById('print-order').addEventListener('click', () => window.print());
   updateChoice();
+  document.getElementById('to-delivery').disabled = false;
 })();

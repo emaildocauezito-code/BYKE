@@ -26,7 +26,7 @@ Os acessos genéricos a `loja.html`, sem um modelo válido, são redirecionados 
 
 O catálogo e as fichas individuais incluem um quadro de comparação com os três modelos e as mensalidades do prazo escolhido. A ficha usa um painel “Saiba mais” ampliado, com nove características disponíveis no catálogo: perfil, uso, posição, autonomia, recarga, pneus/aros, conforto, acessórios e iluminação. O FAQ muda conforme a bicicleta escolhida, incluindo seus valores e acessórios. Não foram criados valores de potência, peso ou capacidade de bateria sem fonte.
 
-O rodapé das quatro páginas usa `rodape.css`, com os créditos de Manuela Valone, Davi Freitas e Caue Mathias e um espaço reservado para o Instagram. O perfil só deve receber um link quando o @ correto for informado; não há link para uma conta presumida.
+O rodapé das quatro páginas usa `rodape.css`, com os créditos de Manuela Valone, Davi Freitas e Caue Mathias e o Instagram @bykeenergy, informado pela autora, com link para https://www.instagram.com/bykeenergy/ e abertura em outra aba.
 
 O quiz existente é reutilizado de `../quiz.js`. Seus resultados levam ao modelo escolhido na loja da prévia. Os estilos do quiz também são compartilhados; os arquivos publicados na raiz permanecem iguais.
 

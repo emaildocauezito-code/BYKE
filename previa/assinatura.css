@@ -79,3 +79,5 @@
  .checkout-success { padding: 0; max-width: none; }
  .checkout-review-block { break-inside: avoid; }
 }
+
+.checkout-actions .btn:disabled { opacity: .5; cursor: wait; }
