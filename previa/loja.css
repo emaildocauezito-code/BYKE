@@ -135,3 +135,47 @@
   .shop-page footer { gap: 24px; }
 }
 @media (prefers-reduced-motion:reduce) { .shop-reveal { opacity: 1; transform: none; transition: none; } .shop-related-image img { transition: none; } .shop-related-image:hover img { transform: none; } }
+
+/* Informações ampliadas e comparação compartilhada pelo catálogo e pelas fichas. */
+.shop-technical { margin-block: 18px 0; font-size: 14px; border: 1px solid #dce2d5; background: #fafbf8; }
+.shop-technical summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 22px; min-height: 82px; list-style: none; }
+.shop-technical summary::-webkit-details-marker { display: none; }
+.shop-technical summary strong { display: block; font-size: 20px; font-weight: 500; letter-spacing: -.4px; }
+.shop-technical summary small { display: block; font-size: 12px; color: var(--muted); margin-top: 7px; line-height: 1.6; }
+.shop-technical summary:focus-visible { outline: 3px solid #426e32; outline-offset: 3px; }
+.technical-toggle { font-size: 26px; font-weight: 400; color: #527241; transition: transform .2s; }
+.shop-technical[open] .technical-toggle { transform: rotate(45deg); }
+.technical-content { padding: 0 22px 22px; }
+.technical-content > p { color: var(--muted); font-size: 14px; line-height: 1.8; margin: 0 0 20px; }
+.shop-technical dl { margin: 0; }
+.shop-technical dl > div { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: start; gap: 20px; border-top: 1px solid var(--line); padding-block: 14px; line-height: 1.7; }
+.shop-technical dt { font-size: 12px; }
+.shop-technical dd { font-size: 13px; text-align: left; }
+.technical-content > .technical-note { font-size: 11px; line-height: 1.7; margin: 14px 0 0; }
+.shop-comparison { margin-top: 64px; padding-block: 32px; scroll-margin-top: 96px; }
+.byke-comparison-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--line); overscroll-behavior-x: contain; }
+.byke-comparison-scroll:focus-visible { outline: 3px solid #426e32; outline-offset: 4px; }
+.byke-comparison-table { width: 100%; min-width: 760px; border-collapse: separate; border-spacing: 0; table-layout: fixed; background: #fff; }
+.byke-comparison-table th, .byke-comparison-table td { text-align: left; vertical-align: top; padding: 19px 22px; font-size: 13px; font-weight: 400; line-height: 1.7; border-bottom: 1px solid var(--line); }
+.byke-comparison-table th:first-child { width: 20%; position: sticky; left: 0; z-index: 1; background: #f6f7f3; color: var(--muted); font-size: 12px; }
+.byke-comparison-table thead th { vertical-align: bottom; padding-top: 24px; }
+.byke-comparison-table thead img { display: block; width: 100%; height: 96px; object-fit: contain; margin-bottom: 14px; }
+.byke-comparison-table thead strong { display: block; font-size: 24px; font-weight: 500; letter-spacing: -.6px; }
+.byke-comparison-table thead span { display: block; font-size: 10px; letter-spacing: 1.5px; color: var(--muted); margin-top: 6px; }
+.byke-comparison-table .comparison-selected { background: #f0f5e9; }
+.byke-comparison-table tfoot th, .byke-comparison-table tfoot td { border-bottom: 0; }
+.byke-comparison-table tfoot a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #35572b; font-size: 13px; }
+.byke-comparison-table tfoot a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.comparison-note { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 16px 0 0; }
+.comparison-mobile-hint { display: none; }
+.shop-faq summary { font-size: 17px; min-height: 30px; line-height: 1.6; }
+@media (max-width:760px) {
+ .shop-technical summary { padding: 18px; }
+ .technical-content { padding: 0 18px 18px; }
+ .shop-technical dl > div { gap: 16px; }
+ .shop-comparison { margin-top: 36px; padding-top: 12px; scroll-margin-top: 88px; }
+ .comparison-mobile-hint { display: block; margin: 0 0 14px; font-size: 11px; line-height: 1.6; color: var(--muted); }
+ .byke-comparison-table th, .byke-comparison-table td { padding: 16px; }
+ .byke-comparison-table th:first-child { width: 140px; }
+ .shop-faq summary { font-size: 16px; }
+}

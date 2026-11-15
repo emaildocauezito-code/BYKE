@@ -24,13 +24,17 @@ Para continuar usando a versão anterior, basta abrir o endereço do site atual.
 
 Os acessos genéricos a `loja.html`, sem um modelo válido, são redirecionados ao catálogo. Os links de modelos específicos e os dois cards relacionados conservam o comportamento da ficha individual.
 
+O catálogo e as fichas individuais incluem um quadro de comparação com os três modelos e as mensalidades do prazo escolhido. A ficha usa um painel “Saiba mais” ampliado, com nove características disponíveis no catálogo: perfil, uso, posição, autonomia, recarga, pneus/aros, conforto, acessórios e iluminação. O FAQ muda conforme a bicicleta escolhida, incluindo seus valores e acessórios. Não foram criados valores de potência, peso ou capacidade de bateria sem fonte.
+
+O rodapé das quatro páginas usa `rodape.css`, com os créditos de Manuela Valone, Davi Freitas e Caue Mathias e um espaço reservado para o Instagram. O perfil só deve receber um link quando o @ correto for informado; não há link para uma conta presumida.
+
 O quiz existente é reutilizado de `../quiz.js`. Seus resultados levam ao modelo escolhido na loja da prévia. Os estilos do quiz também são compartilhados; os arquivos publicados na raiz permanecem iguais.
 
 ## Entrega e confirmação
 
 Este é um protótipo acadêmico. Não há pagamento, contratação, reserva de estoque ou agendamento real. O comprovante demonstra a conclusão do fluxo e tem uma referência gerada no navegador; não existe registro em servidor nem envio de e-mail.
 
-Nome, contato e endereço ficam apenas na memória da página. O formulário não faz requisições nem grava em armazenamento local. Recarregar ou sair da página descarta o preenchimento. Os dados apresentados na revisão e no comprovante são inseridos como texto, sem interpretar HTML. Datas usam o calendário de São Paulo, com início a partir de amanhã.
+Nome, contato e endereço ficam apenas na memória da página. O formulário não faz requisições nem grava em armazenamento local. Recarregar ou sair da página descarta o preenchimento. Os dados apresentados na revisão e no comprovante são inseridos como texto, sem interpretar HTML. O preenchimento é livre para testar o fluxo: não há campos obrigatórios, validações de e-mail/telefone/CEP nem restrição de data. Estado e data também aceitam qualquer texto. Campos vazios aparecem como “Não informado” na revisão. Datas ISO válidas são apresentadas no calendário de São Paulo; qualquer outro texto é preservado.
 
 ## Conferência
 
@@ -39,7 +43,9 @@ Nome, contato e endereço ficam apenas na memória da página. O formulário nã
 3. Confira as três fotos e os valores dos três prazos. Os cards devem mostrar somente os outros dois modelos e seus valores para a mesma duração.
 4. Troque de modelo por um card, volte pelo navegador e confira que o prazo foi preservado.
 5. Faça o quiz e confira que o resultado abre a loja da prévia.
-6. Clique em “Assinar”, ajuste o plano, preencha dados de exemplo e uma data futura. Revise, edite e conclua.
+6. Clique em “Assinar”, ajuste o plano, preencha qualquer texto (ou deixe tudo em branco). A revisão e a conclusão devem continuar funcionando. Revise, edite e conclua.
 7. Confira o comprovante e a opção de salvar/imprimir. Confira também a navegação em celular, teclado e a preferência por movimento reduzido.
 
 Para executar localmente, inicie um servidor na raiz do repositório e abra `/previa/index.html`.
+
+Para conferir os novos detalhes: abra “Saiba mais” em cada modelo, confira as nove informações, troque o prazo e compare os valores do quadro. No celular, o quadro desliza horizontalmente sem alargar a página. Teste e-mail “teste”, CEP “abc”, estado livre, data “a combinar” e campos vazios até o comprovante. Confira os três créditos nas quatro páginas.

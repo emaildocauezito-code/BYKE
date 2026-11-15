@@ -1,5 +1,5 @@
 (() => {
-  const { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard } = BYKEPreview;
+  const { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq } = BYKEPreview;
   const product = document.getElementById('produto');
   const related = document.getElementById('related-models');
   const status = document.getElementById('shop-status');
@@ -36,6 +36,7 @@
     document.getElementById('product-total').textContent = `${selected.months} meses · ${money(price * selected.months)} no período`;
     document.getElementById('subscribe-link').href = checkoutUrl(model, term);
     document.querySelectorAll('[data-model]').forEach(link => { link.href = modelUrl(getModel(link.dataset.model), term); });
+    document.getElementById('comparison-table').innerHTML = comparisonTable(term, model.id);
     related.innerHTML = models.filter(other => other.id !== model.id).map(other => modelCard(other, term)).join('');
     if (typeof updateProductPrices === 'function') updateProductPrices(term);
     BYKEPreview.refreshNavigation?.(term);
@@ -46,6 +47,7 @@
     const fact = facts[model.id];
     document.title = `${model.name} — Bicicletas BYKE`;
     document.getElementById('breadcrumb-model').textContent = model.name;
+    document.getElementById('model-faq').innerHTML = modelFaq(model);
     document.querySelectorAll('.shop-model-nav a').forEach(link => {
       if (link.dataset.model === slug(model)) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
@@ -69,7 +71,7 @@
           <a class="btn btn-dark shop-subscribe" id="subscribe-link" href="${checkoutUrl(model, term)}">Assinar ${model.name} ${arrow}</a>
           <p class="shop-plan-note">Na próxima etapa, informe a entrega e revise sua escolha.</p>
         </section>
-        <details class="shop-technical"><summary>Ver ficha técnica</summary><dl><div><dt>Pneus e aros propostos</dt><dd>${fact.tire}</dd></div><div><dt>Diferencial</dt><dd>${fact.feature}</dd></div></dl></details>
+        ${technicalDetails(model)}
         <a class="shop-help" href="#bike-quiz" data-quiz-forward>Em dúvida? Descubra sua BYKE com o quiz <span aria-hidden="true">→</span></a>
       </div>`;
     renderPrice();
@@ -152,6 +154,6 @@
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
     }), { threshold: .1 });
-    document.querySelectorAll('.shop-related, .shop-quiz-invite, .shop-faq').forEach(section => { section.classList.add('shop-reveal'); observer.observe(section); });
+    document.querySelectorAll('.shop-related, .shop-quiz-invite, .shop-comparison, .shop-faq').forEach(section => { section.classList.add('shop-reveal'); observer.observe(section); });
   }
 })();

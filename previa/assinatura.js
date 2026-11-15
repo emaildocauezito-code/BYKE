@@ -8,14 +8,19 @@
   let finished = false;
   const form = document.getElementById('delivery-form');
   const panels = ['checkout-plan', 'checkout-delivery', 'checkout-review'];
-  const field = name => form.elements.namedItem(name);
-  const states = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
-  states.forEach(state => field('state').add(new Option(state, state)));
-  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  const tomorrow = new Date(`${today}T12:00:00Z`);
-  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-  field('deliveryDate').min = tomorrow.toISOString().slice(0, 10);
-  const displayDate = value => new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${value}T12:00:00Z`));
+  // O preenchimento desta prévia é livre: nenhum formato ou campo é obrigatório.
+  const display = value => String(value || '').trim() || 'Não informado';
+  const displayDate = value => {
+    const text = String(value || '').trim();
+    if (!text) return 'Não informada';
+    if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+      const date = new Date(`${text}T12:00:00Z`);
+      if (!Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === text) {
+        return new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: 'long', year: 'numeric' }).format(date);
+      }
+    }
+    return text;
+  };
 
   function updateChoice() {
     const selected = terms[term];
@@ -64,33 +69,16 @@
   function renderReview(target, editable) {
     const selected = terms[term];
     const price = selected.prices[model.id];
+    const street = [delivery.street, delivery.number].map(value => value.trim()).filter(Boolean).join(', ') || 'Endereço não informado';
+    const locality = [delivery.neighborhood, [delivery.city, delivery.state].map(value => value.trim()).filter(Boolean).join(' / ')].map(value => value.trim()).filter(Boolean).join(' · ') || 'Localidade não informada';
     target.replaceChildren(
       reviewBlock('Bicicleta e plano', [`BYKE ${model.name} · ${selected.months} meses`, `${money(price)}/mês · ${money(price * selected.months)} no período`], editable ? 0 : undefined),
-      reviewBlock('Contato', [delivery.fullName, delivery.email, delivery.phone], editable ? 1 : undefined),
-      reviewBlock('Entrega', [`${delivery.street}, ${delivery.number}${delivery.complement ? ` — ${delivery.complement}` : ''}`, `${delivery.neighborhood} · ${delivery.city} / ${delivery.state}`, `CEP ${delivery.postalCode}`, `Data desejada: ${displayDate(delivery.deliveryDate)}`], editable ? 1 : undefined)
+      reviewBlock('Contato', [display(delivery.fullName), display(delivery.email), display(delivery.phone)], editable ? 1 : undefined),
+      reviewBlock('Entrega', [`${street}${delivery.complement.trim() ? ` — ${delivery.complement}` : ''}`, locality, `CEP ${display(delivery.postalCode)}`, `Data desejada: ${displayDate(delivery.deliveryDate)}`], editable ? 1 : undefined)
     );
   }
-  function validateDelivery() {
-    [...form.elements].forEach(input => {
-      if (input.setCustomValidity) input.setCustomValidity('');
-      if (input.tagName === 'INPUT') input.value = input.value.trim();
-    });
-    if (field('fullName').value.length < 3) field('fullName').setCustomValidity('Informe seu nome completo.');
-    const phone = field('phone').value.replace(/\D/g, '');
-    if (phone.length < 10 || phone.length > 13) field('phone').setCustomValidity('Informe o celular com DDD.');
-    if (field('postalCode').value.replace(/\D/g, '').length !== 8) field('postalCode').setCustomValidity('Informe um CEP com 8 dígitos.');
-    if (field('deliveryDate').value && field('deliveryDate').value < field('deliveryDate').min) field('deliveryDate').setCustomValidity('Escolha uma data a partir de amanhã.');
-    const valid = form.reportValidity();
-    const error = document.getElementById('delivery-error');
-    error.hidden = valid;
-    if (!valid) error.textContent = 'Confira os campos indicados antes de continuar.';
-    return valid;
-  }
-  form.addEventListener('input', event => { if (event.target.setCustomValidity) event.target.setCustomValidity(''); });
-  form.addEventListener('change', event => { if (event.target.setCustomValidity) event.target.setCustomValidity(''); });
   form.addEventListener('submit', event => {
     event.preventDefault();
-    if (!validateDelivery()) return;
     delivery = Object.fromEntries(new FormData(form).entries());
     showStep(2);
   });
