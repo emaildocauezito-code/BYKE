@@ -56,7 +56,11 @@ A composição usa o site oficial da BYD Brasil (https://www.byd.com/br) como re
 
 ### Cenas dos modelos na landing page
 
-A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes. O texto da Tuna fica à esquerda no desktop; as três paisagens ocupam toda a largura e os textos ficam sobre as imagens, com contraste em gradiente. No celular, o texto ocupa a parte superior da paisagem.
+A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes.
+
+No desktop, cada vitrine ocupa a altura visível da janela, descontando o cabeçalho. O texto fica em uma coluna lateral e a cena é exibida inteira, sem recortar ou distorcer a bicicleta e a paisagem. A imagem e os vídeos de abertura também usam encaixe sem recorte. Em telas de até 1100 pixels de largura ou até 600 pixels de altura, o texto aparece acima da foto e a altura acompanha o conteúdo.
+
+A referência BYD Brasil foi medida em uma janela de 1920 × 910 pixels: seus banners ocupavam 1920 × 910 pixels, enquanto as antigas vitrines BYKE ocupavam 1920 × 1280 pixels. A BYD usa `object-fit: cover`, que pode recortar as fotos; a BYKE usa `contain` para preservar por completo suas cenas originais de 1536 × 1024 pixels. O espaço restante recebe o fundo da seção.
 
 O nome público do modelo Cross foi corrigido para Whale. Arquivos originais com prefixo `wale-` foram preservados; links antigos do simulador com `modelo=wale` continuam aceitos.
 
