@@ -15,6 +15,7 @@
     const input = document.querySelector('input[name="duration"]:checked, input[name="catalogDuration"]:checked, input[name="checkoutDuration"]:checked');
     return BYKEPreview.getTerm(input?.value || new URLSearchParams(location.search).get('plano'));
   };
+  BYKEPreview.quizTerm = selectedTerm;
   new MutationObserver(() => {
     content.querySelectorAll('a[href]').forEach(link => {
       const name = new URL(link.href).searchParams.get('modelo');

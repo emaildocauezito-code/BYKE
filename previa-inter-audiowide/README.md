@@ -1,6 +1,6 @@
 # Variante Inter + Audiowide
 
-Versão separada para comparar somente a direção tipográfica, preservando o conteúdo e os fluxos da prévia anterior.
+Versão atual em revisão, com Inter e Audiowide, preços e parâmetros alinhados ao relatório enviado pela Manu. O histórico anterior permanece preservado nas branches de backup.
 
 ## Versão exata preservada
 
@@ -9,7 +9,7 @@ Versão separada para comparar somente a direção tipográfica, preservando o c
 - Versão anterior: https://emaildocauezito-code.github.io/BYKE/previa/index.html
 - Nova versão: https://emaildocauezito-code.github.io/BYKE/previa-inter-audiowide/index.html
 
-Nenhum arquivo existente de `previa/` ou da raiz foi modificado para criar esta variante.
+As páginas, os dados e as imagens das versões anteriores não foram alterados nesta revisão. O README da raiz identifica esta versão como referência atual.
 
 ## Aplicação das fontes
 
@@ -35,7 +35,7 @@ Na foto das três bicicletas, a abertura exibe título e slogan. Enquanto um dos
 
 ## Quiz com avanço pela resposta
 
-O `quiz.js` local preserva as perguntas, pontuação e resultados do quiz original. As respostas são botões acessíveis pelo teclado: escolher uma resposta confirma a seleção por 220 ms e avança, sem botão Continuar. A última escolha abre o resultado. Voltar mantém a resposta marcada, e clicar nela novamente também avança. Fechar o quiz ou voltar cancela qualquer avanço pendente. A breve confirmação impede que um clique duplo responda a duas perguntas. O quiz compartilhado das versões anteriores permanece intacto.
+O `quiz.js` local usa as perguntas e regras revisadas em `quiz-perfil.js`, com dados e preços provenientes do `catalogo.js` local. As respostas são botões acessíveis pelo teclado: escolher uma resposta confirma a seleção por 220 ms e avança, sem botão Continuar. A última escolha abre o resultado. Voltar mantém a resposta marcada, e clicar nela novamente também avança. Fechar o quiz ou voltar cancela qualquer avanço pendente. A breve confirmação impede que um clique duplo responda a duas perguntas. O quiz compartilhado das versões anteriores permanece intacto.
 
 ## Conferência
 
@@ -46,5 +46,9 @@ O `quiz.js` local preserva as perguntas, pontuação e resultados do quiz origin
 5. Escolha 3, 6 ou 12 meses e avance pela assinatura com dados de teste ou campos vazios.
 6. Confira no celular se títulos, botões, preços e comparações cabem na largura disponível.
 7. Na abertura, passe pelas três mídias com as setas: a foto mostra título e slogan; cada vídeo mostra apenas o slogan. Ao voltar à foto, o título deve reaparecer.
+
+Detalhes de preços, parâmetros, testes e pendências: [REVISAO-RELATORIO.md](REVISAO-RELATORIO.md) e [README principal](../README.md).
+
+Para conferir as regras e as 540 combinações do quiz: `node previa-inter-audiowide/tests/consistencia.test.cjs` a partir da raiz.
 
 Esta variante continua sendo uma demonstração de navegação: não efetua cobrança, contratação ou entrega real e não envia nem persiste os dados do formulário.

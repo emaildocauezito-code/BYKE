@@ -1,99 +1,76 @@
 # BYKE — Build Your Keen Energy
 
-Protótipo acadêmico de assinatura trimestral, semestral ou anual de bicicletas elétricas. Não realiza cadastro, cobrança, reserva ou contratação.
+Versão atual em revisão: [Inter + Audiowide](https://emaildocauezito-code.github.io/BYKE/previa-inter-audiowide/index.html). O código desse fluxo está em `previa-inter-audiowide/`. As páginas antigas da raiz e `previa/` são histórico do projeto; não são a referência dos preços e parâmetros desta revisão.
 
-| Modelo | Trimestral (por mês) | Semestral (por mês) | Anual (por mês) |
+Assinatura de bicicletas elétricas para o público geral. Parcerias empresariais são um benefício adicional, sem restringir o acesso ao serviço. A demonstração permite escolher sem quiz, comparar modelos, selecionar 3, 6 ou 12 meses e concluir um comprovante local. Não efetua cobrança ou contratação real.
+
+## Mensalidades confirmadas
+
+| Modelo | 3 meses | 6 meses | 12 meses |
 |---|---:|---:|---:|
-| **Tuna** | R$ 249 | R$ 239 | R$ 219 |
-| **Whale** | R$ 369 | R$ 349 | R$ 319 |
-| **Marlin** | R$ 389 | R$ 369 | R$ 339 |
+| Tuna | R$ 289/mês | R$ 269/mês | R$ 249/mês |
+| Whale | R$ 369/mês | R$ 349/mês | R$ 319/mês |
+| Marlin | R$ 389/mês | R$ 369/mês | R$ 339/mês |
 
-## Executar localmente
+O total do período é a mensalidade multiplicada por 3, 6 ou 12. Catálogo, menu, ficha, comparação, quiz, revisão e comprovante usam o mesmo catálogo local.
 
-Requisito: Python 3. Não há dependências npm nem etapa de build.
+## Parâmetros propostos para o conceito
+
+Sem ensaios das bicicletas; não são especificações de produto homologado. A autonomia varia conforme percurso, carga e nível de assistência. Torque é a força de giro que contribui nas arrancadas e subidas. Não foi atribuído peso em kg aos modelos.
+
+| Característica | Marlin | Tuna | Whale |
+|---|---|---|---|
+| Assistência elétrica proposta | Até 32 km/h | Até 32 km/h | Até 32 km/h |
+| Autonomia estimada por carga | Até 80 km | Até 100 km | Até 80 km |
+| Torque de referência | 55 Nm | 40 Nm | 70 Nm |
+| Bateria nominal proposta | 540 Wh | 720 Wh | 840 Wh |
+| Recarga completa estimada | 6–7 h | 6–7 h | 7–8 h |
+| Instrumentação | Ciclocomputador com mapas | Indicador simples | Indicador simples |
+| Diferencial | Leveza no conceito e pedalada esportiva | Autonomia e uso cotidiano | Força e suspensão dupla |
+
+## Executar e conferir
+
+Sem instalação de dependências ou etapa de build. Na pasta do repositório:
 
 ```sh
-cd /workspace/BYKE
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
+Abra `http://127.0.0.1:8000/previa-inter-audiowide/index.html`. Para parar o servidor, pressione Ctrl+C.
 
-## Arquivos
+Teste a consistência dos preços, parâmetros e regras do quiz com Node.js:
 
-- `index.html`: vitrine ampla da linha BYKE, apresentação individual dos três modelos e explicação do aluguel.
-- `planos.html`: comparação dos planos, simulador, etapas da assinatura e dúvidas frequentes.
-- `bicicletas.html`: layout de apresentação dos três modelos, sem preços.
-- `bicicletas.js` e `bicicletas-motion.css`: interação da vitrine e entradas suaves durante a rolagem da página de bicicletas.
-- `quiz.js`: perguntas, recomendação e ranking de modelos do quiz.
-- `detalhes.css`: estilos responsivos exclusivos das páginas de detalhes.
-- `style.css`: identidade visual, responsividade e animações.
-- `home.css`: vitrines de produto e seções de aluguel da página inicial.
-- `catalogo.js`: modelos, características e preços por duração.
-- `menu-bicicletas.js`: painel de bicicletas compartilhado pelo cabeçalho.
-- `planos.js`: seletor de duração, preços e simulação.
-- `navegacao.js`: menu móvel compartilhado pelas três páginas.
-- `script.js`: redirecionamento de links antigos e reprodução dos vídeos na página inicial.
-- `assets/bicicletas/`: imagens dos modelos fornecidas pelo autor: tipo 1, Marlin Speed; tipo 2, Tuna urbana com cesto; tipo 3, Whale Cross.
-- `assets/BYKE-logo.png`: logo oficial fornecida pelo autor, usada nos cabeçalhos, rodapés e ícones das abas das três páginas.
-- `bike.svg`: ilustração conceitual original, preservada como recurso de referência.
+```sh
+node previa-inter-audiowide/tests/consistencia.test.cjs
+```
 
-O projeto partiu do ZIP BYKE_MVP fornecido pelo autor. As páginas de detalhes usam textos genéricos e campos de especificações para preenchimento posterior. As fontes DM Sans e Manrope são carregadas do Google Fonts; sem acesso à rede, o navegador usa fontes alternativas.
+## Arquivos da versão atual
 
-## Vídeos da página inicial
+- `catalogo.js`: fonte única dos modelos, mensalidades e parâmetros técnicos.
+- `dados.js`: fichas, cards, FAQ, comparação para computador/celular e links do fluxo atual.
+- `quiz-perfil.js`: cinco perguntas sobre necessidade, afinidade, limites de distância e orçamento.
+- `quiz.js`: quiz com avanço pela resposta, voltar, rever, refazer, ranking e escolha do modelo.
+- `quiz-acesso.js`: abertura do quiz, prazo selecionado e retorno de foco no menu móvel.
+- `index.html`: foto/vídeos aprovados e apresentação dos três modelos.
+- `bicicletas.html` e `bicicletas.js`: catálogo e controle de duração.
+- `loja.html` e `loja.js`: modelo, galeria, plano e ficha Saiba mais.
+- `assinatura.html` e `assinatura.js`: plano, entrega, revisão e comprovante.
+- `tipografia.css`: Inter para textos e interface, Audiowide nos destaques aprovados.
 
-Coloque os MP4 finais em uma pasta `videos` e liste seus caminhos em `motionClips`, no arquivo `script.js`, na ordem de reprodução. A vitrine usa a ilustração da BYKE enquanto a lista está vazia. Com vídeos, a sequência se repete sem som, pausa ao sair da área visível e respeita a preferência por movimento reduzido. Use clipes sem falas essenciais e mantenha a bike na área central para acomodar o recorte em telas de celular.
+Os arquivos acima estão em `previa-inter-audiowide/`. Imagens, fontes locais, vídeos, enquadramentos e a organização visual aprovados foram preservados. A foto da abertura mantém título e slogan; os dois vídeos exibem somente o slogan.
 
-### Versão mais nítida do vídeo da Marlin
+## Critérios e limites do quiz
 
-O MP4 original `assets/bicicletas/byke-hero.mp4` tem 1600 × 900 pixels, 30 fps e 13 segundos e foi preservado. Para telas acima de 1100 pixels, a abertura oferece `byke-hero-1080p.webm`, em VP9, com ampliação Lanczos para 1920 × 1080, nitidez moderada e leve ajuste de contraste e saturação. É uma melhoria de apresentação a partir da mesma fonte; não equivale a uma nova captura nativa em Full HD. O MP4 original permanece como alternativa para navegadores sem WebM e para telas menores. A sequência e a duração do vídeo foram mantidas. O vídeo da Whale não foi alterado.
+O orçamento é informado para 12 meses. Se outro prazo estiver selecionado, o resultado identifica a duração e a mensalidade exibidas e explica a diferença em relação à referência de orçamento. Afinidade considera percurso, uso e prioridade; distância e teto de orçamento vêm antes da afinidade. Empates consideram o uso, a prioridade e a mensalidade menor, sem favorecer a ordem do catálogo. O resultado oferece dois motivos, uma contrapartida e alternativas.
 
-## Verificação manual
+Acima de 80 km, a maior autonomia estimada da Tuna tem prioridade. Acima de 100 km sem recarga, nenhum dos três modelos tem autonomia proposta suficiente; o resultado explica a necessidade de uma recarga intermediária. Uma pequena irregularidade urbana, sozinha, não determina a escolha da Whale.
 
-Confira os três modelos e planos, escolha cada modelo e verifique sua mensalidade no simulador. Troque o modelo no seletor e confirme a simulação: deve aparecer um aviso sem efetuar contratação. Verifique também fechamento por botão, sobreposição e Escape, navegação e menu em tela móvel.
+O formulário continua com preenchimento livre para testes. Dados ficam em memória na página, sem envio ou armazenamento persistente. Atualizar/fechar a página perde esses dados; o comprovante pode ser salvo pela impressão do navegador.
 
-### Escolha do modelo na página de bicicletas
+## Revisão e versões preservadas
 
-Cada seção de `bicicletas.html` apresenta o nome do modelo, uma descrição objetiva, o botão “Escolher Marlin”, “Escolher Tuna” ou “Escolher Whale” e as especificações. O botão leva a `planos.html?modelo=marlin#opcoes` (ou `tuna`/`whale`), abrindo o simulador com a bicicleta selecionada. Nele, é possível escolher 3, 6 ou 12 meses e conferir a mensalidade antes de concluir a simulação. Esse fluxo reutiliza a seleção por URL de `planos.js` e não realiza contratação.
+- [Relatório de conferência e pendências do Instagram](previa-inter-audiowide/REVISAO-RELATORIO.md).
+- Antes desta revisão: branch `backup/antes-revisao-relatorio-2026-11-15`, commit `9f95e0b75e2f469d261bd2e4cf75c5dac420995e`.
+- Antes da variante tipográfica: branch `backup/antes-inter-audiowide-2026-11-15`.
 
-### Movimento e quiz de perfil
-
-Na abertura de `bicicletas.html`, entrar com o cursor na imagem avança um modelo; passar pelos nomes seleciona a bicicleta correspondente. As setas e os nomes também funcionam por clique, toque ou teclado (setas esquerda/direita, Home e End nos seletores). A imagem acompanha suavemente o cursor. Não há avanço por temporizador. Um `IntersectionObserver` revela os conteúdos uma vez conforme entram na tela, sem prender a rolagem. A preferência `prefers-reduced-motion` desativa as animações e os movimentos de acompanhamento.
-
-O quiz tem convites na abertura, depois dos modelos e no final da página, além de links discretos junto às fichas de cada bicicleta para quem chega diretamente pelos links “Conhecer modelo”. Usa um diálogo nativo com fechamento por Escape, retorno do foco ao convite e respostas mantidas apenas em memória durante a visita. São cinco perguntas: piso, estilo, objetos transportados, distância entre recargas e diferencial preferido. O resultado traz motivos, dados estimados, ranking dos três modelos e links para escolher cada um no simulador de planos.
-
-As opções somam pontos de afinidade definidos em `quiz.js`. O ranking usa a soma e, em empates, a ordem estável do catálogo; não apresenta porcentagens de compatibilidade. Para respostas de 61 a 100 km entre recargas, Marlin e Tuna precedem a Whale por suas autonomias estimadas. O resultado explica essa prioridade. A recomendação é orientativa, baseada nas características do protótipo. Não verifica condições reais de uso nem substitui a validação das especificações.
-
-Para conferir: faça os perfis esportivo, urbano e cross, volte a uma pergunta, revise respostas e refaça o quiz. Teste os links do resultado com os três prazos no simulador, além de foco, Escape, telas pequenas e movimento reduzido.
-
-## Fotos nos cartões de planos
-
-Cada cartão de Marlin, Tuna e Whale em `planos.html` tem uma galeria independente, com setas para alternar entre três vistas sem fundo: diagonal, lateral e frontal. As vistas ficam em `models[].gallery`, no `catalogo.js`; a navegação e os textos acessíveis são controlados por `planos.js`, e a apresentação por `detalhes.css`. Trocar o prazo ou abrir o simulador não reinicia a vista escolhida. Não há troca automática.
-
-As nove vistas atuais foram geradas com Imagegen para o protótipo, usando os modelos originais como referência. A revisão visual conferiu o alinhamento de rodas, garfo, guidão e farol, com frente em posição reta e variação da câmera. Os arquivos atuais usam os sufixos `-diagonal.webp`, `-lateral.webp` e `-frontal.webp`, todos com transparência real, em `assets/bicicletas/angulos/`. As versões anteriores e as imagens originais foram preservadas, mas não são usadas nas galerias de planos.
-
-Para conferir: acione as duas setas de cada cartão, verifique que só a foto daquele modelo muda e troque entre os três prazos. As mensalidades e o simulador devem continuar funcionando. Os botões também funcionam por Tab e Enter, e mudanças de ângulo são anunciadas por leitores de tela.
-
-## Limites atuais
-
-Marlin, Tuna e Whale usam imagens próprias na página inicial, na apresentação dos modelos e no menu de bicicletas. Os caminhos e textos alternativos usados pelo menu ficam em `catalogo.js`. As imagens PNG originais foram preservadas sem recorte ou alteração de cores. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; essas especificações ainda precisam ser validadas em relação aos modelos ilustrados. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.
-
-## Revisão visual
-
-A composição usa o site oficial da BYD Brasil (https://www.byd.com/br) como referência para destacar os produtos em áreas amplas, com navegação direta e menos elementos decorativos. Os modelos, imagens originais, especificações, preços e modalidades de assinatura foram preservados. A paleta neutra e os botões retos se aplicam às três páginas; o verde permanece na marca e nas imagens originais. A vitrine da Whale mantém o suporte à sequência opcional de vídeos.
-
-### Cenas dos modelos na landing page
-
-A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma rua urbana em ladeira, com calçamento de pedra irregular. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes.
-
-As vitrines e a abertura preenchem toda a largura e a altura disponível da janela, descontando o cabeçalho. Títulos, descrições e botões ficam sobre a imagem, com um gradiente transparente apenas para contraste. Não há coluna lateral, faixas sólidas ou encaixe com barras.
-
-A referência BYD foi inspecionada no navegador em 1920 × 910, 1366 × 768 e 390 × 844 pixels. Seus banners usam altura da janela, imagens com `object-fit: cover`, títulos e ações sobre a mídia e uma imagem alternativa vertical no celular (`<picture>`). Na seção do Dolphin SE, a foto de desktop tem 2880 × 1660 pixels e a versão móvel tem 1080 × 2160 pixels.
-
-A BYKE aplica esse princípio com versões panorâmicas e verticais das cenas, em `assets/cenarios/responsivos/`. As cenas foram reenquadradas com Imagegen a partir dos arquivos originais para deixar espaço ao redor das bicicletas e preservar rodas e guidão nos recortes responsivos. Os arquivos originais não foram substituídos. As novas versões usam WebP para reduzir o tamanho de download. Em janelas verticais, `<picture>` seleciona a versão móvel; em janelas horizontais, seleciona a panorâmica. O enquadramento é ajustado com `object-position`, mantendo a paisagem contínua e os textos sobre ela. Os vídeos existentes da abertura foram preservados e continuam ocupando a área completa do banner.
-
-O nome público do modelo Cross foi corrigido para Whale. Arquivos originais com prefixo `wale-` foram preservados; links antigos do simulador com `modelo=wale` continuam aceitos.
-
-### Imagens transparentes na página de bicicletas
-
-A página `bicicletas.html` usa `assets/bicicletas/marlin-sem-fundo.png`, `tuna-sem-fundo.png` e `whale-sem-fundo.png`, recortados com Imagegen a partir das imagens de estúdio, com canal alfa real. O fundo do contêiner também é transparente. O menu compartilhado usa esses mesmos recortes, com fundo transparente nos três cartões. As imagens originais e as cenas da landing page foram preservadas. Prompt em `assets/bicicletas/RECORTES.md`.
+O relatório registra o que foi verificado e o que depende de revisão externa. O acesso Metricool consulta o conteúdo publicado do Instagram, mas não oferece edição das legendas já publicadas nem dos destaques. Nenhuma publicação foi marcada como corrigida sem alteração efetiva.

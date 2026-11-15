@@ -2,6 +2,8 @@
 (() => {
   const legacyModels = { '#modelo-01': 'marlin', '#modelo-02': 'tuna', '#modelo-03': 'whale' };
   function refreshNavigation(selectedTerm) {
+    const activeTerm = BYKEPreview.getTerm(selectedTerm || new URLSearchParams(location.search).get('plano'));
+    document.querySelectorAll('.nav-product p > span').forEach(span => { span.textContent = ` / mês · ${terms[activeTerm].months} meses`; });
     document.querySelectorAll('a[href]').forEach(link => {
       const url = new URL(link.href);
       const page = url.pathname.split('/').pop();

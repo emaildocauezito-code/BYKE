@@ -1,4 +1,4 @@
-// A prévia reutiliza o catálogo publicado; preços e especificações continuam iguais.
+// Imagens aprovadas e dados do catálogo local desta versão.
 models.forEach(model => {
   model.image = `../${model.image}`;
   const [diagonal, lateral, frontal] = model.gallery;
@@ -6,11 +6,15 @@ models.forEach(model => {
 });
 window.BYKEPreview = (() => {
   const styleUrl = href => window.BYKEStyleVariant?.withVariant(href) || href;
-  const facts = [
-    { range: 'Até 100 km', charge: '4–5 horas', tire: '700 × 40C · aro 700C', feature: 'Guidão curvo', use: 'Esportiva · Asfalto', position: 'Esportiva, com diferentes posições para as mãos', terrain: 'Asfalto e ciclovias de piso regular', accessories: 'Bagageiro traseiro, suporte para garrafa e GPS', comfort: 'Guidão curvo com pegadas variadas', overview: 'A Marlin reúne guidão curvo e pneus de perfil liso para o pedal no asfalto. As diferentes pegadas permitem variar a posição das mãos ao longo do percurso.' },
-    { range: 'Até 100 km', charge: '4–6 horas', tire: '27,5 × 2,15″ · aro 27,5″', feature: 'Quadro baixo e cesta', use: 'Urbana · Dia a dia', position: 'Urbana, com acesso facilitado pelo quadro baixo', terrain: 'Deslocamentos urbanos e paradas frequentes', accessories: 'Cesta dianteira e bagageiro traseiro', comfort: 'Quadro baixo para facilitar subir e descer', overview: 'A Tuna combina quadro baixo, cesta e bagageiro para os deslocamentos cotidianos. O desenho do quadro facilita subir e descer nas paradas, e a cesta mantém os pequenos objetos à mão.' },
-    { range: 'Até 60 km', charge: '5–7 horas', tire: '26 × 4,0″ · aro 26″', feature: 'Suspensão dupla', use: 'Cross · Pisos irregulares', position: 'Condução com guidão reto e pneus largos', terrain: 'Ruas com calçamento irregular e variações de piso', accessories: 'Bagageiro traseiro', comfort: 'Suspensão dianteira e traseira', overview: 'A Whale tem pneus largos e suspensão nos dois eixos para quem procura uma configuração mais robusta. Sua proposta inclui trajetos urbanos com pedras, juntas e diferentes tipos de piso.' }
-  ];
+  const facts = models.map(model => ({
+    ...model.technical,
+    range: `Até ${model.technical.rangeKm} km`,
+    torque: `${model.technical.torqueNm} Nm`,
+    battery: `${model.technical.batteryWh} Wh`,
+    assistance: `Até ${model.technical.assistanceKmh} km/h`
+  }));
+  const estimateNote = 'Parâmetros propostos para o conceito, sem ensaios das bicicletas. A autonomia varia conforme percurso, carga e nível de assistência.';
+  const torqueNote = 'Torque é a força de giro que contribui nas arrancadas e subidas.';
   const slug = model => model.name.toLowerCase();
   const getModel = value => models.find(model => slug(model) === (value === 'wale' ? 'whale' : value)) || models[0];
   const getTerm = value => Object.hasOwn(terms, value) ? value : 'annual';
@@ -39,17 +43,25 @@ window.BYKEPreview = (() => {
     const rows = [
       ['Perfil', fact.use], ['Uso indicado', fact.terrain],
       ['Posição de condução', fact.position], ['Autonomia estimada por carga', fact.range],
+      ['Assistência elétrica proposta', fact.assistance], ['Torque de referência', fact.torque],
+      ['Bateria nominal proposta', fact.battery], ['Instrumentação', fact.instrumentation],
+      ['Principal diferencial', fact.feature],
       ['Recarga completa estimada', fact.charge], ['Pneus e aros de referência', fact.tire],
       ['Conforto e controle', fact.comfort], ['Acessórios', fact.accessories],
       ['Iluminação', 'Farol dianteiro']
     ];
-    return `<details class="shop-technical"><summary><span><strong>Saiba mais</strong><small>Características, medidas e uso indicado</small></span><span class="technical-toggle" aria-hidden="true">+</span></summary><div class="technical-content"><p>${fact.overview}</p><dl>${rows.map(([label,value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl><p class="technical-note">Autonomia e tempo de recarga são estimativas. Piso, carga transportada e modo de uso influenciam o resultado.</p></div></details>`;
+    return `<details class="shop-technical"><summary><span><strong>Saiba mais</strong><small>Características, medidas e uso indicado</small></span><span class="technical-toggle" aria-hidden="true">+</span></summary><div class="technical-content"><p>${fact.overview}</p><dl>${rows.map(([label,value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl><p class="technical-note">${torqueNote} ${estimateNote}</p></div></details>`;
   };
   const comparisonTable = (selectedTerm, selectedModel) => {
     const term = terms[getTerm(selectedTerm)];
     const rows = [
       ['Perfil', model => facts[model.id].use],
-      ['Autonomia por carga', model => facts[model.id].range],
+      ['Principal diferencial', model => facts[model.id].feature],
+      ['Assistência elétrica proposta', model => facts[model.id].assistance],
+      ['Autonomia estimada por carga', model => facts[model.id].range],
+      ['Torque de referência', model => facts[model.id].torque],
+      ['Bateria nominal proposta', model => facts[model.id].battery],
+      ['Instrumentação', model => facts[model.id].instrumentation],
       ['Recarga estimada', model => facts[model.id].charge],
       ['Pneus e aros', model => facts[model.id].tire],
       ['Conforto e controle', model => facts[model.id].comfort],
@@ -60,7 +72,7 @@ window.BYKEPreview = (() => {
     const current = model => model.id === selectedModel ? ' class="comparison-selected"' : '';
     const mobile = `<div class="byke-comparison-mobile" role="region" aria-label="Comparação dos modelos por característica">${rows.map(([label,value]) => `<div class="comparison-feature"><h3>${label}</h3><dl>${models.map(model => `<div${current(model)}><dt>${model.name}</dt><dd>${value(model)}</dd></div>`).join('')}</dl></div>`).join('')}<div class="comparison-mobile-links">${models.map(model => `<a href="${modelUrl(model,selectedTerm)}#produto" data-model="${slug(model)}" aria-label="Conhecer ${model.name}">${model.name} ${arrow}</a>`).join('')}</div></div>`;
 
-    return `<div class="byke-comparison-scroll" tabindex="0" role="region" aria-label="Quadro de comparação dos três modelos"><table class="byke-comparison-table"><caption class="shop-sr-only">Comparação de Marlin, Tuna e Whale para assinatura de ${term.months} meses</caption><thead><tr><th scope="col">Características</th>${models.map(model => `<th scope="col"${current(model)}><img src="${model.gallery[0].src}" width="1536" height="1024" alt="" loading="lazy"><strong>${model.name}</strong><span>${model.tag}</span></th>`).join('')}</tr></thead><tbody>${rows.map(([label,value]) => `<tr><th scope="row">${label}</th>${models.map(model => `<td${current(model)}>${value(model)}</td>`).join('')}</tr>`).join('')}</tbody><tfoot><tr><th scope="row">Conheça o modelo</th>${models.map(model => `<td${current(model)}><a href="${modelUrl(model,selectedTerm)}#produto" data-model="${slug(model)}">Ver ${model.name} ${arrow}</a></td>`).join('')}</tr></tfoot></table></div>${mobile}<p class="comparison-note">Autonomia e recarga estimadas; os resultados variam com o percurso, a carga e o modo de uso.</p>`;
+    return `<div class="byke-comparison-scroll" tabindex="0" role="region" aria-label="Quadro de comparação dos três modelos"><table class="byke-comparison-table"><caption class="shop-sr-only">Comparação de Marlin, Tuna e Whale para assinatura de ${term.months} meses</caption><thead><tr><th scope="col">Características</th>${models.map(model => `<th scope="col"${current(model)}><img src="${model.gallery[0].src}" width="1536" height="1024" alt="" loading="lazy"><strong>${model.name}</strong><span>${model.tag}</span></th>`).join('')}</tr></thead><tbody>${rows.map(([label,value]) => `<tr><th scope="row">${label}</th>${models.map(model => `<td${current(model)}>${value(model)}</td>`).join('')}</tr>`).join('')}</tbody><tfoot><tr><th scope="row">Conheça o modelo</th>${models.map(model => `<td${current(model)}><a href="${modelUrl(model,selectedTerm)}#produto" data-model="${slug(model)}">Ver ${model.name} ${arrow}</a></td>`).join('')}</tr></tfoot></table></div>${mobile}<p class="comparison-note">${torqueNote} ${estimateNote}</p>`;
   };
   const modelFaq = model => {
     const fact = facts[model.id];
@@ -75,13 +87,13 @@ window.BYKEPreview = (() => {
   };
   const generalFaq = () => {
     const questions = [
-      ['Qual a diferença entre Marlin, Tuna e Whale?', 'A Marlin tem guidão curvo e perfil esportivo para asfalto. A Tuna combina quadro baixo, cesta e bagageiro para a rotina urbana. A Whale traz pneus largos e suspensão dianteira e traseira para ruas com calçamento irregular e variações de piso.'],
-      ['Como funcionam os planos de 3, 6 e 12 meses?', 'Você escolhe a bicicleta e a duração da assinatura, com pagamento mensal. A mensalidade muda conforme o modelo e o prazo. O valor por mês e o total do período aparecem antes de continuar para a entrega.'],
-      ['Qual é a autonomia e o tempo de recarga?', 'Marlin e Tuna têm autonomia estimada de até 100 km por carga; a Whale, de até 60 km. A recarga estimada é de 4–5 horas para a Marlin, 4–6 horas para a Tuna e 5–7 horas para a Whale. Piso, carga e modo de uso influenciam esses resultados.'],
+      ['Qual a diferença entre Marlin, Tuna e Whale?', 'A Marlin prioriza leveza no conceito, pedalada esportiva no asfalto e ciclocomputador com mapas. A Tuna tem a maior autonomia estimada, cesta dianteira e praticidade para a rotina. A Whale prioriza força para subidas, pneus largos e suspensão dupla. A assistência elétrica proposta é de até 32 km/h nos três modelos.'],
+      ['Como funcionam os planos de 3, 6 e 12 meses?', 'O serviço atende ao público geral; não é necessário vínculo com uma empresa. Parcerias empresariais são um benefício adicional. Você escolhe a bicicleta e a duração da assinatura, com pagamento mensal. O valor por mês e o total do período aparecem antes de continuar para a entrega.'],
+      ['Qual é a autonomia e o tempo de recarga?', `${models.map(model => `${model.name}: ${facts[model.id].range.toLowerCase()} por carga e recarga completa estimada de ${facts[model.id].charge}`).join('; ')}. ${estimateNote}`],
       ['Como descubro qual BYKE combina comigo?', 'Abra o Quiz no menu e responda cinco perguntas sobre seu percurso e sua rotina. O resultado explica a recomendação e mostra os três modelos em ordem de afinidade. Você também pode comparar as características e abrir a ficha de qualquer bicicleta.'],
       ['Como concluo a escolha e salvo o comprovante?', 'Na ficha da bicicleta, escolha o prazo e clique em “Assinar”. Você passa pelas etapas de plano, entrega e revisão. Confira as informações, edite se necessário e conclua. A tela final permite salvar ou imprimir o comprovante pelo navegador.']
     ];
     return questions.map(([question,answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('');
   };
-  return { facts, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq, generalFaq };
+  return { facts, estimateNote, torqueNote, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq, generalFaq };
 })();
