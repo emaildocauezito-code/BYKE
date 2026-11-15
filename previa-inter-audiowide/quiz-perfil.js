@@ -2,11 +2,11 @@
 window.BYKEQuizProfile = (() => {
   const questions = [
     {
-      title: 'Como é a maior parte do seu percurso?', hint: 'Pense no caminho que você faz com mais frequência.', label: 'Seu caminho', icon: 'route',
+      title: 'Em que tipo de piso você mais pedala?', hint: 'Pense no piso mais frequente. Pode haver subidas em qualquer uma das opções.', label: 'Seu caminho', icon: 'route',
       options: [
-        { title: 'Asfalto e ciclovias, com poucas irregularidades.', scores: [3, 2, 0] },
-        { title: 'Ruas com calçamento irregular e algumas subidas.', scores: [0, 2, 3] },
-        { title: 'Trechos de terra, pedras e mudanças frequentes de piso.', scores: [0, 0, 5] }
+        { title: 'Asfalto regular e ciclovias', text: 'Superfícies lisas, com poucas imperfeições.', scores: [3, 2, 0] },
+        { title: 'Ruas com pavimentação irregular', text: 'Paralelepípedos, remendos e desníveis no pavimento.', scores: [0, 2, 3] },
+        { title: 'Caminhos sem pavimentação', text: 'Terra e pedras soltas na maior parte do trajeto.', scores: [0, 0, 5] }
       ]
     },
     {
@@ -67,7 +67,11 @@ window.BYKEQuizProfile = (() => {
       if (option.scores[model.id] === Math.max(...option.scores)) reasons.push(option.reason);
     }
     if (points(0, model) >= 2) {
-      reasons.push(answers[0] === 0 ? 'Você informou asfalto e ciclovias; esse percurso combina com a proposta de uso do modelo.' : 'Você encontra calçamento e subidas; o resultado considera esse piso junto ao uso e à prioridade que você informou.');
+      reasons.push([
+        'Você informou asfalto regular e ciclovias; esse percurso combina com a proposta de uso do modelo.',
+        'A pavimentação irregular faz parte do seu percurso; o resultado considera esse piso junto ao uso e à prioridade que você informou.',
+        'Você pedala em terra e pedras soltas; os pneus largos e a suspensão dupla da Whale combinam com essa proposta.'
+      ][answers[0]]);
     }
     if (Number.isFinite(budgetLimit) && winner.budgetFits) reasons.push(`Seu limite de ${money(budgetLimit)}/mês é respeitado no prazo de 12 meses: a ${model.name} custa ${money(terms.annual.prices[model.id])}/mês.`);
     if (winner.rangeFits) reasons.push(`Você marcou “${distance.title.replace(/\.$/, '')}”; a autonomia estimada da ${model.name} é de até ${model.technical.rangeKm} km por carga.`);

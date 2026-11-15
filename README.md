@@ -2,7 +2,7 @@
 
 Versão atual em revisão: [Inter + Audiowide](https://emaildocauezito-code.github.io/BYKE/previa-inter-audiowide/index.html). O código desse fluxo está em `previa-inter-audiowide/`. As páginas antigas da raiz e `previa/` são histórico do projeto; não são a referência dos preços e parâmetros desta revisão.
 
-Assinatura de bicicletas elétricas para o público geral. Parcerias empresariais são um benefício adicional, sem restringir o acesso ao serviço. A demonstração permite escolher sem quiz, comparar modelos, selecionar 3, 6 ou 12 meses e concluir um comprovante local. Não efetua cobrança ou contratação real.
+Assinatura de bicicletas elétricas para o público geral. Empresas parceiras podem contar com descontos especiais para suas equipes, conforme as condições da parceria; o serviço permanece aberto ao público geral. Nenhum percentual foi definido ou aplicado aos preços de referência. A demonstração permite escolher sem quiz, comparar modelos, selecionar 3, 6 ou 12 meses, escolher entrega ou retirada e forma de pagamento e concluir um comprovante local. Não efetua cobrança ou contratação real.
 
 ## Mensalidades confirmadas
 
@@ -54,7 +54,7 @@ node previa-inter-audiowide/tests/consistencia.test.cjs
 - `index.html`: foto/vídeos aprovados e apresentação dos três modelos.
 - `bicicletas.html` e `bicicletas.js`: catálogo e controle de duração.
 - `loja.html` e `loja.js`: modelo, galeria, plano e ficha Saiba mais.
-- `assinatura.html` e `assinatura.js`: plano, entrega, revisão e comprovante.
+- `assinatura.html` e `assinatura.js`: plano, entrega ou retirada, forma de pagamento, revisão, comprovante e notificação de conclusão.
 - `tipografia.css`: Inter para textos e interface, Audiowide nos destaques aprovados.
 
 Os arquivos acima estão em `previa-inter-audiowide/`. Imagens, fontes locais, vídeos, enquadramentos e a organização visual aprovados foram preservados. A foto da abertura mantém título e slogan; os dois vídeos exibem somente o slogan.
@@ -64,6 +64,10 @@ Os arquivos acima estão em `previa-inter-audiowide/`. Imagens, fontes locais, v
 O orçamento é informado para 12 meses. Se outro prazo estiver selecionado, o resultado identifica a duração e a mensalidade exibidas e explica a diferença em relação à referência de orçamento. Afinidade considera percurso, uso e prioridade; distância e teto de orçamento vêm antes da afinidade. Empates consideram o uso, a prioridade e a mensalidade menor, sem favorecer a ordem do catálogo. O resultado oferece dois motivos, uma contrapartida e alternativas.
 
 Acima de 80 km, a maior autonomia estimada da Tuna tem prioridade. Acima de 100 km sem recarga, nenhum dos três modelos tem autonomia proposta suficiente; o resultado explica a necessidade de uma recarga intermediária. Uma pequena irregularidade urbana, sozinha, não determina a escolha da Whale.
+
+A primeira pergunta do quiz distingue piso regular, pavimentação irregular e caminhos sem pavimentação; subidas podem existir em qualquer opção. O botão Quiz do menu usa o verde #64cb46 do logotipo, com texto escuro para contraste.
+
+A assinatura oferece entrega em casa ou retirada no ponto combinado e seleção de Pix, cartão de crédito ou boleto. O ponto de retirada aparece como local a combinar até que seu endereço seja definido; nenhum endereço real foi inventado. O resumo, a revisão e o comprovante identificam a opção e a forma de pagamento. Ao concluir, uma notificação acessível aparece por oito segundos, com fechamento manual e por Escape; não há envio de e-mail, SMS ou cobrança real.
 
 O formulário continua com preenchimento livre para testes. Dados ficam em memória na página, sem envio ou armazenamento persistente. Atualizar/fechar a página perde esses dados; o comprovante pode ser salvo pela impressão do navegador.
 

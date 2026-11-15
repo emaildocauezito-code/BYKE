@@ -116,3 +116,13 @@ Alterar só a legenda não corrige texto gravado na imagem. As artes foram apont
 - Conferir bio, Stories e destaques diretamente na conta, especialmente preços, vínculo empresarial e o argumento removido da Tuna.
 - Comparar o cartaz A3 e outros materiais não fornecidos com a tabela confirmada, se contiverem preço ou característica técnica.
 - Validar os parâmetros em ensaios ou documentação técnica antes de apresentá-los como especificações comerciais reais. O site identifica os números como proposta conceitual.
+
+## Atualização após aprovação da revisão
+
+A pedido da Manu, o menu agora destaca Quiz no verde do logotipo (#64cb46), com texto escuro para contraste. A assinatura inclui entrega em casa ou retirada, seleção de Pix, cartão de crédito ou boleto e notificação de conclusão no site. As opções aparecem no resumo, na revisão e no comprovante; nenhum dado de cartão é coletado ou pagamento processado. O local de retirada permanece a combinar, sem endereço fictício.
+
+A comunicação comercial passa a “Empresas parceiras podem contar com descontos especiais para suas equipes. Consulte as condições da parceria.” Não foi informado percentual e nenhum desconto foi aplicado às mensalidades confirmadas. A primeira pergunta do quiz distingue os três tipos de piso, deixando explícito que subidas podem existir em qualquer opção; a pontuação foi preservada.
+
+Essa atualização não foi aplicada às publicações já existentes do Instagram; as limitações de edição e as pendências externas registradas acima permanecem.
+
+Conferência adicional: botão verde nas quatro páginas e fluxos em seis larguras (1920, 1366, 1024, 768, 390 e 320 px); entrega/retirada com as três formas de pagamento no computador e celular; retenção do endereço ao trocar a opção; edição de prazo e pagamento; conclusão com campos vazios; notificação com fechamento manual, Escape e após oito segundos; impressão do comprovante sem a notificação. As 540 combinações do quiz continuam passando no teste de regras.

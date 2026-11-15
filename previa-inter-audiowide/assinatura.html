@@ -2,44 +2,55 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
-    <script src="variantes.js?v=rodape-2"></script>
+    <script src="variantes.js?v=recebimento-1"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Sua assinatura — BYKE</title>
     <link rel="icon" href="../assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="base.css?v=tipo-1">
     <link rel="stylesheet" href="loja.css?v=detalhes-3">
-    <link rel="stylesheet" href="assinatura.css?v=detalhes-4">
+    <link rel="stylesheet" href="assinatura.css?v=recebimento-1">
     <link rel="stylesheet" href="quiz.css?v=relatorio-1">
     <link rel="stylesheet" href="rodape.css?v=rodape-2">
-    <link rel="stylesheet" href="ajustes.css?v=ajustes-5">
+    <link rel="stylesheet" href="ajustes.css?v=recebimento-1">
     <link rel="stylesheet" href="tipografia.css?v=titulo-2">
   </head>
   <body class="shop-page checkout-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-    <header class="header"><a class="logo" href="index.html" aria-label="BYKE — início"><img src="../assets/BYKE-logo.png" width="691" height="197" alt="BYKE — Build Your Keen Energy"></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button><nav id="main-nav" class="nav" aria-label="Navegação principal"><a href="bicicletas.html" id="back-to-model">Bicicletas</a><a href="index.html#como-funciona">Como funciona</a><a class="nav-quiz" href="bicicletas.html?quiz=1" data-open-quiz>Quiz</a>
+    <header class="header"><a class="logo" href="index.html" aria-label="BYKE — início"><img src="../assets/BYKE-logo.png" width="691" height="197" alt="BYKE — Build Your Keen Energy"></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button><nav id="main-nav" class="nav" aria-label="Navegação principal"><a href="bicicletas.html" id="back-to-model">Bicicletas</a><a href="index.html#como-funciona">Como funciona</a><a class="nav-quiz btn" href="bicicletas.html?quiz=1" data-open-quiz>Quiz</a>
         <a class="btn btn-dark" id="catalog-plans-link" href="bicicletas.html#modelos">Planos</a></nav></header>
     <div class="preview-bar"><div class="shop-shell"><span>Prévia acadêmica · Sem cobrança</span><a href="index.html">Início <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>
     <main class="shop-shell checkout-main" id="conteudo">
-      <p class="eyebrow">MODELO, PLANO E ENTREGA</p><h1>Sua assinatura BYKE.</h1>
-      <ol class="checkout-stepper" aria-label="Etapas da assinatura"><li data-step="0" aria-current="step"><span aria-hidden="true">01</span>Seu plano</li><li data-step="1"><span aria-hidden="true">02</span>Entrega</li><li data-step="2"><span aria-hidden="true">03</span>Revisão</li></ol>
+      <p class="eyebrow">MODELO, PLANO E RECEBIMENTO</p><h1>Sua assinatura BYKE.</h1>
+      <ol class="checkout-stepper" aria-label="Etapas da assinatura"><li data-step="0" aria-current="step"><span aria-hidden="true">01</span>Seu plano</li><li data-step="1"><span aria-hidden="true">02</span>Recebimento</li><li data-step="2"><span aria-hidden="true">03</span>Revisão</li></ol>
       <div class="checkout-layout" id="checkout-layout">
         <div class="checkout-steps">
-          <section id="checkout-plan" aria-labelledby="plan-heading"><p class="eyebrow">01 / SUA ESCOLHA</p><h2 id="plan-heading" tabindex="-1">Confirme seu plano.</h2><p class="checkout-intro">Você pode ajustar a duração antes de continuar.</p><div id="checkout-model-choice"></div><fieldset class="shop-terms" id="checkout-terms"><legend class="shop-sr-only">Duração da assinatura</legend></fieldset><div class="checkout-plan-total" aria-live="polite"></div><div class="checkout-actions"><a href="bicicletas.html#modelos" id="change-model">Trocar bicicleta</a><button type="button" class="btn btn-dark" id="to-delivery" disabled>Continuar para entrega <span aria-hidden="true">→</span></button></div></section>
+          <section id="checkout-plan" aria-labelledby="plan-heading"><p class="eyebrow">01 / SUA ESCOLHA</p><h2 id="plan-heading" tabindex="-1">Confirme seu plano.</h2><p class="checkout-intro">Você pode ajustar a duração antes de continuar.</p><div id="checkout-model-choice"></div><fieldset class="shop-terms" id="checkout-terms"><legend class="shop-sr-only">Duração da assinatura</legend></fieldset><div class="checkout-plan-total" aria-live="polite"></div><div class="checkout-actions"><a href="bicicletas.html#modelos" id="change-model">Trocar bicicleta</a><button type="button" class="btn btn-dark" id="to-delivery" disabled>Continuar para recebimento <span aria-hidden="true">→</span></button></div></section>
           <section id="checkout-delivery" aria-labelledby="delivery-heading" hidden><p class="eyebrow">02 / ONDE E QUANDO</p><h2 id="delivery-heading" tabindex="-1">Como sua BYKE chega até você?</h2><p class="checkout-intro">Use dados de exemplo ou deixe os campos em branco para testar até a confirmação. Os dados ficam apenas nesta página.</p>
             <form id="delivery-form" novalidate>
+              <fieldset class="checkout-fieldset"><legend>Entrega ou retirada</legend><div class="checkout-choice-grid">
+                <label class="checkout-choice"><input type="radio" name="fulfillment" value="delivery" checked><span><strong>Entrega em casa</strong><small>Receba no endereço informado.</small></span></label>
+                <label class="checkout-choice"><input type="radio" name="fulfillment" value="pickup"><span><strong>Retirada</strong><small>Retire sua BYKE no ponto combinado.</small></span></label>
+              </div></fieldset>
               <fieldset class="checkout-fieldset"><legend>Seus dados</legend><div class="checkout-fields"><label class="field-full">Nome completo<input name="fullName" id="full-name" autocomplete="name" placeholder="Seu nome e sobrenome"></label><label>E-mail<input name="email" type="text" autocomplete="email" placeholder="voce@exemplo.com"></label><label>Celular<input name="phone" type="text" autocomplete="tel" placeholder="(11) 99999-9999"></label></div></fieldset>
-              <fieldset class="checkout-fieldset"><legend>Endereço de entrega</legend><div class="checkout-fields"><label>CEP<input name="postalCode" autocomplete="postal-code" placeholder="00000-000"></label><label>Bairro<input name="neighborhood" autocomplete="address-level3"></label><label class="field-full">Rua ou avenida<input name="street" autocomplete="address-line1"></label><label>Número<input name="number" autocomplete="off" placeholder="Número ou s/n"></label><label>Complemento <span>(opcional)</span><input name="complement" autocomplete="address-line2" placeholder="Apartamento, bloco…"></label><label>Cidade<input name="city" autocomplete="address-level2"></label><label>Estado<input name="state" type="text" autocomplete="address-level1" placeholder="Ex.: SP"></label></div></fieldset>
-              <fieldset class="checkout-fieldset"><legend>Quando você quer começar?</legend><label class="checkout-date-label">Data desejada para entrega<input name="deliveryDate" type="text" placeholder="Ex.: 20/11/2026 ou a combinar"></label><p class="checkout-field-note">Você pode escrever uma data, digitar “a combinar” ou deixar em branco.</p></fieldset>
+              <fieldset class="checkout-fieldset" id="delivery-address"><legend>Endereço de entrega</legend><div class="checkout-fields"><label>CEP<input name="postalCode" autocomplete="postal-code" placeholder="00000-000"></label><label>Bairro<input name="neighborhood" autocomplete="address-level3"></label><label class="field-full">Rua ou avenida<input name="street" autocomplete="address-line1"></label><label>Número<input name="number" autocomplete="off" placeholder="Número ou s/n"></label><label>Complemento <span>(opcional)</span><input name="complement" autocomplete="address-line2" placeholder="Apartamento, bloco…"></label><label>Cidade<input name="city" autocomplete="address-level2"></label><label>Estado<input name="state" type="text" autocomplete="address-level1" placeholder="Ex.: SP"></label></div></fieldset>
+              <fieldset class="checkout-fieldset" id="pickup-details" hidden disabled><legend>Retirada em ponto BYKE</legend><p class="checkout-field-note">O local e o horário da retirada serão combinados com você.</p></fieldset>
+              <fieldset class="checkout-fieldset"><legend>Quando você quer começar?</legend><label class="checkout-date-label"><span id="fulfillment-date-label">Data desejada para entrega</span><input name="deliveryDate" type="text" placeholder="Ex.: 20/11/2026 ou a combinar"></label><p class="checkout-field-note">Você pode escrever uma data, digitar “a combinar” ou deixar em branco.</p></fieldset>
+              <fieldset class="checkout-fieldset"><legend>Forma de pagamento</legend><div class="checkout-choice-grid checkout-payment-options">
+                <label class="checkout-choice"><input type="radio" name="paymentMethod" value="pix" checked><span><strong>Pix</strong><small>Pagamento mensal.</small></span></label>
+                <label class="checkout-choice"><input type="radio" name="paymentMethod" value="credit"><span><strong>Cartão de crédito</strong><small>Mensalidade no cartão.</small></span></label>
+                <label class="checkout-choice"><input type="radio" name="paymentMethod" value="boleto"><span><strong>Boleto</strong><small>Pagamento mensal.</small></span></label>
+              </div><p class="checkout-field-note">Escolha como prefere pagar. Esta prévia não realiza cobranças nem solicita dados de cartão.</p></fieldset>
               <div class="checkout-actions"><button class="checkout-back" type="button" data-back="0">← Voltar</button><button class="btn btn-dark" type="submit">Revisar assinatura <span aria-hidden="true">→</span></button></div>
             </form>
           </section>
-          <section id="checkout-review" aria-labelledby="review-heading" hidden><p class="eyebrow">03 / ÚLTIMA CONFERÊNCIA</p><h2 id="review-heading" tabindex="-1">Tudo certo para continuar?</h2><p class="checkout-intro">Confira o plano, o endereço e a data antes de concluir.</p><div class="checkout-review-data" id="review-data"></div><p class="checkout-academic-note">Projeto acadêmico: concluir gera um comprovante demonstrativo nesta página. Não há cobrança, contratação ou agendamento real.</p><div class="checkout-actions"><button class="checkout-back" type="button" data-back="1">← Voltar à entrega</button><button class="btn btn-dark" type="button" id="finish-order">Concluir assinatura <span aria-hidden="true">→</span></button></div></section>
+          <section id="checkout-review" aria-labelledby="review-heading" hidden><p class="eyebrow">03 / ÚLTIMA CONFERÊNCIA</p><h2 id="review-heading" tabindex="-1">Tudo certo para continuar?</h2><p class="checkout-intro">Confira o plano, a entrega ou retirada, a data e a forma de pagamento antes de concluir.</p><div class="checkout-review-data" id="review-data"></div><p class="checkout-academic-note">Projeto acadêmico: concluir gera um comprovante demonstrativo nesta página. Não há cobrança, contratação ou agendamento real.</p><div class="checkout-actions"><button class="checkout-back" type="button" data-back="1">← Voltar aos dados</button><button class="btn btn-dark" type="button" id="finish-order">Concluir assinatura <span aria-hidden="true">→</span></button></div></section>
         </div>
         <aside class="checkout-summary" aria-labelledby="summary-title"><p class="eyebrow" id="summary-title">SUA BYKE</p><div id="order-summary"></div></aside>
       </div>
       <section class="checkout-success" id="checkout-success" aria-labelledby="success-title" hidden><div class="checkout-success-icon" aria-hidden="true">✓</div><p class="eyebrow">ESCOLHA CONCLUÍDA</p><h2 id="success-title" tabindex="-1">Sua BYKE está escolhida.</h2><p class="checkout-intro">Veja o comprovante demonstrativo da sua assinatura.</p><div id="success-summary"></div><p class="checkout-academic-note">Este comprovante faz parte do projeto acadêmico. Nenhuma cobrança, contratação ou entrega foi realizada. Os dados não foram enviados nem salvos.</p><div class="checkout-success-actions"><button type="button" class="btn btn-dark" id="print-order">Salvar ou imprimir comprovante</button><a class="btn btn-outline" href="bicicletas.html#modelos" id="back-to-shop">Voltar às bicicletas</a></div></section>
-      <noscript><p>Ative o JavaScript para escolher o plano e preencher a entrega. <a href="bicicletas.html#modelos">Voltar às bicicletas.</a></p></noscript>
+      <div class="checkout-notification" id="checkout-notification" role="status" aria-live="polite" aria-atomic="true" hidden><div><strong>Escolha concluída!</strong><p id="checkout-notification-message"></p></div><button type="button" id="dismiss-notification" aria-label="Fechar notificação">×</button></div>
+      <noscript><p>Ative o JavaScript para escolher o plano e informar entrega ou retirada. <a href="bicicletas.html#modelos">Voltar às bicicletas.</a></p></noscript>
     </main>
     <footer class="byke-footer" id="rodape">
       <div class="shop-shell byke-footer-grid">
@@ -52,8 +63,8 @@
       <div class="shop-shell byke-footer-bottom"><span>BYKE · Build Your Keen Energy</span><nav aria-label="Links do rodapé"><a href="bicicletas.html">Bicicletas</a><a href="bicicletas.html#modelos">Planos</a><a href="bicicletas.html#comparar">Comparar modelos</a></nav></div>
     </footer>
     <dialog class="bike-quiz" id="bike-quiz" aria-labelledby="quiz-title"><button class="quiz-close" type="button" aria-label="Fechar quiz"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" stroke="currentColor" stroke-width="1.6"/></svg></button><div id="quiz-content"></div></dialog>
-    <script src="../navegacao.js"></script><script src="catalogo.js?v=relatorio-1"></script><script src="dados.js?v=relatorio-1"></script><script src="assinatura.js?v=titulo-2"></script>
-    <script src="quiz-perfil.js?v=relatorio-1"></script>
+    <script src="../navegacao.js"></script><script src="catalogo.js?v=relatorio-1"></script><script src="dados.js?v=recebimento-1"></script><script src="assinatura.js?v=recebimento-1"></script>
+    <script src="quiz-perfil.js?v=recebimento-1"></script>
     <script src="quiz.js?v=relatorio-1"></script>
     <script src="quiz-acesso.js?v=relatorio-1"></script>
   </body>

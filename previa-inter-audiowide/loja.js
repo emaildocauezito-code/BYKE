@@ -65,7 +65,7 @@
           <fieldset class="shop-terms"><legend class="shop-sr-only">Duração da assinatura da ${model.name}</legend>${termOptions(model, term)}</fieldset>
           <div class="shop-price" aria-live="polite"><p><strong id="product-price"></strong><span>/mês</span></p><span id="product-total"></span></div>
           <a class="btn btn-dark shop-subscribe" id="subscribe-link" href="${checkoutUrl(model, term)}">Assinar ${model.name} ${arrow}</a>
-          <p class="shop-plan-note">Na próxima etapa, informe a entrega e revise sua escolha.</p>
+          <p class="shop-plan-note">Na próxima etapa, escolha entrega ou retirada e a forma de pagamento.</p>
         </section>
         ${technicalDetails(model)}
         <a class="shop-help" href="#bike-quiz" data-quiz-forward>Em dúvida? Descubra sua BYKE com o quiz <span aria-hidden="true">→</span></a>

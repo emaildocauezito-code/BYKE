@@ -8,6 +8,9 @@
   let delivery = null;
   let finished = false;
   const form = document.getElementById('delivery-form');
+  const paymentLabels = { pix: 'Pix', credit: 'Cartão de crédito', boleto: 'Boleto' };
+  const notification = document.getElementById('checkout-notification');
+  let notificationTimer;
   const panels = ['checkout-plan', 'checkout-delivery', 'checkout-review'];
   // O preenchimento desta prévia é livre: nenhum formato ou campo é obrigatório.
   const display = value => String(value || '').trim() || 'Não informado';
@@ -23,6 +26,19 @@
     return text;
   };
 
+  function syncReceivingChoice() {
+    const pickup = form.elements.fulfillment.value === 'pickup';
+    const address = document.getElementById('delivery-address');
+    const pickupDetails = document.getElementById('pickup-details');
+    address.hidden = pickup;
+    address.disabled = pickup;
+    pickupDetails.hidden = !pickup;
+    pickupDetails.disabled = !pickup;
+    document.getElementById('fulfillment-date-label').textContent = pickup ? 'Data desejada para retirada' : 'Data desejada para entrega';
+    document.getElementById('fulfillment-summary').textContent = pickup ? 'Retirada no ponto combinado' : 'Entrega em casa';
+    document.getElementById('payment-summary').textContent = paymentLabels[form.elements.paymentMethod.value];
+  }
+
   function updateChoice() {
     const selected = terms[term];
     const price = selected.prices[model.id];
@@ -36,8 +52,9 @@
     document.getElementById('order-summary').innerHTML = `
       <img class="checkout-summary-image" src="${model.gallery[0].src}" width="1536" height="1024" alt="${model.imageAlt}">
       <p class="eyebrow">${model.tag}</p><h2>${model.name}</h2><p class="checkout-summary-feature">${facts[model.id].feature}</p>
-      <dl><div><dt>Duração</dt><dd>${selected.months} meses</dd></div><div><dt>Mensalidade</dt><dd>${money(price)}/mês</dd></div><div><dt>Total do período</dt><dd>${money(price * selected.months)}</dd></div></dl><p class="checkout-summary-note">Valores ilustrativos do protótipo. Sem cobrança.</p>`;
+      <dl><div><dt>Duração</dt><dd>${selected.months} meses</dd></div><div><dt>Mensalidade</dt><dd>${money(price)}/mês</dd></div><div><dt>Total do período</dt><dd>${money(price * selected.months)}</dd></div><div><dt>Recebimento</dt><dd id="fulfillment-summary"></dd></div><div><dt>Pagamento</dt><dd id="payment-summary"></dd></div></dl><p class="checkout-summary-note">Valores ilustrativos do protótipo. Sem cobrança.</p>`;
     document.querySelector('.checkout-plan-total').textContent = `${money(price)}/mês durante ${selected.months} meses · ${money(price * selected.months)} no período.`;
+    syncReceivingChoice();
   }
   function showStep(index) {
     if (finished) return;
@@ -71,18 +88,26 @@
   function renderReview(target, editable) {
     const selected = terms[term];
     const price = selected.prices[model.id];
-    const street = [delivery.street, delivery.number].map(value => value.trim()).filter(Boolean).join(', ') || 'Endereço não informado';
-    const locality = [delivery.neighborhood, [delivery.city, delivery.state].map(value => value.trim()).filter(Boolean).join(' / ')].map(value => value.trim()).filter(Boolean).join(' · ') || 'Localidade não informada';
+    const pickup = delivery.fulfillment === 'pickup';
+    const street = [delivery.street, delivery.number].map(value => String(value || '').trim()).filter(Boolean).join(', ') || 'Endereço não informado';
+    const locality = [delivery.neighborhood, [delivery.city, delivery.state].map(value => String(value || '').trim()).filter(Boolean).join(' / ')].map(value => String(value || '').trim()).filter(Boolean).join(' · ') || 'Localidade não informada';
+    const receivingLines = pickup
+      ? ['Retirada em ponto BYKE', `Data desejada: ${displayDate(delivery.deliveryDate)}`, 'Local e horário da retirada a combinar.']
+      : [`${street}${delivery.complement?.trim() ? ` — ${delivery.complement}` : ''}`, locality, `CEP ${display(delivery.postalCode)}`, `Data desejada: ${displayDate(delivery.deliveryDate)}`];
     target.replaceChildren(
       reviewBlock('Bicicleta e plano', [`BYKE ${model.name} · ${selected.months} meses`, `${money(price)}/mês · ${money(price * selected.months)} no período`], editable ? 0 : undefined),
       reviewBlock('Contato', [display(delivery.fullName), display(delivery.email), display(delivery.phone)], editable ? 1 : undefined),
-      reviewBlock('Entrega', [`${street}${delivery.complement.trim() ? ` — ${delivery.complement}` : ''}`, locality, `CEP ${display(delivery.postalCode)}`, `Data desejada: ${displayDate(delivery.deliveryDate)}`], editable ? 1 : undefined)
+      reviewBlock(pickup ? 'Retirada' : 'Entrega em casa', receivingLines, editable ? 1 : undefined),
+      reviewBlock('Pagamento', [paymentLabels[delivery.paymentMethod], `${money(price)}/mês durante ${selected.months} meses`], editable ? 1 : undefined)
     );
   }
   form.addEventListener('submit', event => {
     event.preventDefault();
     delivery = Object.fromEntries(new FormData(form).entries());
     showStep(2);
+  });
+  form.addEventListener('change', event => {
+    if (['fulfillment', 'paymentMethod'].includes(event.target.name)) syncReceivingChoice();
   });
   document.getElementById('checkout-terms').innerHTML = termOptions(model, term, 'checkoutDuration');
   document.getElementById('checkout-model-choice').innerHTML = `<div class="checkout-selected-bike"><img src="${model.gallery[0].src}" width="1536" height="1024" alt="${model.imageAlt}"><div><p class="eyebrow">${model.tag}</p><h3>${model.name}</h3><p>${facts[model.id].feature}</p></div></div>`;
@@ -106,6 +131,20 @@
     document.querySelectorAll('.checkout-stepper li').forEach(item => { item.classList.add('is-complete'); item.removeAttribute('aria-current'); });
     document.getElementById('success-title').focus({ preventScroll: true });
     success.scrollIntoView({ behavior: 'instant', block: 'start' });
+    notification.hidden = false;
+    const message = `${model.name.toUpperCase()} · ${terms[term].months} meses · ${money(terms[term].prices[model.id])}/mês. ${delivery.fulfillment === 'pickup' ? 'Retirada' : 'Entrega em casa'} e ${paymentLabels[delivery.paymentMethod]} selecionados. Confira o comprovante.`;
+    requestAnimationFrame(() => { document.getElementById('checkout-notification-message').textContent = message; });
+    notificationTimer = setTimeout(dismissNotification, 8000);
+  });
+  function dismissNotification() {
+    clearTimeout(notificationTimer);
+    const returnFocus = notification.contains(document.activeElement);
+    notification.hidden = true;
+    if (returnFocus) document.getElementById('success-title').focus({ preventScroll: true });
+  }
+  document.getElementById('dismiss-notification').addEventListener('click', dismissNotification);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !notification.hidden && !document.querySelector('dialog[open]')) dismissNotification();
   });
   document.getElementById('print-order').addEventListener('click', () => window.print());
   updateChoice();

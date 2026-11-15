@@ -42,6 +42,19 @@
 .checkout-page input:focus-visible { outline: 2px solid #53763e; outline-offset: 2px; }
 .checkout-date-label { max-width: 310px; }
 .checkout-field-note { font-size: 11px; line-height: 1.8; color: var(--muted); }
+.checkout-choice-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.checkout-choice { display: flex; align-items: flex-start; gap: 12px; padding: 16px; min-height: 78px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+.checkout-choice input { flex: 0 0 18px; width: 18px; height: 18px; margin: 2px 0 0; accent-color: #335a2c; }
+.checkout-choice strong { display: block; font-size: 13px; line-height: 1.6; font-weight: 600; }
+.checkout-choice small { display: block; font-size: 11px; line-height: 1.7; color: var(--muted); margin-top: 3px; }
+.checkout-choice:has(input:checked) { border-color: #53763e; background: #f0f5e9; }
+.checkout-choice:has(input:focus-visible) { outline: 3px solid #426e32; outline-offset: 3px; }
+.checkout-payment-options { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.checkout-notification { position: fixed; z-index: 65; right: 24px; bottom: 24px; width: min(380px,calc(100% - 32px)); display: flex; align-items: flex-start; gap: 16px; padding: 18px; border: 1px solid #b9cfac; border-left: 5px solid var(--brand-green); background: #fff; color: var(--ink); }
+.checkout-notification strong { font-size: 14px; }
+.checkout-notification p { font-size: 12px; line-height: 1.7; margin: 7px 0 0; }
+.checkout-notification button { flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 22px; }
+.checkout-notification button:focus-visible { outline: 3px solid #426e32; outline-offset: 3px; }
 .checkout-error { padding: 14px; border-left: 2px solid #9c442b; color: #843e29; background: #faf3f0; font-size: 13px; }
 .checkout-review-block { padding-block: 20px; border-top: 1px solid var(--line); }
 .checkout-review-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 12px; }
@@ -68,13 +81,15 @@
  .checkout-selected-bike h3 { font-size: 25px; }
  .checkout-fields { grid-template-columns: minmax(0,1fr); gap: 18px; }
  .checkout-fields .field-full { grid-column: auto; }
+ .checkout-choice-grid, .checkout-payment-options { grid-template-columns: minmax(0,1fr); }
+ .checkout-notification { right: 16px; bottom: 16px; }
  .checkout-actions { gap: 12px; }
  .checkout-actions .btn { padding-inline: 18px; font-size: 12px; gap: 14px; }
  .checkout-success-actions .btn { width: 100%; font-size: 12px; }
  .checkout-page input:not([type="radio"]), .checkout-page select { font-size: 16px; }
 }
 @media print {
- .checkout-page .header, .checkout-page .preview-bar, .checkout-page footer, .checkout-main > .eyebrow, .checkout-main > h1, .checkout-stepper, .checkout-success-actions, .skip-link { display: none !important; }
+ .checkout-page .header, .checkout-page .preview-bar, .checkout-page footer, .checkout-main > .eyebrow, .checkout-main > h1, .checkout-stepper, .checkout-success-actions, .checkout-notification, .skip-link { display: none !important; }
  .checkout-main { width: 100%; padding: 0; }
  .checkout-success { padding: 0; max-width: none; }
  .checkout-review-block { break-inside: avoid; }

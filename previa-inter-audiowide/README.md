@@ -23,7 +23,7 @@ As páginas, os dados e as imagens das versões anteriores não foram alterados 
 
 As fontes são servidas por esta pasta, em `assets/fonts/`, com suas licenças SIL OFL. A Inter é o arquivo variável Latin do Google Fonts. A Audiowide é a mesma fonte usada na versão anterior. A fonte do logo permanece na imagem original da marca.
 
-`inicio.js` adapta o menu para manter todos os links da versão nova dentro de `/previa-inter-audiowide/`. Modelos, galeria, comparação móvel, cinco perguntas do FAQ, quiz, preços, preenchimento livre, comprovante, Instagram e créditos foram preservados.
+`inicio.js` adapta o menu para manter todos os links da versão nova dentro de `/previa-inter-audiowide/`. Modelos, galeria, comparação móvel, cinco perguntas do FAQ, quiz, preços, preenchimento livre, comprovante, Instagram e créditos foram preservados. O menu destaca o Quiz com o verde do logotipo.
 
 ## Nomes em maiúsculas e abertura
 
@@ -43,7 +43,7 @@ O `quiz.js` local usa as perguntas e regras revisadas em `quiz-perfil.js`, com d
 2. Confira os nomes MARLIN, TUNA e WHALE em destaque, sem precisar de parâmetros na URL.
 3. Confira os textos, menu, FAQ e comparação em Inter.
 4. Faça o quiz clicando uma vez por resposta, confira Voltar e escolha uma bike no resultado. As perguntas usam Inter; o nome recomendado ganha Audiowide.
-5. Escolha 3, 6 ou 12 meses e avance pela assinatura com dados de teste ou campos vazios.
+5. Escolha 3, 6 ou 12 meses, entrega ou retirada e Pix, cartão de crédito ou boleto. Avance com dados de teste ou campos vazios, confira as escolhas no comprovante e a notificação de conclusão.
 6. Confira no celular se títulos, botões, preços e comparações cabem na largura disponível.
 7. Na abertura, passe pelas três mídias com as setas: a foto mostra título e slogan; cada vídeo mostra apenas o slogan. Ao voltar à foto, o título deve reaparecer.
 
