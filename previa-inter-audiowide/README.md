@@ -23,7 +23,7 @@ As páginas, os dados e as imagens das versões anteriores não foram alterados 
 
 As fontes são servidas por esta pasta, em `assets/fonts/`, com suas licenças SIL OFL. A Inter é o arquivo variável Latin do Google Fonts. A Audiowide é a mesma fonte usada na versão anterior. A fonte do logo permanece na imagem original da marca.
 
-`inicio.js` adapta o menu para manter todos os links da versão nova dentro de `/previa-inter-audiowide/`. Modelos, galeria, comparação móvel, cinco perguntas do FAQ, quiz, preços, preenchimento livre, comprovante, Instagram e créditos foram preservados. O menu destaca o Quiz com o verde do logotipo.
+`inicio.js` adapta o menu para manter todos os links da versão nova dentro de `/previa-inter-audiowide/`. Modelos, galeria, comparação móvel, cinco perguntas do FAQ, quiz, preços, preenchimento livre, comprovante, Instagram e créditos foram preservados. O menu destaca o Quiz com borda verde e fundo transparente, nas mesmas dimensões de Planos.
 
 ## Nomes em maiúsculas e abertura
 

@@ -1,9 +1,9 @@
 @font-face { font-family: 'Audiowide'; font-style: normal; font-weight: 400; font-display: swap; src: url('assets/fonts/audiowide-latin.woff2') format('woff2'); }
 .home-hero-copy > .brand-tagline:last-child { font-family: 'Audiowide', sans-serif; font-weight: 400; font-size: clamp(13px,1.4vw,18px); line-height: 1.6; letter-spacing: .035em; max-width: 90%; margin-top: 14px; }
 :root { --brand-green: #64cb46; }
-.nav > .btn { min-height: 44px; }
-.nav .nav-quiz { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: 26px; background: var(--brand-green); border-color: var(--brand-green); color: #191919; text-decoration: none; }
-.nav .nav-quiz:hover { background: #55b83a; border-color: #55b83a; color: #191919; }
+.nav > .btn { width: 100px; min-height: 44px; }
+.nav .nav-quiz { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: 20px; background: transparent; border: 1px solid var(--brand-green); color: #191919; text-decoration: none; }
+.nav .nav-quiz:hover { background: transparent; border-color: #55b83a; color: #191919; }
 .nav .nav-quiz:focus-visible { outline: 3px solid #335a2c; outline-offset: 4px; }
 .faq-overview { width: min(1280px,90%); margin-inline: auto; padding-block: 64px; }
 .faq-overview > .eyebrow { margin: 0 0 14px; }
@@ -15,6 +15,7 @@
 .byke-comparison-mobile { display: none; }
 @media (min-width:761px) and (max-width:1050px) { .header .nav { gap: 20px; } }
 @media (max-width:760px) {
+ .header .nav > .btn { width: 100%; }
  .byke-comparison-scroll { display: none; }
  .byke-comparison-mobile { display: grid; gap: 16px; }
  .comparison-feature { border: 1px solid var(--line); background: #fff; }

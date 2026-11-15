@@ -26,6 +26,40 @@
     return text;
   };
 
+  async function playCompletionSound() {
+    let audioContext;
+    try {
+      const Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) return;
+      // Criado no clique de conclusão para respeitar a política de áudio do navegador.
+      audioContext = new Audio();
+      if (audioContext.state === 'suspended') await audioContext.resume();
+      if (audioContext.state !== 'running') { await audioContext.close(); return; }
+      const start = audioContext.currentTime;
+      let remaining = 2;
+      [660, 880].forEach((frequency, index) => {
+        const oscillator = audioContext.createOscillator();
+        const volume = audioContext.createGain();
+        const time = start + index * .15;
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, time);
+        volume.gain.setValueAtTime(0, time);
+        volume.gain.linearRampToValueAtTime(.065, time + .015);
+        volume.gain.exponentialRampToValueAtTime(.001, time + .20);
+        oscillator.connect(volume);
+        volume.connect(audioContext.destination);
+        oscillator.onended = () => {
+          oscillator.disconnect(); volume.disconnect();
+          if (--remaining === 0) audioContext.close().catch(() => {});
+        };
+        oscillator.start(time);
+        oscillator.stop(time + .23);
+      });
+    } catch {
+      if (audioContext && audioContext.state !== 'closed') await audioContext.close().catch(() => {});
+    }
+  }
+
   function syncReceivingChoice() {
     const pickup = form.elements.fulfillment.value === 'pickup';
     const address = document.getElementById('delivery-address');
@@ -132,6 +166,7 @@
     document.getElementById('success-title').focus({ preventScroll: true });
     success.scrollIntoView({ behavior: 'instant', block: 'start' });
     notification.hidden = false;
+    playCompletionSound();
     const message = `${model.name.toUpperCase()} · ${terms[term].months} meses · ${money(terms[term].prices[model.id])}/mês. ${delivery.fulfillment === 'pickup' ? 'Retirada' : 'Entrega em casa'} e ${paymentLabels[delivery.paymentMethod]} selecionados. Confira o comprovante.`;
     requestAnimationFrame(() => { document.getElementById('checkout-notification-message').textContent = message; });
     notificationTimer = setTimeout(dismissNotification, 8000);

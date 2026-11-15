@@ -19,7 +19,7 @@ const models = [
       "use": "Esportiva / Speed · Asfalto",
       "tire": "700 × 40C · aro 700C",
       "position": "Esportiva, com diferentes posições para as mãos",
-      "terrain": "Asfalto e ciclovias de piso regular",
+      "terrain": "Asfalto, ruas pavimentadas e ciclovias",
       "accessories": "Bagageiro traseiro e suporte para garrafa",
       "comfort": "Guidão curvo com pegadas variadas",
       "overview": "A Marlin prioriza leveza no conceito e pedalada esportiva no asfalto. O ciclocomputador com mapas ajuda a acompanhar o percurso. A assistência elétrica proposta tem o mesmo limite dos demais modelos.",

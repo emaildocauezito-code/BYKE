@@ -20,7 +20,10 @@ assert.equal(questions.length, 5);
 assert.equal(winner([0,1,1,2,3]), 'Marlin'); // Esportivo / asfalto.
 assert.equal(winner([0,0,0,2,0]), 'Tuna'); // Rotina / autonomia / até R$250.
 assert.equal(winner([2,2,2,3,1]), 'Whale'); // Cross até 80 km / orçamento de até R$320.
-assert.equal(winner([1,0,0,1,3]), 'Tuna'); // Calçamento urbano não obriga escolher Cross.
+assert.equal(winner([1,0,0,1,3]), 'Tuna'); // Rotina urbana favorece autonomia e praticidade.
+assert.equal(winner([1,1,1,2,3]), 'Marlin'); // A proposta esportiva continua válida em trajetos urbanos.
+assert.equal(winner([0,2,2,2,3]), 'Whale'); // A Cross também faz sentido em vias pavimentadas.
+assert.equal(winner([2,0,0,2,3]), 'Tuna'); // Percursos variados não excluem a Urbana quando rotina/autonomia são prioridade.
 assert.equal(winner([0,1,1,0,0]), 'Tuna'); // Uso esportivo com orçamento insuficiente.
 assert.match(recommend([0,1,1,0,0]).notices.join(' '), /Marlin.*orçamento/);
 assert.equal(winner([2,2,2,4,3]), 'Tuna'); // Mais de 80 km muda a prioridade para autonomia.

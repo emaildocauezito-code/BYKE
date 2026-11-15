@@ -126,3 +126,11 @@ A comunicação comercial passa a “Empresas parceiras podem contar com descont
 Essa atualização não foi aplicada às publicações já existentes do Instagram; as limitações de edição e as pendências externas registradas acima permanecem.
 
 Conferência adicional: botão verde nas quatro páginas e fluxos em seis larguras (1920, 1366, 1024, 768, 390 e 320 px); entrega/retirada com as três formas de pagamento no computador e celular; retenção do endereço ao trocar a opção; edição de prazo e pagamento; conclusão com campos vazios; notificação com fechamento manual, Escape e após oito segundos; impressão do comprovante sem a notificação. As 540 combinações do quiz continuam passando no teste de regras.
+
+### Refinamento do botão, som e percursos
+
+O botão Quiz passou a usar somente contorno verde, com a mesma largura e altura de Planos (100 × 44 px no computador e larguras iguais no menu móvel). A notificação de conclusão ganhou dois tons suaves, sintetizados no clique de conclusão via Web Audio; o aviso visual continua disponível mesmo sem áudio.
+
+A primeira pergunta passa a representar preferências de trajeto, com possibilidades para os três modelos: asfalto e ciclovias, ruas e trajetos urbanos do dia a dia, subidas e caminhos variados. A pontuação de afinidade foi ajustada sem criar exclusões por piso. Os testes incluem Marlin em trajetos urbanos, Whale em vias pavimentadas e Tuna em percursos variados quando rotina e autonomia são prioritárias. Autonomia, orçamento, preços e demais parâmetros continuam com os mesmos limites de referência.
+
+Conferência desse refinamento: dimensões iguais e transparência nos quatro cabeçalhos em seis larguras; três perfis que demonstram uso em cenários diferentes no computador e celular; Web Audio com dois tons de 660/880 Hz, amostras de áudio não nulas, reprodução apenas ao concluir e liberação do contexto ao terminar. Áudio indisponível, erro de criação e reprodução bloqueada não interromperam o comprovante ou a notificação visual. O teste das 540 combinações foi executado novamente.

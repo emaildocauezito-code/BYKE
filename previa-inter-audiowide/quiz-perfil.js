@@ -2,11 +2,11 @@
 window.BYKEQuizProfile = (() => {
   const questions = [
     {
-      title: 'Em que tipo de piso você mais pedala?', hint: 'Pense no piso mais frequente. Pode haver subidas em qualquer uma das opções.', label: 'Seu caminho', icon: 'route',
+      title: 'Que caminhos mais fazem parte da sua rotina?', hint: 'Escolha o cenário mais frequente. A recomendação combina essa preferência com as próximas respostas.', label: 'Seus trajetos', icon: 'route',
       options: [
-        { title: 'Asfalto regular e ciclovias', text: 'Superfícies lisas, com poucas imperfeições.', scores: [3, 2, 0] },
-        { title: 'Ruas com pavimentação irregular', text: 'Paralelepípedos, remendos e desníveis no pavimento.', scores: [0, 2, 3] },
-        { title: 'Caminhos sem pavimentação', text: 'Terra e pedras soltas na maior parte do trajeto.', scores: [0, 0, 5] }
+        { title: 'Asfalto e ciclovias', text: 'Percursos em vias pavimentadas e ciclovias.', scores: [3, 2, 1] },
+        { title: 'Ruas e trajetos urbanos do dia a dia', text: 'Caminhos pela cidade para trabalhar, estudar, fazer compras ou passear.', scores: [1, 3, 2] },
+        { title: 'Subidas e caminhos mais variados', text: 'Trechos que pedem mais força e conforto nos impactos, na cidade ou fora dela.', scores: [1, 1, 4] }
       ]
     },
     {
@@ -14,7 +14,7 @@ window.BYKEQuizProfile = (() => {
       options: [
         { title: 'Ir ao trabalho, estudar, fazer compras e resolver tarefas.', scores: [0, 7, 1], reason: 'Você quer uma bike para as tarefas da rotina; a Tuna combina autonomia, cesta dianteira e praticidade.' },
         { title: 'Pedalar no asfalto por lazer ou atividade física, em ritmo esportivo.', scores: [7, 0, 1], reason: 'Você quer pedalar no asfalto com proposta esportiva; esse é o foco da Marlin, com leveza no conceito e mapas.' },
-        { title: 'Fazer passeios por caminhos variados e explorar trilhas leves.', scores: [1, 1, 7], reason: 'Você quer passeios em caminhos variados; os pneus largos e a suspensão dupla da Whale atendem a essa proposta.' }
+        { title: 'Passear por caminhos variados, inclusive trechos urbanos mais exigentes.', scores: [1, 1, 7], reason: 'Você quer passeios em caminhos variados, inclusive urbanos; a Whale combina força e suspensão para essa proposta.' }
       ]
     },
     {
@@ -68,9 +68,9 @@ window.BYKEQuizProfile = (() => {
     }
     if (points(0, model) >= 2) {
       reasons.push([
-        'Você informou asfalto regular e ciclovias; esse percurso combina com a proposta de uso do modelo.',
-        'A pavimentação irregular faz parte do seu percurso; o resultado considera esse piso junto ao uso e à prioridade que você informou.',
-        'Você pedala em terra e pedras soltas; os pneus largos e a suspensão dupla da Whale combinam com essa proposta.'
+        'Asfalto e ciclovias fazem parte da sua rotina; essa preferência foi considerada junto às suas outras respostas.',
+        'Você faz trajetos urbanos do dia a dia; o resultado considera essa rotina junto à finalidade e às suas prioridades.',
+        'Seus percursos pedem mais força e conforto nos impactos; essa necessidade foi combinada com suas outras preferências.'
       ][answers[0]]);
     }
     if (Number.isFinite(budgetLimit) && winner.budgetFits) reasons.push(`Seu limite de ${money(budgetLimit)}/mês é respeitado no prazo de 12 meses: a ${model.name} custa ${money(terms.annual.prices[model.id])}/mês.`);

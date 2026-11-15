@@ -65,9 +65,11 @@ O orçamento é informado para 12 meses. Se outro prazo estiver selecionado, o r
 
 Acima de 80 km, a maior autonomia estimada da Tuna tem prioridade. Acima de 100 km sem recarga, nenhum dos três modelos tem autonomia proposta suficiente; o resultado explica a necessidade de uma recarga intermediária. Uma pequena irregularidade urbana, sozinha, não determina a escolha da Whale.
 
-A primeira pergunta do quiz distingue piso regular, pavimentação irregular e caminhos sem pavimentação; subidas podem existir em qualquer opção. O botão Quiz do menu usa o verde #64cb46 do logotipo, com texto escuro para contraste.
+A primeira pergunta do quiz combina preferências de percurso: asfalto/ciclovias, trajetos urbanos do dia a dia e subidas/caminhos variados. Esses cenários não delimitam os modelos a um único piso. Finalidade, prioridades, autonomia e orçamento também participam da recomendação. O botão Quiz tem fundo transparente e borda verde #64cb46 do logotipo, com as mesmas dimensões de Planos.
 
-A assinatura oferece entrega em casa ou retirada no ponto combinado e seleção de Pix, cartão de crédito ou boleto. O ponto de retirada aparece como local a combinar até que seu endereço seja definido; nenhum endereço real foi inventado. O resumo, a revisão e o comprovante identificam a opção e a forma de pagamento. Ao concluir, uma notificação acessível aparece por oito segundos, com fechamento manual e por Escape; não há envio de e-mail, SMS ou cobrança real.
+A assinatura oferece entrega em casa ou retirada no ponto combinado e seleção de Pix, cartão de crédito ou boleto. O ponto de retirada aparece como local a combinar até que seu endereço seja definido; nenhum endereço real foi inventado. O resumo, a revisão e o comprovante identificam a opção e a forma de pagamento. Ao concluir, uma notificação acessível aparece por oito segundos, acompanhada de um som discreto de dois tons, com fechamento manual e por Escape; não há envio de e-mail, SMS ou cobrança real.
+
+O som usa Web Audio no clique de conclusão, sem baixar arquivos de áudio. Se o navegador não permitir sua reprodução, a confirmação visual continua funcionando.
 
 O formulário continua com preenchimento livre para testes. Dados ficam em memória na página, sem envio ou armazenamento persistente. Atualizar/fechar a página perde esses dados; o comprovante pode ser salvo pela impressão do navegador.
 
