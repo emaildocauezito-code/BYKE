@@ -5,8 +5,8 @@ Protótipo acadêmico de assinatura trimestral, semestral ou anual de bicicletas
 | Modelo | Trimestral (por mês) | Semestral (por mês) | Anual (por mês) |
 |---|---:|---:|---:|
 | **Tuna** | R$ 249 | R$ 239 | R$ 219 |
-| **Whale** | R$ 379 | R$ 349 | R$ 319 |
-| **Marlin** | R$ 399 | R$ 369 | R$ 339 |
+| **Whale** | R$ 369 | R$ 349 | R$ 319 |
+| **Marlin** | R$ 389 | R$ 369 | R$ 339 |
 
 ## Executar localmente
 
