@@ -7,7 +7,7 @@
     <title>Bicicletas — BYKE</title>
     <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="detalhes.css?v=escolher-modelo-1">
+    <link rel="stylesheet" href="detalhes.css?v=comparacao-mobile-1">
     <link rel="stylesheet" href="bicicletas-motion.css?v=quiz-motion-1">
   </head>
   <body class="detail-page">
@@ -174,53 +174,53 @@
           <p class="eyebrow">LADO A LADO</p>
           <h2 id="comparison-title">Compare os modelos.</h2>
         </div>
-        <table class="comparison-table" aria-labelledby="comparison-title"
+        <table class="comparison-table" role="table" aria-labelledby="comparison-title"
           aria-describedby="comparison-note">
-          <thead><tr>
-            <th scope="col">Ficha técnica</th>
-            <th scope="col">
+          <thead role="rowgroup"><tr role="row">
+            <th scope="col" role="columnheader">Ficha técnica</th>
+            <th scope="col" role="columnheader">
               <img src="assets/bicicletas/marlin-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
               <strong>Marlin</strong><span>Esportiva</span>
             </th>
-            <th scope="col">
+            <th scope="col" role="columnheader">
               <img src="assets/bicicletas/tuna-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
               <strong>Tuna</strong><span>Urbana</span>
             </th>
-            <th scope="col">
+            <th scope="col" role="columnheader">
               <img src="assets/bicicletas/whale-sem-fundo.png" width="1536" height="1024" alt="" loading="lazy">
               <strong>Whale</strong><span>Cross</span>
             </th>
           </tr></thead>
-          <tbody>
-            <tr>
-              <th scope="row">Autonomia <span>Estimada por carga</span></th>
-              <td><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
-              <td><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
-              <td><strong class="comparison-value"><small>Até</small> 60&nbsp;km</strong></td>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">Autonomia <span>Estimada por carga</span></th>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Marlin</span><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Tuna</span><strong class="comparison-value"><small>Até</small> 100&nbsp;km</strong></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Whale</span><strong class="comparison-value"><small>Até</small> 60&nbsp;km</strong></td>
             </tr>
-            <tr>
-              <th scope="row">Recarga <span>Completa, estimada</span></th>
-              <td><strong class="comparison-value">4–5&nbsp;h</strong></td>
-              <td><strong class="comparison-value">4–6&nbsp;h</strong></td>
-              <td><strong class="comparison-value">5–7&nbsp;h</strong></td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Recarga <span>Completa, estimada</span></th>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Marlin</span><strong class="comparison-value">4–5&nbsp;h</strong></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Tuna</span><strong class="comparison-value">4–6&nbsp;h</strong></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Whale</span><strong class="comparison-value">5–7&nbsp;h</strong></td>
             </tr>
-            <tr>
-              <th scope="row">Pneus e aros</th>
-              <td><strong>700 × 40C</strong><span>Aro 700C · perfil liso</span></td>
-              <td><strong>27,5 × 2,15″</strong><span>Aro 27,5″ · uso urbano</span></td>
-              <td><strong>26 × 4,0″</strong><span>Aro 26″ · cravos para pisos irregulares</span></td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Pneus e aros</th>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Marlin</span><strong>700 × 40C</strong><span>Aro 700C · perfil liso</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Tuna</span><strong>27,5 × 2,15″</strong><span>Aro 27,5″ · uso urbano</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Whale</span><strong>26 × 4,0″</strong><span>Aro 26″ · cravos para pisos irregulares</span></td>
             </tr>
-            <tr>
-              <th scope="row">Controle e conforto</th>
-              <td><strong>Guidão curvo</strong><span>Pegadas variadas durante o pedal</span></td>
-              <td><strong>Quadro baixo</strong><span>Facilita subir e descer</span></td>
-              <td><strong>Suspensão dupla</strong><span>Dianteira e traseira</span></td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Controle e conforto</th>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Marlin</span><strong>Guidão curvo</strong><span>Pegadas variadas durante o pedal</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Tuna</span><strong>Quadro baixo</strong><span>Facilita subir e descer</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Whale</span><strong>Suspensão dupla</strong><span>Dianteira e traseira</span></td>
             </tr>
-            <tr>
-              <th scope="row">Acessórios</th>
-              <td><strong>GPS</strong><span>Suporte para garrafa</span></td>
-              <td><strong>Cesta dianteira</strong><span>Para compras e objetos do dia a dia</span></td>
-              <td><strong>Bagageiro traseiro</strong><span>Para levar objetos no dia a dia</span></td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Acessórios</th>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Marlin</span><strong>GPS</strong><span>Suporte para garrafa</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Tuna</span><strong>Cesta dianteira</strong><span>Para compras e objetos do dia a dia</span></td>
+              <td role="cell"><span class="comparison-model-label" aria-hidden="true">Whale</span><strong>Bagageiro traseiro</strong><span>Para levar objetos no dia a dia</span></td>
             </tr>
           </tbody>
         </table>
@@ -252,3 +252,4 @@
     <script src="quiz.js?v=quiz-motion-1"></script>
   </body>
 </html>
+
