@@ -26,3 +26,9 @@ BYD Brasil, seção Dolphin SE, inspecionada em 15/11/2026: banners com altura l
 `marlin-desktop-luz.webp` e `tuna-desktop-luz.webp` são retoques de iluminação gerados com Imagegen a partir das versões de desktop desta pasta. Os prompts pediram preservar enquadramento, posição, tamanho, geometria, acessórios e marca das bicicletas; aumentar a separação tonal do quadro e dos detalhes; moderar realces e distrações do cenário; e usar uma suavização óptica discreta no fundo. A Tuna recebeu atenção maior para evitar que a luz da rua apagasse seu quadro preto. As versões móveis, a foto e o vídeo da Whale foram preservados.
 
 As novas fotos foram exportadas como WebP com qualidade 92. As versões anteriores continuam nesta pasta.
+
+## Whale em percurso urbano irregular
+
+`whale-urbana-desktop.webp` e `whale-urbana-mobile.webp` substituem as cenas de floresta na vitrine da Whale. A cena aprovada mostra uma rua urbana bem cuidada em ladeira, com pedras de alturas variadas, pequenas transições de piso e vegetação discreta. O tratamento mantém a bicicleta nítida e suaviza o fundo, preservando a textura do calçamento próximo dos pneus.
+
+As duas versões foram geradas com Imagegen a partir da prévia aprovada, preservando a identidade, a posição e os detalhes da Whale. O prompt de desktop pediu o mesmo enquadramento panorâmico e desfoque óptico moderado no cenário. O de celular pediu composição vertical 9:16, bicicleta completa na metade inferior e espaço de fachada e vegetação na parte superior para os textos. Ambas foram exportadas em WebP com qualidade 92. As cenas anteriores foram preservadas; o vídeo da Whale não foi alterado.

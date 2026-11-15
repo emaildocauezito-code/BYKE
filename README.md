@@ -60,7 +60,7 @@ A composição usa o site oficial da BYD Brasil (https://www.byd.com/br) como re
 
 ### Cenas dos modelos na landing page
 
-A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes.
+A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma rua urbana em ladeira, com calçamento de pedra irregular. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes.
 
 As vitrines e a abertura preenchem toda a largura e a altura disponível da janela, descontando o cabeçalho. Títulos, descrições e botões ficam sobre a imagem, com um gradiente transparente apenas para contraste. Não há coluna lateral, faixas sólidas ou encaixe com barras.
 
