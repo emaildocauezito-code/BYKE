@@ -15,6 +15,24 @@ bikePlanGrid.innerHTML = models.map(model => `
   <article class="detail-plan">
     <span class="eyebrow">${model.tag}</span>
     <h3>${model.name}</h3>
+    <div class="plan-gallery" role="group" aria-roledescription="carrossel"
+      aria-label="Fotos da ${model.name}" data-gallery-model="${model.id}" data-view="0">
+      <div class="plan-gallery-stage">
+        <img id="plan-image-${model.id}" class="plan-gallery-image"
+          src="${model.gallery[0].src}" width="1536" height="1024" loading="lazy" decoding="async"
+          alt="${model.imageAlt} — ${model.gallery[0].label.toLowerCase()}">
+        <button class="plan-gallery-arrow plan-gallery-arrow--prev" type="button" data-view-step="-1"
+          aria-label="Ângulo anterior da ${model.name}" aria-controls="plan-image-${model.id}">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6"/></svg>
+        </button>
+        <button class="plan-gallery-arrow plan-gallery-arrow--next" type="button" data-view-step="1"
+          aria-label="Próximo ângulo da ${model.name}" aria-controls="plan-image-${model.id}">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <p class="plan-gallery-caption"><span data-view-label>${model.gallery[0].label}</span><span data-view-count aria-hidden="true">1 / ${model.gallery.length}</span></p>
+      <span class="plan-gallery-status" role="status" aria-live="polite" aria-atomic="true"></span>
+    </div>
     <div class="plan-price"><strong></strong><span> / mês</span></div>
     <ul class="detail-list">
       ${model.specs.map(spec => `<li>${spec}</li>`).join('')}
@@ -26,6 +44,38 @@ bikePlanGrid.innerHTML = models.map(model => `
   </article>`).join('');
 
 const planCards = bikePlanGrid.querySelectorAll('.detail-plan');
+
+bikePlanGrid.addEventListener('click', async event => {
+  const button = event.target.closest('button[data-view-step]');
+  if (!button) return;
+
+  const gallery = button.closest('.plan-gallery');
+  if (gallery.getAttribute('aria-busy') === 'true') return;
+
+  const model = models[Number(gallery.dataset.galleryModel)];
+  const nextView = (Number(gallery.dataset.view) + Number(button.dataset.viewStep) +
+    model.gallery.length) % model.gallery.length;
+  const view = model.gallery[nextView];
+  const status = gallery.querySelector('.plan-gallery-status');
+  gallery.setAttribute('aria-busy', 'true');
+
+  try {
+    const nextImage = new Image();
+    nextImage.src = view.src;
+    await nextImage.decode();
+    const image = gallery.querySelector('.plan-gallery-image');
+    image.src = view.src;
+    image.alt = `${model.imageAlt} — ${view.label.toLowerCase()}`;
+    gallery.dataset.view = String(nextView);
+    gallery.querySelector('[data-view-label]').textContent = view.label;
+    gallery.querySelector('[data-view-count]').textContent = `${nextView + 1} / ${model.gallery.length}`;
+    status.textContent = `${model.name}: ${view.label.toLowerCase()}, imagem ${nextView + 1} de ${model.gallery.length}.`;
+  } catch {
+    status.textContent = 'Não foi possível carregar este ângulo. Tente novamente.';
+  } finally {
+    gallery.setAttribute('aria-busy', 'false');
+  }
+});
 
 function updateBikePrices(animate) {
   const selectedTerm = termPicker.querySelector(':checked').value;

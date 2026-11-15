@@ -3,6 +3,10 @@ const models = [
     id: 0, name: 'Marlin', price: 239, tag: 'ESPORTIVA',
     image: 'assets/bicicletas/marlin-sem-fundo.png',
     imageAlt: 'Bicicleta BYKE Marlin Speed com guidão curvo e GPS',
+    gallery: [
+      { src: 'assets/bicicletas/angulos/marlin-frente.webp', label: 'Vista dianteira' },
+      { src: 'assets/bicicletas/angulos/marlin-traseira.webp', label: 'Vista traseira' }
+    ],
     tagline: 'Encontre seu ritmo.',
     desc: 'A agilidade do marlin inspira nossa bike de perfil esportivo. ' +
       'Com guidão curvo e pneus de rolagem lisa, a Marlin foi pensada para quem ' +
@@ -14,6 +18,10 @@ const models = [
     id: 1, name: 'Tuna', price: 199, tag: 'URBANA',
     image: 'assets/bicicletas/tuna-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro',
+    gallery: [
+      { src: 'assets/bicicletas/angulos/tuna-frente.webp', label: 'Vista dianteira' },
+      { src: 'assets/bicicletas/angulos/tuna-traseira.webp', label: 'Vista traseira' }
+    ],
     tagline: 'Energia para acompanhar seu dia.',
     desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
       'combina autonomia de bateria, conforto e praticidade. ' +
@@ -26,6 +34,10 @@ const models = [
     id: 2, name: 'Whale', price: 239, tag: 'CROSS',
     image: 'assets/bicicletas/whale-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla',
+    gallery: [
+      { src: 'assets/bicicletas/angulos/whale-frente.webp', label: 'Vista dianteira' },
+      { src: 'assets/bicicletas/angulos/whale-traseira.webp', label: 'Vista traseira' }
+    ],
     tagline: 'Presença para explorar.',
     desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
       'largos, suspensão dianteira e traseira e visual robusto, ela traz uma ' +

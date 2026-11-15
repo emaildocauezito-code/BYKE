@@ -50,6 +50,14 @@ O MP4 original `assets/bicicletas/byke-hero.mp4` tem 1600 × 900 pixels, 30 fps 
 
 Confira os três modelos e planos, escolha cada modelo e verifique sua mensalidade no simulador. Troque o modelo no seletor e confirme a simulação: deve aparecer um aviso sem efetuar contratação. Verifique também fechamento por botão, sobreposição e Escape, navegação e menu em tela móvel.
 
+## Fotos nos cartões de planos
+
+Cada cartão de Marlin, Tuna e Whale em `planos.html` tem uma galeria independente, com setas para alternar entre duas vistas sem fundo. As vistas ficam em `models[].gallery`, no `catalogo.js`; a navegação e os textos acessíveis são controlados por `planos.js`, e a apresentação por `detalhes.css`. Trocar o prazo ou abrir o simulador não reinicia a vista escolhida. Não há troca automática.
+
+As primeiras vistas são cópias otimizadas dos recortes existentes; os ângulos adicionais foram gerados com Imagegen para o protótipo. Todos os seis arquivos usam WebP com transparência real e ficam em `assets/bicicletas/angulos/`. As imagens originais foram preservadas.
+
+Para conferir: acione as duas setas de cada cartão, verifique que só a foto daquele modelo muda e troque entre os três prazos. As mensalidades e o simulador devem continuar funcionando. Os botões também funcionam por Tab e Enter, e mudanças de ângulo são anunciadas por leitores de tela.
+
 ## Limites atuais
 
 Marlin, Tuna e Whale usam imagens próprias na página inicial, na apresentação dos modelos e no menu de bicicletas. Os caminhos e textos alternativos usados pelo menu ficam em `catalogo.js`. As imagens PNG originais foram preservadas sem recorte ou alteração de cores. A página de bicicletas apresenta as descrições e características fornecidas pelo autor, com autonomia e recarga estimadas; essas especificações ainda precisam ser validadas em relação aos modelos ilustrados. A página de planos reúne as três modalidades, seus preços e o simulador. As condições de contratação permanecem como espaços para preenchimento. Recuperação de energia na frenagem permanece uma proposta conceitual.

@@ -165,6 +165,54 @@ a.breadcrumb:hover {
   margin: 12px 0 14px;
   font-size: 34px;
 }
+.plan-gallery {
+  margin: 0 -20px 24px;
+}
+.plan-gallery-stage {
+  position: relative;
+}
+.plan-gallery-image {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 18vw, 240px);
+  padding: 4px 32px;
+  object-fit: contain;
+  background: transparent;
+}
+.plan-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 40px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+}
+.plan-gallery-arrow--prev { left: 0; }
+.plan-gallery-arrow--next { right: 0; }
+.plan-gallery-arrow:hover { background: var(--pale); }
+.plan-gallery-arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+.plan-gallery[aria-busy="true"] { cursor: progress; }
+.plan-gallery-caption {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
 .detail-plan .plan-price {
   color: var(--forest);
   font-variant-numeric: tabular-nums;
@@ -284,7 +332,8 @@ a.breadcrumb:hover {
     pointer-events: auto;
   }
 }
-.bike-carousel-status {
+.bike-carousel-status,
+.plan-gallery-status {
   position: absolute;
   width: 1px;
   height: 1px;
