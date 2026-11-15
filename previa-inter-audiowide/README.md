@@ -33,12 +33,16 @@ MARLIN, TUNA e WHALE são o padrão nos nomes em destaque, inclusive ao abrir `i
 
 Na foto das três bicicletas, a abertura exibe título e slogan. Enquanto um dos vídeos está visível, `home.css` oculta visualmente o título e remove seu espaçamento, deixando somente “Build Your Keen Energy”. O seletor acompanha o atributo `hidden` que o carrossel já controla; voltar à foto, inclusive após falha de reprodução, restaura o título automaticamente. O carrossel compartilhado e os arquivos das versões anteriores permanecem intactos.
 
+## Quiz com avanço pela resposta
+
+O `quiz.js` local preserva as perguntas, pontuação e resultados do quiz original. As respostas são botões acessíveis pelo teclado: escolher uma resposta confirma a seleção por 220 ms e avança, sem botão Continuar. A última escolha abre o resultado. Voltar mantém a resposta marcada, e clicar nela novamente também avança. Fechar o quiz ou voltar cancela qualquer avanço pendente. A breve confirmação impede que um clique duplo responda a duas perguntas. O quiz compartilhado das versões anteriores permanece intacto.
+
 ## Conferência
 
 1. Abra a versão anterior e a nova lado a lado no mesmo tamanho de tela.
 2. Confira os nomes MARLIN, TUNA e WHALE em destaque, sem precisar de parâmetros na URL.
 3. Confira os textos, menu, FAQ e comparação em Inter.
-4. Faça o quiz e escolha uma bike. As perguntas usam Inter; o nome recomendado ganha Audiowide.
+4. Faça o quiz clicando uma vez por resposta, confira Voltar e escolha uma bike no resultado. As perguntas usam Inter; o nome recomendado ganha Audiowide.
 5. Escolha 3, 6 ou 12 meses e avance pela assinatura com dados de teste ou campos vazios.
 6. Confira no celular se títulos, botões, preços e comparações cabem na largura disponível.
 7. Na abertura, passe pelas três mídias com as setas: a foto mostra título e slogan; cada vídeo mostra apenas o slogan. Ao voltar à foto, o título deve reaparecer.
