@@ -8,7 +8,7 @@
     <meta name="description" content="Conheça Marlin, Tuna e Whale. Aluguel de bicicletas elétricas por assinatura trimestral, semestral ou anual, com pagamento mensal.">
     <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=fullbleed-2">
   </head>
   <body class="home-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -54,9 +54,12 @@
           <p>Escolha uma BYKE para fazer parte da sua rotina.</p>
         </div>
         <div class="home-hero-media" id="hero-media" role="group" aria-label="Foto e vídeos das bicicletas BYKE">
-          <img class="home-hero-image" src="assets/bicicletas/bykes-estudio.png"
-            width="1774" height="887" fetchpriority="high"
-            alt="Marlin, Tuna e Whale: os três modelos de bicicletas elétricas BYKE">
+          <picture class="home-hero-picture">
+            <source media="(max-aspect-ratio: 1/1)" srcset="assets/cenarios/responsivos/grupo-mobile.webp">
+            <img class="home-hero-image" src="assets/cenarios/responsivos/grupo-desktop.webp"
+              width="1817" height="866" fetchpriority="high"
+              alt="Marlin, Tuna e Whale: os três modelos de bicicletas elétricas BYKE">
+          </picture>
           <video class="home-hero-video" src="assets/bicicletas/byke-hero.mp4"
             width="1600" height="900" preload="metadata" muted playsinline
             aria-label="Vídeo da bicicleta speed BYKE" hidden></video>
@@ -79,7 +82,10 @@
             <a class="text-btn" href="planos.html?modelo=marlin#opcoes">Ver planos</a>
           </div>
         </div>
-        <img src="assets/cenarios/marlin-ciclovia.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Marlin estacionada ao lado de uma ciclovia em uma cidade tecnológica inspirada em Shenzhen">
+        <picture class="product-stage-media">
+          <source media="(max-aspect-ratio: 1/1)" srcset="assets/cenarios/responsivos/marlin-mobile.webp">
+          <img src="assets/cenarios/responsivos/marlin-desktop.webp" width="1914" height="822" loading="lazy" alt="Bicicleta BYKE Marlin estacionada ao lado de uma ciclovia em uma cidade tecnológica inspirada em Shenzhen">
+        </picture>
       </section>
       <section class="product-stage" id="tuna" aria-labelledby="tuna-title">
         <div class="product-stage-copy">
@@ -91,7 +97,10 @@
             <a class="text-btn" href="planos.html?modelo=tuna#opcoes">Ver planos</a>
           </div>
         </div>
-        <img src="assets/cenarios/tuna-comercio.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Tuna estacionada junto a lojas de uma área comercial inspirada em Milão">
+        <picture class="product-stage-media">
+          <source media="(max-aspect-ratio: 1/1)" srcset="assets/cenarios/responsivos/tuna-mobile.webp">
+          <img src="assets/cenarios/responsivos/tuna-desktop.webp" width="1914" height="822" loading="lazy" alt="Bicicleta BYKE Tuna estacionada junto a lojas de uma área comercial inspirada em Milão">
+        </picture>
       </section>
       <section class="product-stage motion-showcase" id="whale" aria-labelledby="whale-title">
         <div class="product-stage-copy">
@@ -103,7 +112,10 @@
             <a class="text-btn" href="planos.html?modelo=whale#opcoes">Ver planos</a>
           </div>
         </div>
-        <img src="assets/cenarios/wale-trilha.png" width="1536" height="1024" loading="lazy" alt="Bicicleta BYKE Whale estacionada em uma trilha de terra com pedras e terreno irregular">
+        <picture class="product-stage-media">
+          <source media="(max-aspect-ratio: 1/1)" srcset="assets/cenarios/responsivos/whale-mobile.webp">
+          <img src="assets/cenarios/responsivos/whale-desktop.webp" width="1915" height="821" loading="lazy" alt="Bicicleta BYKE Whale estacionada em uma trilha de terra com pedras e terreno irregular">
+        </picture>
         <video class="motion-video" playsinline muted preload="none" aria-hidden="true"></video>
         <button class="motion-toggle" type="button" hidden>Reproduzir vídeos</button>
       </section>

@@ -1,12 +1,14 @@
 .home-page { --home-header-height: 80px; background: #fff; }
-.home-hero { position: relative; display: flex; flex-direction: column; height: calc(100svh - var(--home-header-height)); background: #f4f4f2; }
-.home-hero-copy { padding: 46px 24px 32px; text-align: center; }
-.home-hero-copy .eyebrow { margin: 0 0 16px; }
+.home-hero { position: relative; height: calc(100svh - var(--home-header-height)); overflow: hidden; isolation: isolate; background: #f4f4f2; }
+.home-hero::after { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, #07121b91, transparent 48%); pointer-events: none; }
+.home-hero-copy { position: absolute; z-index: 2; top: clamp(28px, 5svh, 60px); left: 5%; right: 5%; text-align: center; color: #fff; }
+.home-hero-copy .eyebrow { margin: 0 0 16px; color: #fff; }
 .home-hero h1 { margin: 0; font-size: clamp(34px, 4.3vw, 66px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
-.home-hero-copy > p:last-child { margin: 16px auto 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
-.home-hero-image { display: block; width: 100%; height: 100%; object-fit: contain; }
-.home-hero-media { position: relative; flex: 1; min-height: 0; overflow: hidden; }
-.home-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #f4f4f2; }
+.home-hero-copy > p:last-child { margin: 16px auto 0; color: #fff; font-size: 16px; line-height: 1.6; }
+.home-hero-picture { display: block; width: 100%; height: 100%; }
+.home-hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; }
+.home-hero-media { position: absolute; inset: 0; overflow: hidden; }
+.home-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .home-hero-arrow {
   position: absolute;
   top: 50%;
@@ -35,27 +37,24 @@
 .home-hero-arrow--next::before { transform: translateX(-2px) rotate(45deg); }
 .collection-nav { display: flex; align-items: center; justify-content: center; gap: 48px; padding: 24px; font-size: 14px; border-bottom: 1px solid var(--line); }
 .collection-nav a:hover { text-decoration: underline; text-underline-offset: 7px; }
-/* A cena inteira cabe na área visível; o texto não cobre a bicicleta. */
+/* Fotos de ponta a ponta, com enquadramentos horizontal e vertical. */
 .product-stage {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(300px, 30%) minmax(0, 1fr);
-  align-items: center;
   height: calc(100svh - var(--home-header-height));
-  background: #121a16;
+  overflow: hidden;
+  isolation: isolate;
   color: #fff;
 }
-.product-stage > img {
-  grid-column: 2;
-  grid-row: 1;
+.product-stage-media { position: absolute; z-index: -2; inset: 0; display: block; }
+.product-stage-media img {
   display: block;
   width: 100%;
   height: 100%;
-  min-width: 0;
-  min-height: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 75% 65%;
 }
-.product-stage-copy { grid-column: 1; grid-row: 1; min-width: 0; padding: clamp(28px, 4vw, 72px); }
+.product-stage::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #08120e9e, #08120e42 32%, transparent 62%); pointer-events: none; }
+.product-stage-copy { position: absolute; top: clamp(28px, 8svh, 96px); left: 5%; width: min(34%, 420px); }
 .product-stage .eyebrow { color: #eee; }
 .product-stage h2 { margin: 20px 0 18px; font-size: clamp(48px, 6vw, 86px); font-weight: 400; letter-spacing: -.045em; line-height: 1; }
 .product-stage-copy > p:not(.eyebrow) { max-width: 310px; color: #fff; line-height: 1.7; font-size: 16px; }
@@ -63,7 +62,7 @@
 .product-stage .text-btn { color: #fff; font-weight: 400; }
 .product-stage .btn { border-color: #fff; background: transparent; color: #fff; }
 .product-stage .btn:hover { background: #fff; color: #191919; }
-.motion-video { grid-column: 2; grid-row: 1; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; background: #121a16; opacity: 0; pointer-events: none; }
+.motion-video { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; }
 .motion-video.is-visible { opacity: 1; }
 .motion-toggle { position: absolute; right: 5%; bottom: 24px; z-index: 3; padding: 10px 16px; background: #111; color: white; border: 1px solid #888; }
 .rental-section { padding: 100px 5%; }
@@ -79,28 +78,31 @@
 .brand-section > div { max-width: 640px; }
 .brand-section h2 { font-size: 32px; margin-bottom: 18px; }
 .brand-section p:not(.eyebrow) { color: var(--muted); line-height: 1.8; }
-@media (max-width: 1100px), (max-height: 600px) {
-  .home-hero { height: auto; }
-  .home-hero-media { flex: none; }
-  .home-hero-image { height: auto; }
-  .product-stage { height: auto; grid-template-columns: minmax(0, 1fr); }
-  .product-stage-copy { grid-column: 1; grid-row: 1; padding: 36px 5%; }
-  .product-stage-copy > p:not(.eyebrow) { max-width: 520px; }
-  .product-stage h2 { font-size: 56px; }
-  .product-stage > img { grid-column: 1; grid-row: 2; height: auto; }
-  .motion-video { grid-column: 1; grid-row: 2; }
+@media (max-aspect-ratio: 1/1) {
+  .product-stage-media img, .home-hero-image { object-position: center 80%; }
+  .product-stage::before { background: linear-gradient(180deg, #08120eb3, #08120e38 40%, transparent 62%); }
+  .product-stage-copy { top: 32px; width: 90%; }
+  .product-stage h2 { margin: 12px 0 10px; font-size: clamp(40px, 10vw, 56px); }
+  .product-stage-copy > p:not(.eyebrow) { max-width: 340px; }
+  .product-stage .actions { margin-top: 18px; }
 }
 @media (max-width: 760px) {
   .home-page { --home-header-height: 72px; }
-  .home-hero-copy { padding: 38px 20px 26px; }
+  .home-hero-copy { top: 32px; }
+  .home-hero h1 { font-size: clamp(30px, 8vw, 46px); }
   .home-hero-copy > p:last-child { max-width: 300px; font-size: 14px; }
-  .home-hero-image { max-height: none; object-fit: contain; }
   .collection-nav { gap: 34px; padding: 22px; }
   .product-stage-copy > p:not(.eyebrow) { max-width: 300px; font-size: 14px; }
-  .product-stage .actions { margin-top: 24px; }
   .rental-section { padding: 60px 5%; }
   .rental-intro { grid-template-columns: 1fr; gap: 8px; }
   .rental-intro > p { margin-top: 0; font-size: 16px; }
   .rental-steps { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; padding-top: 32px; }
   .brand-section { padding: 48px 5%; }
+}
+@media (max-height: 500px) and (min-aspect-ratio: 1/1) {
+  .product-stage-copy { top: 20px; width: min(42%, 420px); }
+  .product-stage h2 { margin: 10px 0; font-size: 40px; }
+  .product-stage-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.5; }
+  .product-stage .actions { margin-top: 12px; gap: 18px; }
+  .home-hero h1 { font-size: 38px; }
 }
