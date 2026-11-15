@@ -20,3 +20,9 @@ Preservar identidade, cores, marca, geometria e acessórios das bicicletas de re
 ## Referência conferida
 
 BYD Brasil, seção Dolphin SE, inspecionada em 15/11/2026: banners com altura ligada à janela, títulos e botões sobrepostos e elemento `picture` com foto horizontal de 2880 × 1660 e alternativa móvel de 1080 × 2160. A BYKE seleciona seus enquadramentos de acordo com a orientação da janela e ajusta o recorte com `object-position`.
+
+## Realce de produto no desktop
+
+`marlin-desktop-luz.webp` e `tuna-desktop-luz.webp` são retoques de iluminação gerados com Imagegen a partir das versões de desktop desta pasta. Os prompts pediram preservar enquadramento, posição, tamanho, geometria, acessórios e marca das bicicletas; aumentar a separação tonal do quadro e dos detalhes; moderar realces e distrações do cenário; e usar uma suavização óptica discreta no fundo. A Tuna recebeu atenção maior para evitar que a luz da rua apagasse seu quadro preto. As versões móveis, a foto e o vídeo da Whale foram preservados.
+
+As novas fotos foram exportadas como WebP com qualidade 92. As versões anteriores continuam nesta pasta.

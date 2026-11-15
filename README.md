@@ -42,6 +42,10 @@ O projeto partiu do ZIP BYKE_MVP fornecido pelo autor. As páginas de detalhes u
 
 Coloque os MP4 finais em uma pasta `videos` e liste seus caminhos em `motionClips`, no arquivo `script.js`, na ordem de reprodução. A vitrine usa a ilustração da BYKE enquanto a lista está vazia. Com vídeos, a sequência se repete sem som, pausa ao sair da área visível e respeita a preferência por movimento reduzido. Use clipes sem falas essenciais e mantenha a bike na área central para acomodar o recorte em telas de celular.
 
+### Versão mais nítida do vídeo da Marlin
+
+O MP4 original `assets/bicicletas/byke-hero.mp4` tem 1600 × 900 pixels, 30 fps e 13 segundos e foi preservado. Para telas acima de 1100 pixels, a abertura oferece `byke-hero-1080p.webm`, em VP9, com ampliação Lanczos para 1920 × 1080, nitidez moderada e leve ajuste de contraste e saturação. É uma melhoria de apresentação a partir da mesma fonte; não equivale a uma nova captura nativa em Full HD. O MP4 original permanece como alternativa para navegadores sem WebM e para telas menores. A sequência e a duração do vídeo foram mantidas. O vídeo da Whale não foi alterado.
+
 ## Verificação manual
 
 Confira os três modelos e planos, escolha cada modelo e verifique sua mensalidade no simulador. Troque o modelo no seletor e confirme a simulação: deve aparecer um aviso sem efetuar contratação. Verifique também fechamento por botão, sobreposição e Escape, navegação e menu em tela móvel.
