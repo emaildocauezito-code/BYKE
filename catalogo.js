@@ -1,11 +1,11 @@
 const models = [
   {
-    id: 0, name: 'Marlim', price: 239, tag: 'ESPORTIVA',
-    image: 'assets/bicicletas/marlim-sem-fundo.png',
-    imageAlt: 'Bicicleta BYKE Marlim Speed com guidão curvo e GPS',
+    id: 0, name: 'Marlin', price: 239, tag: 'ESPORTIVA',
+    image: 'assets/bicicletas/marlin-sem-fundo.png',
+    imageAlt: 'Bicicleta BYKE Marlin Speed com guidão curvo e GPS',
     tagline: 'Encontre seu ritmo.',
-    desc: 'A agilidade do marlim inspira nossa bike de perfil esportivo. ' +
-      'Com guidão curvo e pneus de rolagem lisa, a Marlim foi pensada para quem ' +
+    desc: 'A agilidade do marlin inspira nossa bike de perfil esportivo. ' +
+      'Com guidão curvo e pneus de rolagem lisa, a Marlin foi pensada para quem ' +
       'gosta de ganhar ritmo no asfalto.',
     specs: ['Autonomia estimada de até 100 km', 'Recarga estimada de 4 a 5 horas',
       'Guidão curvo esportivo']
