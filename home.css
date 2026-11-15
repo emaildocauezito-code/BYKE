@@ -1,12 +1,11 @@
 .home-page { --home-header-height: 80px; background: #fff; }
 .home-hero { position: relative; height: calc(100svh - var(--home-header-height)); overflow: hidden; isolation: isolate; background: #f4f4f2; }
 .home-hero::after { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, #07121b91, transparent 48%); pointer-events: none; }
-.home-hero-copy { position: absolute; z-index: 2; top: clamp(28px, 5svh, 60px); left: 5%; right: 5%; text-align: center; color: #fff; }
-.home-hero-copy .eyebrow { margin: 0 0 16px; color: #fff; }
-.home-hero h1 { margin: 0; font-size: clamp(34px, 4.3vw, 66px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
-.home-hero-copy > p:last-child { margin: 16px auto 0; color: #fff; font-size: 16px; line-height: 1.6; }
+.home-hero-copy { position: absolute; z-index: 2; top: clamp(20px, 3svh, 36px); left: 5%; right: 5%; text-align: center; color: #fff; }
+.home-hero h1 { margin: 0; font-size: clamp(30px, 3.4vw, 52px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
+.home-hero-copy > p:last-child { margin: 10px auto 0; color: #fff; font-size: 15px; line-height: 1.45; }
 .home-hero-picture { display: block; width: 100%; height: 100%; }
-.home-hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; }
+.home-hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; transform: scale(1.08); transform-origin: center 65%; }
 .home-hero-media { position: absolute; inset: 0; overflow: hidden; }
 .home-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .home-hero-arrow {
@@ -52,7 +51,12 @@
   height: 100%;
   object-fit: cover;
   object-position: 75% 65%;
+  transform: scale(var(--scene-zoom, 1));
+  transform-origin: 65% 65%;
 }
+#marlin { --scene-zoom: 1.22; }
+#tuna { --scene-zoom: 1.18; }
+#whale { --scene-zoom: 1.1; }
 .product-stage::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #08120e9e, #08120e42 32%, transparent 62%); pointer-events: none; }
 .product-stage-copy { position: absolute; top: clamp(28px, 8svh, 96px); left: 5%; width: min(34%, 420px); }
 .product-stage .eyebrow { color: #eee; }
@@ -78,8 +82,14 @@
 .brand-section > div { max-width: 640px; }
 .brand-section h2 { font-size: 32px; margin-bottom: 18px; }
 .brand-section p:not(.eyebrow) { color: var(--muted); line-height: 1.8; }
+@media (max-width: 1100px) {
+  #marlin { --scene-zoom: 1.12; }
+  #tuna { --scene-zoom: 1.08; }
+  #whale { --scene-zoom: 1.05; }
+}
 @media (max-aspect-ratio: 1/1) {
   .product-stage-media img, .home-hero-image { object-position: center 80%; }
+  .product-stage-media img, .home-hero-image { transform: none; }
   .product-stage::before { background: linear-gradient(180deg, #08120eb3, #08120e38 40%, transparent 62%); }
   .product-stage-copy { top: 32px; width: 90%; }
   .product-stage h2 { margin: 12px 0 10px; font-size: clamp(40px, 10vw, 56px); }
@@ -88,9 +98,9 @@
 }
 @media (max-width: 760px) {
   .home-page { --home-header-height: 72px; }
-  .home-hero-copy { top: 32px; }
-  .home-hero h1 { font-size: clamp(30px, 8vw, 46px); }
-  .home-hero-copy > p:last-child { max-width: 300px; font-size: 14px; }
+  .home-hero-copy { top: 24px; }
+  .home-hero h1 { font-size: clamp(28px, 7vw, 38px); }
+  .home-hero-copy > p:last-child { max-width: 300px; font-size: 13px; }
   .collection-nav { gap: 34px; padding: 22px; }
   .product-stage-copy > p:not(.eyebrow) { max-width: 300px; font-size: 14px; }
   .rental-section { padding: 60px 5%; }
@@ -99,10 +109,13 @@
   .rental-steps { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; padding-top: 32px; }
   .brand-section { padding: 48px 5%; }
 }
+@media (max-height: 600px) {
+  .product-stage-media img, .home-hero-image { transform: none; }
+}
 @media (max-height: 500px) and (min-aspect-ratio: 1/1) {
   .product-stage-copy { top: 20px; width: min(42%, 420px); }
   .product-stage h2 { margin: 10px 0; font-size: 40px; }
   .product-stage-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.5; }
   .product-stage .actions { margin-top: 12px; gap: 18px; }
-  .home-hero h1 { font-size: 38px; }
+  .home-hero h1 { font-size: 32px; }
 }
