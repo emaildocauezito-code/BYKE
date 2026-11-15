@@ -1,0 +1,30 @@
+@font-face { font-family: 'Audiowide'; font-style: normal; font-weight: 400; font-display: swap; src: url('assets/fonts/audiowide-latin.woff2') format('woff2'); }
+.home-hero-copy > .brand-tagline:last-child { font-family: 'Audiowide', sans-serif; font-weight: 400; font-size: clamp(13px,1.4vw,18px); line-height: 1.6; letter-spacing: .035em; max-width: 90%; margin-top: 14px; }
+.nav .nav-quiz { display: inline-flex; align-items: center; min-height: 44px; }
+.faq-overview { width: min(1280px,90%); margin-inline: auto; padding-block: 64px; }
+.faq-overview > .eyebrow { margin: 0 0 14px; }
+.faq-overview h2 { font-size: clamp(28px,3vw,40px); font-weight: 500; margin: 0 0 28px; line-height: 1.2; }
+.faq-overview details { border-bottom: 1px solid var(--line); padding-block: 20px; }
+.faq-overview summary { cursor: pointer; font-size: 17px; line-height: 1.6; min-height: 30px; }
+.faq-overview summary:focus-visible, .shop-faq summary:focus-visible { outline: 3px solid #426e32; outline-offset: 4px; }
+.faq-overview details p { max-width: 800px; font-size: 14px; line-height: 1.8; color: var(--muted); }
+.byke-comparison-mobile { display: none; }
+@media (min-width:761px) and (max-width:1050px) { .header .nav { gap: 20px; } }
+@media (max-width:760px) {
+ .byke-comparison-scroll { display: none; }
+ .byke-comparison-mobile { display: grid; gap: 16px; }
+ .comparison-feature { border: 1px solid var(--line); background: #fff; }
+ .comparison-feature h3 { font: 500 15px/1.5 'Inter', sans-serif; letter-spacing: 0; margin: 0; padding: 16px; background: #f4f6f0; border-bottom: 1px solid var(--line); }
+ .comparison-feature dl { padding: 0; margin: 0; }
+ .comparison-feature dl > div { display: grid; grid-template-columns: 80px minmax(0,1fr); gap: 16px; padding: 15px 16px; border-bottom: 1px solid #e8ebe3; }
+ .comparison-feature dl > div:last-child { border-bottom: 0; }
+ .comparison-feature dt { font-size: 13px; font-weight: 500; line-height: 1.7; }
+ .comparison-feature dd { margin: 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
+ .comparison-feature .comparison-selected { background: #edf4e6; box-shadow: inset 3px 0 #7d9a69; }
+ .comparison-mobile-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+ .comparison-mobile-links a { display: flex; align-items: center; justify-content: center; min-height: 46px; gap: 6px; padding: 8px 5px; border: 1px solid var(--line); font-size: 12px; color: #35572b; }
+ .comparison-mobile-links svg { width: 14px; height: 14px; flex-shrink: 0; }
+ .faq-overview { padding-block: 44px; }
+ .faq-overview summary { font-size: 16px; }
+ .home-hero-copy > .brand-tagline:last-child { font-size: clamp(12px,3.4vw,15px); max-width: 100%; margin-top: 12px; }
+}
