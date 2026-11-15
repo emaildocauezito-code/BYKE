@@ -2,7 +2,7 @@
 
 Geradas com a ferramenta integrada Imagegen a partir das imagens originais em `assets/bicicletas/`. Os arquivos PNG originais dos produtos foram preservados. As paisagens são cenas ilustrativas, não fotografias documentais dos locais citados.
 
-## marlim
+## marlin
 
 Use case: compositing. Asset type: photorealistic premium bicycle rental website landscape photo, wide 3:2. Input image 1 is the edit target: preserve this exact BYKE bicycle identity, silhouette, components, black/graphite color and lime BYKE graphics. Replace the black studio background with the requested real environment and integrate natural lighting and contact shadows. Entire bicycle fully visible, parked on its kickstand, three-quarter side view, occupying about 65% of frame width centered, generous environment around it. No rider, no extra bikes, no titles, no added text, no watermark. Grounded editorial commercial photography, realistic details, restrained color grading, not futuristic fantasy or illustration. Scene: A separated bicycle lane in a highly technological city inspired by Shenzhen, elegant glass skyscrapers, contemporary urban infrastructure, planted trees, early morning daylight. Bicycle safely parked at the edge of the cycle path, not blocking it. Preserve drop handlebars, GPS, rear rack, thin tires, bottle.
 

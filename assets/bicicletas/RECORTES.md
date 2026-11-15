@@ -1,8 +1,8 @@
 # Recortes transparentes
 
 Ferramenta: Imagegen integrada, com `transparent_background: true`.
-Entradas: `marlim-speed.png`, `tuna-urbana.png`, `wale-cross.png`.
-Saídas: `marlim-sem-fundo.png`, `tuna-sem-fundo.png`, `whale-sem-fundo.png`.
+Entradas: `marlin-speed.png`, `tuna-urbana.png`, `wale-cross.png`.
+Saídas: `marlin-sem-fundo.png`, `tuna-sem-fundo.png`, `whale-sem-fundo.png`.
 
 ## Prompt aplicado às três imagens
 

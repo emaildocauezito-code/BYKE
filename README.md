@@ -32,7 +32,7 @@ Abra o servidor local no seu navegador. Para encerrar, use Ctrl+C.
 - `planos.js`: seletor de duração, preços e simulação.
 - `navegacao.js`: menu móvel compartilhado pelas três páginas.
 - `script.js`: redirecionamento de links antigos e reprodução dos vídeos na página inicial.
-- `assets/bicicletas/`: imagens dos modelos fornecidas pelo autor: tipo 1, Marlim Speed; tipo 2, Tuna urbana com cesto; tipo 3, Whale Cross.
+- `assets/bicicletas/`: imagens dos modelos fornecidas pelo autor: tipo 1, Marlin Speed; tipo 2, Tuna urbana com cesto; tipo 3, Whale Cross.
 - `assets/BYKE-logo.png`: logo oficial fornecida pelo autor, usada nos cabeçalhos, rodapés e ícones das abas das três páginas.
 - `bike.svg`: ilustração conceitual original, preservada como recurso de referência.
 
@@ -56,10 +56,10 @@ A composição usa o site oficial da BYD Brasil (https://www.byd.com/br) como re
 
 ### Cenas dos modelos na landing page
 
-A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlim em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes. O texto da Tuna fica à esquerda no desktop; as três paisagens ocupam toda a largura e os textos ficam sobre as imagens, com contraste em gradiente. No celular, o texto ocupa a parte superior da paisagem.
+A landing page usa três cenas geradas com Imagegen a partir dos modelos originais: Marlin em uma ciclovia de cidade tecnológica inspirada em Shenzhen, Tuna junto a lojas em uma área comercial inspirada em Milão e Whale em uma trilha rochosa. Arquivos em `assets/cenarios/`, com prompts completos em `assets/cenarios/PROMPTS.md`. As imagens originais de estúdio foram preservadas; a página de bicicletas e o menu usam os recortes transparentes. O texto da Tuna fica à esquerda no desktop; as três paisagens ocupam toda a largura e os textos ficam sobre as imagens, com contraste em gradiente. No celular, o texto ocupa a parte superior da paisagem.
 
 O nome público do modelo Cross foi corrigido para Whale. Arquivos originais com prefixo `wale-` foram preservados; links antigos do simulador com `modelo=wale` continuam aceitos.
 
 ### Imagens transparentes na página de bicicletas
 
-A página `bicicletas.html` usa `assets/bicicletas/marlim-sem-fundo.png`, `tuna-sem-fundo.png` e `whale-sem-fundo.png`, recortados com Imagegen a partir das imagens de estúdio, com canal alfa real. O fundo do contêiner também é transparente. O menu compartilhado usa esses mesmos recortes, com fundo transparente nos três cartões. As imagens originais e as cenas da landing page foram preservadas. Prompt em `assets/bicicletas/RECORTES.md`.
+A página `bicicletas.html` usa `assets/bicicletas/marlin-sem-fundo.png`, `tuna-sem-fundo.png` e `whale-sem-fundo.png`, recortados com Imagegen a partir das imagens de estúdio, com canal alfa real. O fundo do contêiner também é transparente. O menu compartilhado usa esses mesmos recortes, com fundo transparente nos três cartões. As imagens originais e as cenas da landing page foram preservadas. Prompt em `assets/bicicletas/RECORTES.md`.
