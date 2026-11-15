@@ -1,13 +1,13 @@
-// A comparação de caixa fica na URL e não interfere em outras abas ou versões.
+// Os nomes em destaque usam maiúsculas como padrão nesta versão.
 (() => {
-  const uppercase = new URLSearchParams(location.search).get('nomes') === 'maiusculos';
+  const uppercase = true;
   const directory = new URL('.', location.href).pathname;
   if (uppercase) document.documentElement.dataset.modelNames = 'uppercase';
   function withVariant(href) {
     const url = new URL(href, location.href);
     if (url.origin !== location.origin || !url.pathname.startsWith(directory)) return href;
     if (!url.pathname.endsWith('.html')) return href;
-    url.searchParams.set('v', 'titulo-2');
+    url.searchParams.set('v', 'hero-3');
     if (uppercase) url.searchParams.set('nomes', 'maiusculos');
     return `${url.pathname.slice(directory.length)}${url.search}${url.hash}`;
   }

@@ -25,20 +25,22 @@ As fontes são servidas por esta pasta, em `assets/fonts/`, com suas licenças S
 
 `inicio.js` adapta o menu para manter todos os links da versão nova dentro de `/previa-inter-audiowide/`. Modelos, galeria, comparação móvel, cinco perguntas do FAQ, quiz, preços, preenchimento livre, comprovante, Instagram e créditos foram preservados.
 
-## Opção de nomes em maiúsculas
+## Nomes em maiúsculas e abertura
 
-- Normal: `index.html`.
-- Comparação: `index.html?nomes=maiusculos#marlin`.
+MARLIN, TUNA e WHALE são o padrão nos nomes em destaque, inclusive ao abrir `index.html` sem parâmetros. Os links antigos com `nomes=maiusculos` continuam funcionando.
 
-`variantes.js` ativa MARLIN, TUNA e WHALE nos nomes em destaque quando a URL contém `nomes=maiusculos`. A opção acompanha os links, o quiz, a escolha de duração e a assinatura, sem alterar os dados dos modelos ou armazenar preferências. Uma aba normal continua independente da opção em maiúsculas. Os textos corridos e botões mantêm sua capitalização original.
+`variantes.js` ativa as maiúsculas antes da primeira pintura e mantém os links atualizados, sem alterar os dados dos modelos ou armazenar preferências. Os textos corridos e botões mantêm sua capitalização original.
+
+Na foto das três bicicletas, a abertura exibe título e slogan. Enquanto um dos vídeos está visível, `home.css` oculta visualmente o título e remove seu espaçamento, deixando somente “Build Your Keen Energy”. O seletor acompanha o atributo `hidden` que o carrossel já controla; voltar à foto, inclusive após falha de reprodução, restaura o título automaticamente. O carrossel compartilhado e os arquivos das versões anteriores permanecem intactos.
 
 ## Conferência
 
 1. Abra a versão anterior e a nova lado a lado no mesmo tamanho de tela.
-2. Compare a abertura e os nomes Marlin, Tuna e Whale.
+2. Confira os nomes MARLIN, TUNA e WHALE em destaque, sem precisar de parâmetros na URL.
 3. Confira os textos, menu, FAQ e comparação em Inter.
 4. Faça o quiz e escolha uma bike. As perguntas usam Inter; o nome recomendado ganha Audiowide.
 5. Escolha 3, 6 ou 12 meses e avance pela assinatura com dados de teste ou campos vazios.
 6. Confira no celular se títulos, botões, preços e comparações cabem na largura disponível.
+7. Na abertura, passe pelas três mídias com as setas: a foto mostra título e slogan; cada vídeo mostra apenas o slogan. Ao voltar à foto, o título deve reaparecer.
 
 Esta variante continua sendo uma demonstração de navegação: não efetua cobrança, contratação ou entrega real e não envia nem persiste os dados do formulário.

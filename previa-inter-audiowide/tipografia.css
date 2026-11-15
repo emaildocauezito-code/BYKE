@@ -50,6 +50,6 @@ h1, h2, h3 { font-family: var(--font-reading); }
   .shop-section-heading h2 { font-size: 25px; }
 }
 
-/* Opção de comparação: somente os nomes em destaque passam a maiúsculas. */
+/* Nomes em destaque em maiúsculas; textos corridos mantêm a capitalização original. */
 html[data-model-names="uppercase"] :is(.product-stage h2, .shop-product h1, .shop-related-info h3, .nav-product h3, .shop-model-nav a, .byke-comparison-table thead strong, .comparison-feature dt, .comparison-mobile-links a, .quiz-result-intro h2 span, .quiz-ranking li strong, .checkout-selected-bike h3, .checkout-summary h2) { text-transform: uppercase; }
 html[data-model-names="uppercase"] .shop-model-nav a span { text-transform: none; }

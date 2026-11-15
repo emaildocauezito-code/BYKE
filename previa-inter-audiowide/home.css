@@ -4,6 +4,9 @@
 .home-hero-copy { position: absolute; z-index: 2; top: clamp(20px, 3svh, 36px); left: 5%; right: 5%; text-align: center; color: #fff; }
 .home-hero h1 { margin: 0; font-size: clamp(30px, 3.4vw, 52px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
 .home-hero-copy > p:last-child { margin: 10px auto 0; color: #fff; font-size: 15px; line-height: 1.45; }
+/* Acompanha a mídia realmente visível; a foto mantém o título, inclusive em falhas de reprodução. */
+.home-hero:has(.home-hero-video:not([hidden])) h1 { display: none; }
+.home-hero:has(.home-hero-video:not([hidden])) .home-hero-copy > .brand-tagline:last-child { margin-top: 0; }
 .home-hero-picture { display: block; width: 100%; height: 100%; }
 .home-hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; transform: scale(1.08); transform-origin: center 65%; }
 .home-hero-media { position: absolute; inset: 0; overflow: hidden; }
