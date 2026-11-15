@@ -4,9 +4,9 @@ Protótipo acadêmico de assinatura trimestral, semestral ou anual de bicicletas
 
 | Modelo | Trimestral (por mês) | Semestral (por mês) | Anual (por mês) |
 |---|---:|---:|---:|
-| Marlin · Esportiva | R$ 329 | R$ 269 | R$ 239 |
-| Tuna · Urbana | R$ 279 | R$ 219 | R$ 199 |
-| Whale · Cross | R$ 329 | R$ 269 | R$ 239 |
+| **Tuna** | R$ 249 | R$ 239 | R$ 219 |
+| **Whale** | R$ 379 | R$ 349 | R$ 319 |
+| **Marlin** | R$ 399 | R$ 369 | R$ 339 |
 
 ## Executar localmente
 
