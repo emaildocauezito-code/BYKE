@@ -7,7 +7,7 @@
     <title>Planos — BYKE</title>
     <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="detalhes.css?v=galeria-planos-2">
+    <link rel="stylesheet" href="detalhes.css?v=escolher-modelo-1">
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -129,18 +129,18 @@
         <div class="eyebrow">
           SIMULADOR DE ASSINATURA
         </div>
-        <h2 id="modal-title">Monte sua BYKE</h2>
+        <h2 id="modal-title">Escolha seu plano</h2>
         <p class="modal-sub">
-          Escolha um modelo para visualizar uma simulação de
-          assinatura trimestral, semestral ou anual.
+          Escolha a duração da assinatura e confira a mensalidade
+          da bicicleta selecionada.
         </p>
         <label for="model-select">Bicicleta</label>
         <select id="model-select"></select>
         <label for="term-select" class="term-label">Duração do plano</label>
         <select id="term-select">
-          <option value="quarterly">Trimestral — 3 meses</option>
-          <option value="semiannual">Semestral — 6 meses</option>
-          <option value="annual" selected>Anual — 12 meses, com desconto</option>
+          <option value="quarterly">3 meses — Trimestral</option>
+          <option value="semiannual">6 meses — Semestral</option>
+          <option value="annual" selected>12 meses — Anual</option>
         </select>
         <div class="summary">
           <div>
@@ -156,7 +156,7 @@
             <strong id="summary-term">12 meses</strong>
           </div>
         </div>
-        <button class="btn btn-green full" id="confirm">Simular escolha ↗</button>
+        <button class="btn btn-green full" id="confirm">Concluir simulação</button>
         <p class="modal-note">
           Demonstração acadêmica, sem cobrança ou reserva.
         </p>
@@ -164,7 +164,7 @@
     </div>
     <div class="toast" id="toast" role="status"></div>
     <script src="navegacao.js"></script>
-    <script src="catalogo.js?v=galeria-planos-2"></script>
+    <script src="catalogo.js?v=escolher-modelo-1"></script>
     <script src="menu-bicicletas.js"></script>
     <script src="planos.js?v=galeria-planos-2"></script>
   </body>

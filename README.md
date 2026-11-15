@@ -50,6 +50,10 @@ O MP4 original `assets/bicicletas/byke-hero.mp4` tem 1600 × 900 pixels, 30 fps 
 
 Confira os três modelos e planos, escolha cada modelo e verifique sua mensalidade no simulador. Troque o modelo no seletor e confirme a simulação: deve aparecer um aviso sem efetuar contratação. Verifique também fechamento por botão, sobreposição e Escape, navegação e menu em tela móvel.
 
+### Escolha do modelo na página de bicicletas
+
+Cada seção de `bicicletas.html` apresenta o nome do modelo, uma descrição objetiva, o botão “Escolher Marlin”, “Escolher Tuna” ou “Escolher Whale” e as especificações. O botão leva a `planos.html?modelo=marlin#opcoes` (ou `tuna`/`whale`), abrindo o simulador com a bicicleta selecionada. Nele, é possível escolher 3, 6 ou 12 meses e conferir a mensalidade antes de concluir a simulação. Esse fluxo reutiliza a seleção por URL de `planos.js` e não realiza contratação.
+
 ## Fotos nos cartões de planos
 
 Cada cartão de Marlin, Tuna e Whale em `planos.html` tem uma galeria independente, com setas para alternar entre três vistas sem fundo: diagonal, lateral e frontal. As vistas ficam em `models[].gallery`, no `catalogo.js`; a navegação e os textos acessíveis são controlados por `planos.js`, e a apresentação por `detalhes.css`. Trocar o prazo ou abrir o simulador não reinicia a vista escolhida. Não há troca automática.

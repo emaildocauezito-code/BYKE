@@ -7,7 +7,7 @@
     <title>Bicicletas — BYKE</title>
     <link rel="icon" type="image/png" href="assets/BYKE-logo-sem-fundo.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="detalhes.css?v=escolher-modelo-1">
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -39,8 +39,8 @@
             <p class="eyebrow">BICICLETAS ELÉTRICAS</p>
             <h1>Marlin. Tuna. Whale.</h1>
             <p class="detail-lead">
-              Marlin, Tuna e Whale: três personalidades para diferentes caminhos.
-              Conheça a proposta e as características de cada bicicleta.
+              Compare as características de Marlin, Tuna e Whale
+              e escolha o modelo para sua rotina.
             </p>
             <a class="btn btn-green" href="#modelos">Explorar modelos ↗</a>
           </div>
@@ -71,72 +71,82 @@
         <a href="#modelo-03">Whale <span>Cross</span></a>
       </nav>
       <div id="modelos">
-        <section class="detail-model detail-shell" id="modelo-01">
+        <section class="detail-model detail-shell" id="modelo-01" aria-labelledby="model-marlin-title">
           <div class="detail-model-image">
-            <span class="eyebrow">BYKE / MARLIN</span>
             <img src="assets/bicicletas/marlin-sem-fundo.png" width="1536" height="1024" loading="lazy"
               alt="Bicicleta BYKE Marlin Speed com guidão curvo e GPS">
           </div>
           <div class="detail-model-copy">
-            <p class="eyebrow">MARLIN · ESPORTIVA</p>
-            <h2>Encontre seu ritmo.</h2>
+            <p class="eyebrow">ESPORTIVA</p>
+            <h2 id="model-marlin-title">Marlin</h2>
             <p class="detail-lead">
-              A agilidade do marlin inspira nossa bike de perfil esportivo. Com guidão
-              curvo e pneus de rolagem lisa, a Marlin foi pensada para quem gosta
-              de ganhar ritmo no asfalto.
+              Guidão curvo e pneus de perfil liso para trajetos no asfalto.
+              Inclui bagageiro traseiro e suporte para garrafa.
             </p>
+            <div class="detail-model-actions">
+              <a class="btn btn-dark" href="planos.html?modelo=marlin#opcoes">
+                Escolher Marlin
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+              </a>
+              <span>Planos de 3, 6 ou 12 meses</span>
+            </div>
             <dl class="detail-specs">
               <div><dt>Autonomia estimada</dt><dd>Até 100 km por carga</dd></div>
               <div><dt>Recarga completa estimada</dt><dd>4–5 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>700 × 40C · aro 700C</dd></div>
             </dl>
-            <p class="detail-model-note">Agilidade · Estilo esportivo · Asfalto</p>
           </div>
         </section>
-        <section class="detail-model detail-shell" id="modelo-02">
+        <section class="detail-model detail-shell" id="modelo-02" aria-labelledby="model-tuna-title">
           <div class="detail-model-image">
-            <span class="eyebrow">BYKE / TUNA</span>
             <img src="assets/bicicletas/tuna-sem-fundo.png" width="1536" height="1024" loading="lazy"
               alt="Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro">
           </div>
           <div class="detail-model-copy">
-            <p class="eyebrow">TUNA · URBANA</p>
-            <h2>Energia para acompanhar seu dia.</h2>
+            <p class="eyebrow">URBANA</p>
+            <h2 id="model-tuna-title">Tuna</h2>
             <p class="detail-lead">
-              A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta
-              combina autonomia de bateria, conforto e praticidade. A
-              cesta e o bagageiro acomodam seus pertences, enquanto o quadro baixo
-              facilita cada parada pelo caminho.
+              Quadro baixo, cesta dianteira e bagageiro traseiro
+              para os deslocamentos do dia a dia.
             </p>
+            <div class="detail-model-actions">
+              <a class="btn btn-dark" href="planos.html?modelo=tuna#opcoes">
+                Escolher Tuna
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+              </a>
+              <span>Planos de 3, 6 ou 12 meses</span>
+            </div>
             <dl class="detail-specs">
               <div><dt>Autonomia estimada</dt><dd>Até 100 km por carga</dd></div>
               <div><dt>Recarga completa estimada</dt><dd>4–6 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>27,5 × 2,15″ · aro 27,5″</dd></div>
             </dl>
-            <p class="detail-model-note">Autonomia · Conforto · Praticidade</p>
           </div>
         </section>
-        <section class="detail-model detail-shell" id="modelo-03">
+        <section class="detail-model detail-shell" id="modelo-03" aria-labelledby="model-whale-title">
           <div class="detail-model-image">
-            <span class="eyebrow">BYKE / WHALE</span>
             <img src="assets/bicicletas/whale-sem-fundo.png" width="1536" height="1024" loading="lazy"
               alt="Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla">
           </div>
           <div class="detail-model-copy">
-            <p class="eyebrow">WHALE · CROSS</p>
-            <h2>Presença para explorar.</h2>
+            <p class="eyebrow">CROSS</p>
+            <h2 id="model-whale-title">Whale</h2>
             <p class="detail-lead">
-              A força e a presença da baleia dão personalidade à Whale. Com pneus
-              largos, suspensão dianteira e traseira e visual robusto, ela traz uma
-              proposta aventureira para quem quer explorar caminhos de terra e
-              percursos irregulares.
+              Pneus largos e suspensão dianteira e traseira para percursos urbanos
+              com calçamento irregular e variações de piso.
             </p>
+            <div class="detail-model-actions">
+              <a class="btn btn-dark" href="planos.html?modelo=whale#opcoes">
+                Escolher Whale
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+              </a>
+              <span>Planos de 3, 6 ou 12 meses</span>
+            </div>
             <dl class="detail-specs">
               <div><dt>Autonomia estimada</dt><dd>Até 60 km por carga</dd></div>
               <div><dt>Recarga completa estimada</dt><dd>5–7 horas</dd></div>
               <div><dt>Pneu e aro propostos</dt><dd>26 × 4,0″ · aro 26″</dd></div>
             </dl>
-            <p class="detail-model-note">Robustez · Estabilidade · Aventura</p>
           </div>
         </section>
       </div>
@@ -179,7 +189,7 @@
               <th scope="row">Pneus e aros</th>
               <td><strong>700 × 40C</strong><span>Aro 700C · perfil liso</span></td>
               <td><strong>27,5 × 2,15″</strong><span>Aro 27,5″ · uso urbano</span></td>
-              <td><strong>26 × 4,0″</strong><span>Aro 26″ · cravos para trilha</span></td>
+              <td><strong>26 × 4,0″</strong><span>Aro 26″ · cravos para pisos irregulares</span></td>
             </tr>
             <tr>
               <th scope="row">Controle e conforto</th>
@@ -191,7 +201,7 @@
               <th scope="row">Acessórios</th>
               <td><strong>GPS</strong><span>Suporte para garrafa</span></td>
               <td><strong>Cesta dianteira</strong><span>Para compras e objetos do dia a dia</span></td>
-              <td><strong>Bagageiro traseiro</strong><span>Para levar equipamento na trilha</span></td>
+              <td><strong>Bagageiro traseiro</strong><span>Para levar objetos no dia a dia</span></td>
             </tr>
           </tbody>
         </table>
@@ -213,7 +223,7 @@
       <a class="back-top" href="#conteudo">Voltar ao topo ↑</a>
     </footer>
     <script src="navegacao.js"></script>
-    <script src="catalogo.js"></script>
+    <script src="catalogo.js?v=escolher-modelo-1"></script>
     <script src="menu-bicicletas.js"></script>
     <script src="bicicletas.js"></script>
   </body>

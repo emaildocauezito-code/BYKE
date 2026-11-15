@@ -8,10 +8,8 @@ const models = [
       { src: 'assets/bicicletas/angulos/marlin-lateral.webp', label: 'Vista lateral' },
       { src: 'assets/bicicletas/angulos/marlin-frontal.webp', label: 'Vista frontal' }
     ],
-    tagline: 'Encontre seu ritmo.',
-    desc: 'A agilidade do marlin inspira nossa bike de perfil esportivo. ' +
-      'Com guidão curvo e pneus de rolagem lisa, a Marlin foi pensada para quem ' +
-      'gosta de ganhar ritmo no asfalto.',
+    desc: 'Guidão curvo e pneus de perfil liso para trajetos no asfalto. ' +
+      'Inclui bagageiro traseiro e suporte para garrafa.',
     specs: ['Autonomia estimada de até 100 km', 'Recarga estimada de 4 a 5 horas',
       'Guidão curvo esportivo']
   },
@@ -24,11 +22,8 @@ const models = [
       { src: 'assets/bicicletas/angulos/tuna-lateral.webp', label: 'Vista lateral' },
       { src: 'assets/bicicletas/angulos/tuna-frontal.webp', label: 'Vista frontal' }
     ],
-    tagline: 'Energia para acompanhar seu dia.',
-    desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
-      'combina autonomia de bateria, conforto e praticidade. ' +
-      'A cesta e o bagageiro acomodam seus pertences, enquanto o quadro baixo ' +
-      'facilita cada parada pelo caminho.',
+    desc: 'Quadro baixo, cesta dianteira e bagageiro traseiro ' +
+      'para os deslocamentos do dia a dia.',
     specs: ['Autonomia estimada de até 100 km', 'Recarga estimada de 4 a 6 horas',
       'Cesta dianteira e bagageiro traseiro']
   },
@@ -41,10 +36,8 @@ const models = [
       { src: 'assets/bicicletas/angulos/whale-lateral.webp', label: 'Vista lateral' },
       { src: 'assets/bicicletas/angulos/whale-frontal.webp', label: 'Vista frontal' }
     ],
-    tagline: 'Presença para explorar.',
-    desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
-      'largos, suspensão dianteira e traseira e visual robusto, ela traz uma ' +
-      'proposta aventureira para quem quer explorar caminhos de terra e percursos irregulares.',
+    desc: 'Pneus largos e suspensão dianteira e traseira para percursos urbanos ' +
+      'com calçamento irregular e variações de piso.',
     specs: ['Autonomia estimada de até 60 km', 'Recarga estimada de 5 a 7 horas',
       'Suspensão dianteira e traseira']
   }
