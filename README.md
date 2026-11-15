@@ -52,9 +52,9 @@ Confira os três modelos e planos, escolha cada modelo e verifique sua mensalida
 
 ## Fotos nos cartões de planos
 
-Cada cartão de Marlin, Tuna e Whale em `planos.html` tem uma galeria independente, com setas para alternar entre duas vistas sem fundo. As vistas ficam em `models[].gallery`, no `catalogo.js`; a navegação e os textos acessíveis são controlados por `planos.js`, e a apresentação por `detalhes.css`. Trocar o prazo ou abrir o simulador não reinicia a vista escolhida. Não há troca automática.
+Cada cartão de Marlin, Tuna e Whale em `planos.html` tem uma galeria independente, com setas para alternar entre três vistas sem fundo: diagonal, lateral e frontal. As vistas ficam em `models[].gallery`, no `catalogo.js`; a navegação e os textos acessíveis são controlados por `planos.js`, e a apresentação por `detalhes.css`. Trocar o prazo ou abrir o simulador não reinicia a vista escolhida. Não há troca automática.
 
-As primeiras vistas são cópias otimizadas dos recortes existentes; os ângulos adicionais foram gerados com Imagegen para o protótipo. Todos os seis arquivos usam WebP com transparência real e ficam em `assets/bicicletas/angulos/`. As imagens originais foram preservadas.
+As nove vistas atuais foram geradas com Imagegen para o protótipo, usando os modelos originais como referência. A revisão visual conferiu o alinhamento de rodas, garfo, guidão e farol, com frente em posição reta e variação da câmera. Os arquivos atuais usam os sufixos `-diagonal.webp`, `-lateral.webp` e `-frontal.webp`, todos com transparência real, em `assets/bicicletas/angulos/`. As versões anteriores e as imagens originais foram preservadas, mas não são usadas nas galerias de planos.
 
 Para conferir: acione as duas setas de cada cartão, verifique que só a foto daquele modelo muda e troque entre os três prazos. As mensalidades e o simulador devem continuar funcionando. Os botões também funcionam por Tab e Enter, e mudanças de ângulo são anunciadas por leitores de tela.
 

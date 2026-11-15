@@ -4,8 +4,9 @@ const models = [
     image: 'assets/bicicletas/marlin-sem-fundo.png',
     imageAlt: 'Bicicleta BYKE Marlin Speed com guidão curvo e GPS',
     gallery: [
-      { src: 'assets/bicicletas/angulos/marlin-frente.webp', label: 'Vista dianteira' },
-      { src: 'assets/bicicletas/angulos/marlin-traseira.webp', label: 'Vista traseira' }
+      { src: 'assets/bicicletas/angulos/marlin-diagonal.webp', label: 'Vista diagonal' },
+      { src: 'assets/bicicletas/angulos/marlin-lateral.webp', label: 'Vista lateral' },
+      { src: 'assets/bicicletas/angulos/marlin-frontal.webp', label: 'Vista frontal' }
     ],
     tagline: 'Encontre seu ritmo.',
     desc: 'A agilidade do marlin inspira nossa bike de perfil esportivo. ' +
@@ -19,8 +20,9 @@ const models = [
     image: 'assets/bicicletas/tuna-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro',
     gallery: [
-      { src: 'assets/bicicletas/angulos/tuna-frente.webp', label: 'Vista dianteira' },
-      { src: 'assets/bicicletas/angulos/tuna-traseira.webp', label: 'Vista traseira' }
+      { src: 'assets/bicicletas/angulos/tuna-diagonal.webp', label: 'Vista diagonal' },
+      { src: 'assets/bicicletas/angulos/tuna-lateral.webp', label: 'Vista lateral' },
+      { src: 'assets/bicicletas/angulos/tuna-frontal.webp', label: 'Vista frontal' }
     ],
     tagline: 'Energia para acompanhar seu dia.',
     desc: 'A Tuna traduz resistência em uma bike feita para a rotina. Sua proposta ' +
@@ -35,8 +37,9 @@ const models = [
     image: 'assets/bicicletas/whale-sem-fundo.png',
     imageAlt: 'Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla',
     gallery: [
-      { src: 'assets/bicicletas/angulos/whale-frente.webp', label: 'Vista dianteira' },
-      { src: 'assets/bicicletas/angulos/whale-traseira.webp', label: 'Vista traseira' }
+      { src: 'assets/bicicletas/angulos/whale-diagonal.webp', label: 'Vista diagonal' },
+      { src: 'assets/bicicletas/angulos/whale-lateral.webp', label: 'Vista lateral' },
+      { src: 'assets/bicicletas/angulos/whale-frontal.webp', label: 'Vista frontal' }
     ],
     tagline: 'Presença para explorar.',
     desc: 'A força e a presença da baleia dão personalidade à Whale. Com pneus ' +
