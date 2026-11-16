@@ -48,3 +48,10 @@
   .catalog-grid .shop-related-card { padding: 22px; }
   .catalog-grid .shop-related-image img { height: 230px; }
 }
+
+.catalog-grid .shop-related-card { position: relative; border: 0; padding: 0; }
+.catalog-grid .shop-related-image { background: transparent; }
+.catalog-grid .shop-related-image img { padding: 0; }
+@media (max-width: 760px) {
+  .catalog-grid { gap: 36px; }
+}

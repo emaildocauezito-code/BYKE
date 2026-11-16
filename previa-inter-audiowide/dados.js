@@ -32,10 +32,11 @@ window.BYKEPreview = (() => {
       <input type="radio" name="${name}" value="${key}" ${key === selected ? 'checked' : ''}>
       <span><strong>${term.months} meses</strong><small>${money(term.prices[model.id])}/mês</small></span>
     </label>`).join('');
-  const modelCard = (model, selectedTerm) => {
+  const modelCard = (model, selectedTerm, showAR = false) => {
     const term = terms[getTerm(selectedTerm)];
     return `
       <article class="shop-related-card">
+        ${showAR && /\biPhone\b/i.test(navigator.userAgent) ? `<a class="bike-ar-camera" rel="ar" href="assets/ar/${slug(model)}.usdz#allowsContentScaling=0" aria-label="Ver ${model.name} no meu espaço"><img src="assets/ar/quick-look.svg" width="20" height="20" alt=""></a>` : ""}
         <a class="shop-related-image" href="${modelUrl(model, selectedTerm)}#produto" data-model="${slug(model)}" aria-label="Conhecer ${model.name}"><img src="${model.gallery[0].src}" width="1536" height="1024" loading="lazy" alt="${model.imageAlt}"></a>
         <div class="shop-related-info"><div><p class="eyebrow">${model.tag}</p><h3>${model.name}</h3></div><p class="shop-related-price"><strong>${money(term.prices[model.id])}</strong><span>/mês · ${term.months} meses</span></p></div>
         <p class="shop-related-desc">${model.desc}</p>

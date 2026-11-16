@@ -11,3 +11,4 @@
   background: #fff;
 }
 .bike-ar-camera:hover { background: #f0f2f0; }
+.catalog-grid .bike-ar-camera:not([hidden]) { top: 0; z-index: 1; }

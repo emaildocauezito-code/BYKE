@@ -7,7 +7,7 @@
   function renderCards() {
     controls.querySelectorAll('input').forEach(input => { input.checked = input.value === term; });
     document.getElementById('comparison-table').innerHTML = comparisonTable(term);
-    cards.innerHTML = models.map(model => modelCard(model, term)).join('');
+    cards.innerHTML = models.map(model => modelCard(model, term, true)).join('');
     document.getElementById('catalog-term-note').textContent = `Contrato de ${terms[term].months} meses · Pagamento mensal`;
     updateProductPrices(term);
     BYKEPreview.refreshNavigation(term);
