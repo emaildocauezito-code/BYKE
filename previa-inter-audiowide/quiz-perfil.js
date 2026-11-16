@@ -2,19 +2,19 @@
 window.BYKEQuizProfile = (() => {
   const questions = [
     {
-      title: 'Que caminhos mais fazem parte da sua rotina?', hint: 'Escolha o cenário mais frequente. A recomendação combina essa preferência com as próximas respostas.', label: 'Seus trajetos', icon: 'route',
+      title: 'Que caminhos mais fazem parte da sua rotina?', hint: 'Pense nas condições físicas dos seus trajetos mais frequentes.', label: 'Seus trajetos', icon: 'route',
       options: [
         { title: 'Asfalto e ciclovias', text: 'Percursos em vias pavimentadas e ciclovias.', scores: [3, 2, 1] },
-        { title: 'Ruas e trajetos urbanos do dia a dia', text: 'Caminhos pela cidade para trabalhar, estudar, fazer compras ou passear.', scores: [1, 3, 2] },
-        { title: 'Subidas e caminhos mais variados', text: 'Trechos que pedem mais força e conforto nos impactos, na cidade ou fora dela.', scores: [1, 1, 4] }
+        { title: 'Ruas e trajetos urbanos do dia a dia', text: 'Ruas de bairro, avenidas e cruzamentos, com diferentes condições de piso.', scores: [1, 3, 2] },
+        { title: 'Subidas e caminhos mais variados', text: 'Ladeiras, pisos irregulares e trechos que podem incluir terra ou pedras.', scores: [1, 1, 4] }
       ]
     },
     {
       title: 'Como você pretende usar a bike com mais frequência?', hint: 'Escolha o uso mais presente na sua rotina.', label: 'Seu uso', icon: 'compass',
       options: [
-        { title: 'Ir ao trabalho, estudar, fazer compras e resolver tarefas.', scores: [0, 7, 1], reason: 'Você quer uma bike para as tarefas da rotina; a Tuna combina autonomia, cesta dianteira e praticidade.' },
+        { title: 'Facilitar meus deslocamentos e tarefas da rotina.', scores: [0, 7, 1], reason: 'Você quer praticidade nos deslocamentos; a Tuna combina autonomia e cesta para acompanhar a rotina.' },
         { title: 'Pedalar no asfalto por lazer ou atividade física, em ritmo esportivo.', scores: [7, 0, 1], reason: 'Você quer pedalar no asfalto com proposta esportiva; esse é o foco da Marlin, com leveza no conceito e mapas.' },
-        { title: 'Passear por caminhos variados, inclusive trechos urbanos mais exigentes.', scores: [1, 1, 7], reason: 'Você quer passeios em caminhos variados, inclusive urbanos; a Whale combina força e suspensão para essa proposta.' }
+        { title: 'Explorar novos lugares em passeios de bicicleta.', scores: [1, 1, 7], reason: 'Você quer explorar novos lugares nos passeios; a Whale combina força e suspensão para acompanhar essa proposta.' }
       ]
     },
     {

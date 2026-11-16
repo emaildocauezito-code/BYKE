@@ -89,7 +89,7 @@
  .checkout-page input:not([type="radio"]), .checkout-page select { font-size: 16px; }
 }
 @media print {
- .checkout-page .header, .checkout-page .preview-bar, .checkout-page footer, .checkout-main > .eyebrow, .checkout-main > h1, .checkout-stepper, .checkout-success-actions, .checkout-notification, .skip-link { display: none !important; }
+ .checkout-page .header, .checkout-page .preview-bar, .checkout-page footer, .checkout-main > .eyebrow, .checkout-main > h1, .checkout-stepper, .checkout-success-actions, .checkout-notification, #sound-feedback, .skip-link { display: none !important; }
  .checkout-main { width: 100%; padding: 0; }
  .checkout-success { padding: 0; max-width: none; }
  .checkout-review-block { break-inside: avoid; }
