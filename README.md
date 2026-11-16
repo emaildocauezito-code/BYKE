@@ -69,7 +69,7 @@ A primeira pergunta descreve as condições dos caminhos; a segunda pergunta tra
 
 A assinatura oferece entrega em casa ou retirada no ponto combinado e seleção de Pix, cartão de crédito ou boleto. O ponto de retirada aparece como local a combinar até que seu endereço seja definido; nenhum endereço real foi inventado. O resumo, a revisão e o comprovante identificam a opção e a forma de pagamento. Ao concluir, uma notificação acessível aparece por oito segundos, acompanhada de um aviso sonoro pré-carregado, com fechamento manual e por Escape; não há envio de e-mail, SMS ou cobrança real.
 
-O som usa um arquivo WAV próprio de 0,95 s em `previa-inter-audiowide/assets/audio/conclusao.wav`, pré-carregado e reproduzido pelo clique em Concluir assinatura. O botão “Ouvir confirmação” permite repetir o som com um novo clique. Se a reprodução falhar, a confirmação visual permanece e a página indica essa opção. Não há reprodução sonora ao navegar ou responder ao quiz.
+O som usa um arquivo WAV próprio de 0,95 s em `previa-inter-audiowide/assets/audio/conclusao.wav`, pré-carregado e reproduzido pelo clique em Concluir assinatura. Não há botão de reprodução ou mensagem pedindo para ouvir o aviso. Se o áudio não for reproduzido, a confirmação visual permanece. Não há reprodução sonora ao navegar ou responder ao quiz.
 
 O formulário continua com preenchimento livre para testes. Dados ficam em memória na página, sem envio ou armazenamento persistente. Atualizar/fechar a página perde esses dados; o comprovante pode ser salvo pela impressão do navegador.
 

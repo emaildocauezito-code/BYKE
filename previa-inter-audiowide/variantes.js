@@ -7,7 +7,7 @@
     const url = new URL(href, location.href);
     if (url.origin !== location.origin || !url.pathname.startsWith(directory)) return href;
     if (!url.pathname.endsWith('.html')) return href;
-    url.searchParams.set('v', 'som-arquivo-2');
+    url.searchParams.set('v', 'sem-controle-audio-1');
     if (uppercase) url.searchParams.set('nomes', 'maiusculos');
     return `${url.pathname.slice(directory.length)}${url.search}${url.hash}`;
   }

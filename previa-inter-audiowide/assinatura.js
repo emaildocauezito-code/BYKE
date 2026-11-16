@@ -27,7 +27,6 @@
   };
 
   const completionSound = document.getElementById('completion-sound');
-  const soundFeedback = document.getElementById('sound-feedback');
   async function playCompletionSound() {
     try {
       completionSound.currentTime = 0;
@@ -35,12 +34,10 @@
       completionSound.muted = false;
       // Reproduzido diretamente pelo clique, usando o arquivo pré-carregado.
       await completionSound.play();
-      soundFeedback.hidden = true;
     } catch {
-      soundFeedback.hidden = false;
+      // A confirmação visual permanece disponível se o áudio não for reproduzido.
     }
   }
-  document.getElementById('replay-completion-sound').addEventListener('click', playCompletionSound);
 
   function syncReceivingChoice() {
     const pickup = form.elements.fulfillment.value === 'pickup';

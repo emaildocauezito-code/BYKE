@@ -142,3 +142,7 @@ Após a Manu relatar que não ouviu o som, o aviso sintetizado em Web Audio foi 
 Na pergunta 1, as descrições passam a tratar somente dos caminhos: asfalto/ciclovias; ruas, avenidas e cruzamentos; ladeiras, pisos irregulares e possíveis trechos de terra ou pedras. A pergunta 2 trata de finalidade: tarefas da rotina, pedal esportivo (alternativa mantida) ou exploração de novos lugares em passeios. As perguntas 3, 4 e 5 e as pontuações foram preservadas.
 
 Verificação dessa alteração: arquivo WAV válido de 44,1 kHz/mono/PCM 16 bits, duração de 0,95 s e amostras não silenciosas; reprodução nativa até o evento ended e repetição pelo botão em 1366, 768, 390 e 320 px. Um bloqueio inicial de reprodução foi simulado: o comprovante permaneceu disponível, a indicação para repetir apareceu e o novo clique reproduziu o áudio até o fim. Foi comparado o conteúdo com a versão anterior para confirmar que as perguntas 3–5 e a alternativa esportiva da pergunta 2 são idênticas. O teste das 540 combinações continua passando.
+
+### Remoção dos controles de áudio
+
+A pedido da Manu, foram retirados o botão “Ouvir confirmação” e a mensagem que orientava sua utilização. A tentativa automática de reprodução ao concluir permanece, assim como o comprovante e a notificação visual. A reprodução no dispositivo da Manu continua sem confirmação; nenhum novo controle de som foi adicionado.
