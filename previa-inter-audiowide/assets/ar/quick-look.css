@@ -1,0 +1,13 @@
+.detail-model-copy, .shop-product-info { position: relative; }
+.bike-ar-camera:not([hidden]) {
+  position: absolute;
+  inset: -12px 0 auto auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d5dbd7;
+  border-radius: 50%;
+  background: #fff;
+}
+.bike-ar-camera:hover { background: #f0f2f0; }

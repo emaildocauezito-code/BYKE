@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="detalhes.css?v=comparacao-mobile-1">
     <link rel="stylesheet" href="bicicletas-motion.css?v=quiz-motion-1">
+    <link rel="stylesheet" href="previa-inter-audiowide/assets/ar/quick-look.css">
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -88,6 +89,7 @@
               alt="Bicicleta BYKE Marlin Speed com guidão curvo e GPS">
           </div>
           <div class="detail-model-copy">
+            <a class="bike-ar-camera" rel="ar" href="previa-inter-audiowide/assets/ar/marlin.usdz#allowsContentScaling=0" aria-label="Ver Marlin no meu espaço" hidden><img src="previa-inter-audiowide/assets/ar/quick-look.svg" width="20" height="20" alt=""></a>
             <p class="eyebrow">ESPORTIVA</p>
             <h2 id="model-marlin-title">Marlin</h2>
             <p class="detail-lead">
@@ -115,6 +117,7 @@
               alt="Bicicleta elétrica BYKE Tuna urbana com cesto dianteiro">
           </div>
           <div class="detail-model-copy">
+            <a class="bike-ar-camera" rel="ar" href="previa-inter-audiowide/assets/ar/tuna.usdz#allowsContentScaling=0" aria-label="Ver Tuna no meu espaço" hidden><img src="previa-inter-audiowide/assets/ar/quick-look.svg" width="20" height="20" alt=""></a>
             <p class="eyebrow">URBANA</p>
             <h2 id="model-tuna-title">Tuna</h2>
             <p class="detail-lead">
@@ -142,6 +145,7 @@
               alt="Bicicleta elétrica BYKE Whale Cross com pneus largos e suspensão dupla">
           </div>
           <div class="detail-model-copy">
+            <a class="bike-ar-camera" rel="ar" href="previa-inter-audiowide/assets/ar/whale.usdz#allowsContentScaling=0" aria-label="Ver Whale no meu espaço" hidden><img src="previa-inter-audiowide/assets/ar/quick-look.svg" width="20" height="20" alt=""></a>
             <p class="eyebrow">CROSS</p>
             <h2 id="model-whale-title">Whale</h2>
             <p class="detail-lead">
@@ -250,6 +254,11 @@
     <script src="menu-bicicletas.js"></script>
     <script src="bicicletas.js?v=quiz-motion-1"></script>
     <script src="quiz.js?v=quiz-motion-1"></script>
+      <script>
+      if (/\biPhone\b/i.test(navigator.userAgent)) {
+        document.querySelectorAll('.bike-ar-camera').forEach(link => { link.hidden = false; });
+      }
+    </script>
   </body>
 </html>
 
