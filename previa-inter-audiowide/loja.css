@@ -179,3 +179,6 @@
  .byke-comparison-table th:first-child { width: 140px; }
  .shop-faq summary { font-size: 16px; }
 }
+
+.shop-ar-link { width: fit-content; gap: 10px; margin: 0 0 12px; }
+.shop-ar-link::after { content: "Ver no meu espaço"; }

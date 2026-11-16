@@ -59,6 +59,7 @@
         <div class="shop-thumbnails" role="group" aria-label="Escolha um ângulo da ${model.name}">${model.gallery.map((view, index) => `<button type="button" data-view="${index}" aria-pressed="${index === 0}" aria-label="${view.label} da ${model.name}"><img src="${view.src}" width="1536" height="1024" alt=""><span>${view.label.replace('Vista ', '')}</span></button>`).join('')}</div>
       </div>
       <div class="shop-product-info"><p class="eyebrow">BYKE · ${model.tag}</p><h1 id="product-name" tabindex="-1">${model.name}</h1><p class="shop-description">${model.desc}</p>
+        <a class="btn btn-outline shop-ar-link" rel="ar" href="assets/ar/${slug(model)}.usdz#allowsContentScaling=0" aria-label="Ver ${model.name} no meu espaço"><img src="assets/ar/quick-look.svg" width="20" height="20" alt=""></a>
         <dl class="shop-facts"><div><dt>Autonomia estimada</dt><dd>${fact.range}<small>por carga</small></dd></div><div><dt>Recarga estimada</dt><dd>${fact.charge}</dd></div></dl>
 
         <section class="shop-plan" id="plano" aria-labelledby="plan-title"><div class="shop-plan-heading"><h2 id="plan-title">Escolha a duração</h2><span>Pagamento mensal</span></div>
