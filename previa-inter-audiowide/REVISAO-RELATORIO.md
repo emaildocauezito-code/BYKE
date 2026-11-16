@@ -146,3 +146,7 @@ Verificação dessa alteração: arquivo WAV válido de 44,1 kHz/mono/PCM 16 bit
 ### Remoção dos controles de áudio
 
 A pedido da Manu, foram retirados o botão “Ouvir confirmação” e a mensagem que orientava sua utilização. A tentativa automática de reprodução ao concluir permanece, assim como o comprovante e a notificação visual. A reprodução no dispositivo da Manu continua sem confirmação; nenhum novo controle de som foi adicionado.
+
+### Conferência final do checklist — 16/11/2026
+
+A Manu confirmou que o som funciona e que estava desligado no aparelho. A revisão final dos 30 critérios, verificações executadas e pendências externas está em [CHECKLIST-FINAL.md](CHECKLIST-FINAL.md). Foram corrigidos a preservação de prazo nos atalhos do rodapé e a identificação semântica da faixa Prévia, sem alterações visuais. O link antigo da raiz e as divergências do Instagram continuam identificados no checklist para a entrega.

@@ -68,6 +68,7 @@
       <dl><div><dt>Duração</dt><dd>${selected.months} meses</dd></div><div><dt>Mensalidade</dt><dd>${money(price)}/mês</dd></div><div><dt>Total do período</dt><dd>${money(price * selected.months)}</dd></div><div><dt>Recebimento</dt><dd id="fulfillment-summary"></dd></div><div><dt>Pagamento</dt><dd id="payment-summary"></dd></div></dl><p class="checkout-summary-note">Valores ilustrativos do protótipo. Sem cobrança.</p>`;
     document.querySelector('.checkout-plan-total').textContent = `${money(price)}/mês durante ${selected.months} meses · ${money(price * selected.months)} no período.`;
     syncReceivingChoice();
+    BYKEPreview.refreshFooter(term);
   }
   function showStep(index) {
     if (finished) return;

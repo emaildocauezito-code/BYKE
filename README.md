@@ -75,6 +75,7 @@ O formulário continua com preenchimento livre para testes. Dados ficam em memó
 
 ## Revisão e versões preservadas
 
+- [Checklist final da AP2 — 30 critérios e pendências](previa-inter-audiowide/CHECKLIST-FINAL.md).
 - [Relatório de conferência e pendências do Instagram](previa-inter-audiowide/REVISAO-RELATORIO.md).
 - Antes desta revisão: branch `backup/antes-revisao-relatorio-2026-11-15`, commit `9f95e0b75e2f469d261bd2e4cf75c5dac420995e`.
 - Antes da variante tipográfica: branch `backup/antes-inter-audiowide-2026-11-15`.

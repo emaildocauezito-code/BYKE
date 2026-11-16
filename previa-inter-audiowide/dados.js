@@ -21,6 +21,11 @@ window.BYKEPreview = (() => {
   const url = (page, model, term) => styleUrl(`${page}?${new URLSearchParams({ modelo: slug(model), plano: getTerm(term) })}`);
   const modelUrl = (model, term) => url('loja.html', model, term);
   const checkoutUrl = (model, term) => url('assinatura.html', model, term);
+  const refreshFooter = term => {
+    document.querySelectorAll('.byke-footer a[data-model]').forEach(link => {
+      link.href = modelUrl(getModel(link.dataset.model), getTerm(term));
+    });
+  };
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
   const termOptions = (model, selected, name = 'duration') => Object.entries(terms).map(([key, term]) => `
     <label class="shop-term-option">
@@ -95,5 +100,5 @@ window.BYKEPreview = (() => {
     ];
     return questions.map(([question,answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('');
   };
-  return { facts, estimateNote, torqueNote, slug, getModel, getTerm, modelUrl, checkoutUrl, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq, generalFaq };
+  return { facts, estimateNote, torqueNote, slug, getModel, getTerm, modelUrl, checkoutUrl, refreshFooter, arrow, termOptions, modelCard, technicalDetails, comparisonTable, modelFaq, generalFaq };
 })();
